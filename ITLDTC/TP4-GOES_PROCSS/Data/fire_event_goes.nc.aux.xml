@@ -1,0 +1,650 @@
+<PAMDataset>
+  <Subdataset name="band1_refl">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="band1_refl#coordinates">goes_imager_projection x_image y_image</MDI>
+        <MDI key="band1_refl#grid_mapping">spatial_ref</MDI>
+        <MDI key="band1_refl#_FillValue">nan</MDI>
+        <MDI key="NC_GLOBAL#cdm_data_type">Image</MDI>
+        <MDI key="NC_GLOBAL#Conventions">CF-1.7</MDI>
+        <MDI key="NC_GLOBAL#dataset_name">OR_ABI-L1b-RadF-M6C01_G16_s20212301400207_e20212301409515_c20212301409562.nc</MDI>
+        <MDI key="NC_GLOBAL#date_created">2021-08-18T14:09:56.2Z</MDI>
+        <MDI key="NC_GLOBAL#id">694ade65-94ac-4ea5-a8dc-4667e917a3fb</MDI>
+        <MDI key="NC_GLOBAL#institution">DOC/NOAA/NESDIS &gt; U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Environmental Satellite, Data, and Information Services</MDI>
+        <MDI key="NC_GLOBAL#instrument_ID">FM1</MDI>
+        <MDI key="NC_GLOBAL#instrument_type">GOES-R Series Advanced Baseline Imager (ABI)</MDI>
+        <MDI key="NC_GLOBAL#iso_series_metadata_id">a70be540-c38b-11e0-962b-0800200c9a66</MDI>
+        <MDI key="NC_GLOBAL#keywords">SPECTRAL/ENGINEERING &gt; VISIBLE WAVELENGTHS &gt; VISIBLE RADIANCE</MDI>
+        <MDI key="NC_GLOBAL#keywords_vocabulary">NASA Global Change Master Directory (GCMD) Earth Science Keywords, Version 7.0.0.0.0</MDI>
+        <MDI key="NC_GLOBAL#license">Unclassified data.  Access is restricted to approved users only.</MDI>
+        <MDI key="NC_GLOBAL#LUT_Filenames">SpaceLookParams(FM1A_CDRL79RevP_PR_09_00_02)-637827000.0.h5 QTableBand01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.h5 CalTargetTimeIntervals(FM1A_CDRL79RevP_DO_08_00_01)-611906620.0.h5 BandSaturationLimits(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SolarSpaceLookParams(FM1A_CDRL79RevH_DO_09_00_00)-600765435.0.h5 DeadRowListParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 Mirror_Record(FM1A_CDRL79RevG_DO_07_00_00)-582860861.0.h5 KalmanAstroConsts(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml KalmanFilterControls(FM1A_PR_09_08_02)-677650371.0.xml KalmanMeasMaxSensibles(FMAA_INT_ONLY_DO_09_01_00)-652936814.0.xml KalmanPreprocessorControls(FM1A_CDRL79RevJ_PR_09_06_02)-657795700.0.xml KalmanReferenceData(FM1A_CDRL79RevH_DO_08_00_00)-888.0.xml KalmanStarCatalogs(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml ABI_NavigationRDP_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ABI_NavigationParameters_Band01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.xml ABI_ResamplingImplementation_Band01(FM1A_CDRL79RevH_DO_07_02_00)-602129336.0.xml ABI_ResamplingParameters_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml StarLookParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 StarDetectionParams(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ResamplingScaledConversion(FMAA_INT_ONLY_DO_08_00_00)-1111.0.xml BlockReleaseRegions(FMAA_INT_ONLY_DO_08_00_00)-2222.0.csv VNIR_RetrievalParameters(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SCT_Record(FM1A_CDRL79RevM_DO_09_00_00)-600765435.0.h5 ICM_ConversionConsts(FM1A_CDRL43-18_DO_09_01_00)-652936750.0.h5 ICM_SensorCoefficients(FM1A_TMABI_18_159_TMABI_18_533_DO_09_05_00)-676949608.0.h5</MDI>
+        <MDI key="NC_GLOBAL#Metadata_Conventions">Unidata Dataset Discovery v1.0</MDI>
+        <MDI key="NC_GLOBAL#naming_authority">gov.nesdis.noaa</MDI>
+        <MDI key="NC_GLOBAL#orbital_slot">GOES-East</MDI>
+        <MDI key="NC_GLOBAL#platform_ID">G16</MDI>
+        <MDI key="NC_GLOBAL#processing_level">National Aeronautics and Space Administration (NASA) L1b</MDI>
+        <MDI key="NC_GLOBAL#production_data_source">Realtime</MDI>
+        <MDI key="NC_GLOBAL#production_environment">OE</MDI>
+        <MDI key="NC_GLOBAL#production_site">WCDAS</MDI>
+        <MDI key="NC_GLOBAL#project">GOES</MDI>
+        <MDI key="NC_GLOBAL#scene_id">Full Disk</MDI>
+        <MDI key="NC_GLOBAL#spatial_resolution">1km at nadir</MDI>
+        <MDI key="NC_GLOBAL#standard_name_vocabulary">CF Standard Name Table (v35, 20 July 2016)</MDI>
+        <MDI key="NC_GLOBAL#summary">Single reflective band ABI L1b Radiance Products are digital maps of outgoing radiance values at the top of the atmosphere for visible and near-IR bands.</MDI>
+        <MDI key="NC_GLOBAL#timeline_id">ABI Mode 6</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_end">2021-08-18T14:09:51.5Z</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_start">2021-08-18T14:00:20.7Z</MDI>
+        <MDI key="NC_GLOBAL#title">ABI L1b Radiances</MDI>
+        <MDI key="spatial_ref#crs_wkt">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="spatial_ref#geographic_crs_name">WGS 84</MDI>
+        <MDI key="spatial_ref#GeoTransform">-65.3581113969933 0.01237527939943406 0.0 -30.863362666217075 0.0 -0.01237527939943406</MDI>
+        <MDI key="spatial_ref#grid_mapping_name">latitude_longitude</MDI>
+        <MDI key="spatial_ref#horizontal_datum_name">World Geodetic System 1984</MDI>
+        <MDI key="spatial_ref#inverse_flattening">298.257223563</MDI>
+        <MDI key="spatial_ref#longitude_of_prime_meridian">0</MDI>
+        <MDI key="spatial_ref#prime_meridian_name">Greenwich</MDI>
+        <MDI key="spatial_ref#reference_ellipsoid_name">WGS 84</MDI>
+        <MDI key="spatial_ref#semi_major_axis">6378137</MDI>
+        <MDI key="spatial_ref#semi_minor_axis">6356752.314245179</MDI>
+        <MDI key="spatial_ref#spatial_ref">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="x#axis">X</MDI>
+        <MDI key="x#long_name">longitude</MDI>
+        <MDI key="x#standard_name">longitude</MDI>
+        <MDI key="x#units">degrees_east</MDI>
+        <MDI key="x#_FillValue">nan</MDI>
+        <MDI key="y#axis">Y</MDI>
+        <MDI key="y#long_name">latitude</MDI>
+        <MDI key="y#standard_name">latitude</MDI>
+        <MDI key="y#units">degrees_north</MDI>
+        <MDI key="y#_FillValue">nan</MDI>
+      </Metadata>
+      <Metadata domain="GEOLOCATION">
+        <MDI key="SRS">GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]]</MDI>
+        <MDI key="X_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":x_image</MDI>
+        <MDI key="X_BAND">1</MDI>
+        <MDI key="Y_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":y_image</MDI>
+        <MDI key="Y_BAND">1</MDI>
+        <MDI key="PIXEL_OFFSET">0</MDI>
+        <MDI key="PIXEL_STEP">1</MDI>
+        <MDI key="LINE_OFFSET">0</MDI>
+        <MDI key="LINE_STEP">1</MDI>
+        <MDI key="GEOREFERENCING_CONVENTION">PIXEL_CENTER</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Metadata>
+          <MDI key="STATISTICS_MINIMUM">0.05968390032649</MDI>
+          <MDI key="STATISTICS_MAXIMUM">0.16852404177189</MDI>
+          <MDI key="STATISTICS_MEAN">0.10082064714906</MDI>
+          <MDI key="STATISTICS_STDDEV">0.013169856108145</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+  <Subdataset name="band2_refl">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="band2_refl#coordinates">goes_imager_projection x_image y_image</MDI>
+        <MDI key="band2_refl#grid_mapping">spatial_ref</MDI>
+        <MDI key="band2_refl#_FillValue">nan</MDI>
+        <MDI key="NC_GLOBAL#cdm_data_type">Image</MDI>
+        <MDI key="NC_GLOBAL#Conventions">CF-1.7</MDI>
+        <MDI key="NC_GLOBAL#dataset_name">OR_ABI-L1b-RadF-M6C01_G16_s20212301400207_e20212301409515_c20212301409562.nc</MDI>
+        <MDI key="NC_GLOBAL#date_created">2021-08-18T14:09:56.2Z</MDI>
+        <MDI key="NC_GLOBAL#id">694ade65-94ac-4ea5-a8dc-4667e917a3fb</MDI>
+        <MDI key="NC_GLOBAL#institution">DOC/NOAA/NESDIS &gt; U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Environmental Satellite, Data, and Information Services</MDI>
+        <MDI key="NC_GLOBAL#instrument_ID">FM1</MDI>
+        <MDI key="NC_GLOBAL#instrument_type">GOES-R Series Advanced Baseline Imager (ABI)</MDI>
+        <MDI key="NC_GLOBAL#iso_series_metadata_id">a70be540-c38b-11e0-962b-0800200c9a66</MDI>
+        <MDI key="NC_GLOBAL#keywords">SPECTRAL/ENGINEERING &gt; VISIBLE WAVELENGTHS &gt; VISIBLE RADIANCE</MDI>
+        <MDI key="NC_GLOBAL#keywords_vocabulary">NASA Global Change Master Directory (GCMD) Earth Science Keywords, Version 7.0.0.0.0</MDI>
+        <MDI key="NC_GLOBAL#license">Unclassified data.  Access is restricted to approved users only.</MDI>
+        <MDI key="NC_GLOBAL#LUT_Filenames">SpaceLookParams(FM1A_CDRL79RevP_PR_09_00_02)-637827000.0.h5 QTableBand01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.h5 CalTargetTimeIntervals(FM1A_CDRL79RevP_DO_08_00_01)-611906620.0.h5 BandSaturationLimits(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SolarSpaceLookParams(FM1A_CDRL79RevH_DO_09_00_00)-600765435.0.h5 DeadRowListParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 Mirror_Record(FM1A_CDRL79RevG_DO_07_00_00)-582860861.0.h5 KalmanAstroConsts(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml KalmanFilterControls(FM1A_PR_09_08_02)-677650371.0.xml KalmanMeasMaxSensibles(FMAA_INT_ONLY_DO_09_01_00)-652936814.0.xml KalmanPreprocessorControls(FM1A_CDRL79RevJ_PR_09_06_02)-657795700.0.xml KalmanReferenceData(FM1A_CDRL79RevH_DO_08_00_00)-888.0.xml KalmanStarCatalogs(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml ABI_NavigationRDP_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ABI_NavigationParameters_Band01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.xml ABI_ResamplingImplementation_Band01(FM1A_CDRL79RevH_DO_07_02_00)-602129336.0.xml ABI_ResamplingParameters_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml StarLookParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 StarDetectionParams(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ResamplingScaledConversion(FMAA_INT_ONLY_DO_08_00_00)-1111.0.xml BlockReleaseRegions(FMAA_INT_ONLY_DO_08_00_00)-2222.0.csv VNIR_RetrievalParameters(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SCT_Record(FM1A_CDRL79RevM_DO_09_00_00)-600765435.0.h5 ICM_ConversionConsts(FM1A_CDRL43-18_DO_09_01_00)-652936750.0.h5 ICM_SensorCoefficients(FM1A_TMABI_18_159_TMABI_18_533_DO_09_05_00)-676949608.0.h5</MDI>
+        <MDI key="NC_GLOBAL#Metadata_Conventions">Unidata Dataset Discovery v1.0</MDI>
+        <MDI key="NC_GLOBAL#naming_authority">gov.nesdis.noaa</MDI>
+        <MDI key="NC_GLOBAL#orbital_slot">GOES-East</MDI>
+        <MDI key="NC_GLOBAL#platform_ID">G16</MDI>
+        <MDI key="NC_GLOBAL#processing_level">National Aeronautics and Space Administration (NASA) L1b</MDI>
+        <MDI key="NC_GLOBAL#production_data_source">Realtime</MDI>
+        <MDI key="NC_GLOBAL#production_environment">OE</MDI>
+        <MDI key="NC_GLOBAL#production_site">WCDAS</MDI>
+        <MDI key="NC_GLOBAL#project">GOES</MDI>
+        <MDI key="NC_GLOBAL#scene_id">Full Disk</MDI>
+        <MDI key="NC_GLOBAL#spatial_resolution">1km at nadir</MDI>
+        <MDI key="NC_GLOBAL#standard_name_vocabulary">CF Standard Name Table (v35, 20 July 2016)</MDI>
+        <MDI key="NC_GLOBAL#summary">Single reflective band ABI L1b Radiance Products are digital maps of outgoing radiance values at the top of the atmosphere for visible and near-IR bands.</MDI>
+        <MDI key="NC_GLOBAL#timeline_id">ABI Mode 6</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_end">2021-08-18T14:09:51.5Z</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_start">2021-08-18T14:00:20.7Z</MDI>
+        <MDI key="NC_GLOBAL#title">ABI L1b Radiances</MDI>
+        <MDI key="spatial_ref#crs_wkt">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="spatial_ref#geographic_crs_name">WGS 84</MDI>
+        <MDI key="spatial_ref#GeoTransform">-65.3581113969933 0.01237527939943406 0.0 -30.863362666217075 0.0 -0.01237527939943406</MDI>
+        <MDI key="spatial_ref#grid_mapping_name">latitude_longitude</MDI>
+        <MDI key="spatial_ref#horizontal_datum_name">World Geodetic System 1984</MDI>
+        <MDI key="spatial_ref#inverse_flattening">298.257223563</MDI>
+        <MDI key="spatial_ref#longitude_of_prime_meridian">0</MDI>
+        <MDI key="spatial_ref#prime_meridian_name">Greenwich</MDI>
+        <MDI key="spatial_ref#reference_ellipsoid_name">WGS 84</MDI>
+        <MDI key="spatial_ref#semi_major_axis">6378137</MDI>
+        <MDI key="spatial_ref#semi_minor_axis">6356752.314245179</MDI>
+        <MDI key="spatial_ref#spatial_ref">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="x#axis">X</MDI>
+        <MDI key="x#long_name">longitude</MDI>
+        <MDI key="x#standard_name">longitude</MDI>
+        <MDI key="x#units">degrees_east</MDI>
+        <MDI key="x#_FillValue">nan</MDI>
+        <MDI key="y#axis">Y</MDI>
+        <MDI key="y#long_name">latitude</MDI>
+        <MDI key="y#standard_name">latitude</MDI>
+        <MDI key="y#units">degrees_north</MDI>
+        <MDI key="y#_FillValue">nan</MDI>
+      </Metadata>
+      <Metadata domain="GEOLOCATION">
+        <MDI key="SRS">GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]]</MDI>
+        <MDI key="X_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":x_image</MDI>
+        <MDI key="X_BAND">1</MDI>
+        <MDI key="Y_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":y_image</MDI>
+        <MDI key="Y_BAND">1</MDI>
+        <MDI key="PIXEL_OFFSET">0</MDI>
+        <MDI key="PIXEL_STEP">1</MDI>
+        <MDI key="LINE_OFFSET">0</MDI>
+        <MDI key="LINE_STEP">1</MDI>
+        <MDI key="GEOREFERENCING_CONVENTION">PIXEL_CENTER</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Metadata>
+          <MDI key="STATISTICS_MINIMUM">0.020909488201141</MDI>
+          <MDI key="STATISTICS_MAXIMUM">0.1556878387928</MDI>
+          <MDI key="STATISTICS_MEAN">0.087682477207873</MDI>
+          <MDI key="STATISTICS_STDDEV">0.022451819516882</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+  <Subdataset name="band3_refl">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="band3_refl#coordinates">goes_imager_projection x_image y_image</MDI>
+        <MDI key="band3_refl#grid_mapping">spatial_ref</MDI>
+        <MDI key="band3_refl#_FillValue">nan</MDI>
+        <MDI key="NC_GLOBAL#cdm_data_type">Image</MDI>
+        <MDI key="NC_GLOBAL#Conventions">CF-1.7</MDI>
+        <MDI key="NC_GLOBAL#dataset_name">OR_ABI-L1b-RadF-M6C01_G16_s20212301400207_e20212301409515_c20212301409562.nc</MDI>
+        <MDI key="NC_GLOBAL#date_created">2021-08-18T14:09:56.2Z</MDI>
+        <MDI key="NC_GLOBAL#id">694ade65-94ac-4ea5-a8dc-4667e917a3fb</MDI>
+        <MDI key="NC_GLOBAL#institution">DOC/NOAA/NESDIS &gt; U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Environmental Satellite, Data, and Information Services</MDI>
+        <MDI key="NC_GLOBAL#instrument_ID">FM1</MDI>
+        <MDI key="NC_GLOBAL#instrument_type">GOES-R Series Advanced Baseline Imager (ABI)</MDI>
+        <MDI key="NC_GLOBAL#iso_series_metadata_id">a70be540-c38b-11e0-962b-0800200c9a66</MDI>
+        <MDI key="NC_GLOBAL#keywords">SPECTRAL/ENGINEERING &gt; VISIBLE WAVELENGTHS &gt; VISIBLE RADIANCE</MDI>
+        <MDI key="NC_GLOBAL#keywords_vocabulary">NASA Global Change Master Directory (GCMD) Earth Science Keywords, Version 7.0.0.0.0</MDI>
+        <MDI key="NC_GLOBAL#license">Unclassified data.  Access is restricted to approved users only.</MDI>
+        <MDI key="NC_GLOBAL#LUT_Filenames">SpaceLookParams(FM1A_CDRL79RevP_PR_09_00_02)-637827000.0.h5 QTableBand01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.h5 CalTargetTimeIntervals(FM1A_CDRL79RevP_DO_08_00_01)-611906620.0.h5 BandSaturationLimits(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SolarSpaceLookParams(FM1A_CDRL79RevH_DO_09_00_00)-600765435.0.h5 DeadRowListParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 Mirror_Record(FM1A_CDRL79RevG_DO_07_00_00)-582860861.0.h5 KalmanAstroConsts(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml KalmanFilterControls(FM1A_PR_09_08_02)-677650371.0.xml KalmanMeasMaxSensibles(FMAA_INT_ONLY_DO_09_01_00)-652936814.0.xml KalmanPreprocessorControls(FM1A_CDRL79RevJ_PR_09_06_02)-657795700.0.xml KalmanReferenceData(FM1A_CDRL79RevH_DO_08_00_00)-888.0.xml KalmanStarCatalogs(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml ABI_NavigationRDP_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ABI_NavigationParameters_Band01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.xml ABI_ResamplingImplementation_Band01(FM1A_CDRL79RevH_DO_07_02_00)-602129336.0.xml ABI_ResamplingParameters_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml StarLookParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 StarDetectionParams(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ResamplingScaledConversion(FMAA_INT_ONLY_DO_08_00_00)-1111.0.xml BlockReleaseRegions(FMAA_INT_ONLY_DO_08_00_00)-2222.0.csv VNIR_RetrievalParameters(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SCT_Record(FM1A_CDRL79RevM_DO_09_00_00)-600765435.0.h5 ICM_ConversionConsts(FM1A_CDRL43-18_DO_09_01_00)-652936750.0.h5 ICM_SensorCoefficients(FM1A_TMABI_18_159_TMABI_18_533_DO_09_05_00)-676949608.0.h5</MDI>
+        <MDI key="NC_GLOBAL#Metadata_Conventions">Unidata Dataset Discovery v1.0</MDI>
+        <MDI key="NC_GLOBAL#naming_authority">gov.nesdis.noaa</MDI>
+        <MDI key="NC_GLOBAL#orbital_slot">GOES-East</MDI>
+        <MDI key="NC_GLOBAL#platform_ID">G16</MDI>
+        <MDI key="NC_GLOBAL#processing_level">National Aeronautics and Space Administration (NASA) L1b</MDI>
+        <MDI key="NC_GLOBAL#production_data_source">Realtime</MDI>
+        <MDI key="NC_GLOBAL#production_environment">OE</MDI>
+        <MDI key="NC_GLOBAL#production_site">WCDAS</MDI>
+        <MDI key="NC_GLOBAL#project">GOES</MDI>
+        <MDI key="NC_GLOBAL#scene_id">Full Disk</MDI>
+        <MDI key="NC_GLOBAL#spatial_resolution">1km at nadir</MDI>
+        <MDI key="NC_GLOBAL#standard_name_vocabulary">CF Standard Name Table (v35, 20 July 2016)</MDI>
+        <MDI key="NC_GLOBAL#summary">Single reflective band ABI L1b Radiance Products are digital maps of outgoing radiance values at the top of the atmosphere for visible and near-IR bands.</MDI>
+        <MDI key="NC_GLOBAL#timeline_id">ABI Mode 6</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_end">2021-08-18T14:09:51.5Z</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_start">2021-08-18T14:00:20.7Z</MDI>
+        <MDI key="NC_GLOBAL#title">ABI L1b Radiances</MDI>
+        <MDI key="spatial_ref#crs_wkt">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="spatial_ref#geographic_crs_name">WGS 84</MDI>
+        <MDI key="spatial_ref#GeoTransform">-65.3581113969933 0.01237527939943406 0.0 -30.863362666217075 0.0 -0.01237527939943406</MDI>
+        <MDI key="spatial_ref#grid_mapping_name">latitude_longitude</MDI>
+        <MDI key="spatial_ref#horizontal_datum_name">World Geodetic System 1984</MDI>
+        <MDI key="spatial_ref#inverse_flattening">298.257223563</MDI>
+        <MDI key="spatial_ref#longitude_of_prime_meridian">0</MDI>
+        <MDI key="spatial_ref#prime_meridian_name">Greenwich</MDI>
+        <MDI key="spatial_ref#reference_ellipsoid_name">WGS 84</MDI>
+        <MDI key="spatial_ref#semi_major_axis">6378137</MDI>
+        <MDI key="spatial_ref#semi_minor_axis">6356752.314245179</MDI>
+        <MDI key="spatial_ref#spatial_ref">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="x#axis">X</MDI>
+        <MDI key="x#long_name">longitude</MDI>
+        <MDI key="x#standard_name">longitude</MDI>
+        <MDI key="x#units">degrees_east</MDI>
+        <MDI key="x#_FillValue">nan</MDI>
+        <MDI key="y#axis">Y</MDI>
+        <MDI key="y#long_name">latitude</MDI>
+        <MDI key="y#standard_name">latitude</MDI>
+        <MDI key="y#units">degrees_north</MDI>
+        <MDI key="y#_FillValue">nan</MDI>
+      </Metadata>
+      <Metadata domain="GEOLOCATION">
+        <MDI key="SRS">GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]]</MDI>
+        <MDI key="X_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":x_image</MDI>
+        <MDI key="X_BAND">1</MDI>
+        <MDI key="Y_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":y_image</MDI>
+        <MDI key="Y_BAND">1</MDI>
+        <MDI key="PIXEL_OFFSET">0</MDI>
+        <MDI key="PIXEL_STEP">1</MDI>
+        <MDI key="LINE_OFFSET">0</MDI>
+        <MDI key="LINE_STEP">1</MDI>
+        <MDI key="GEOREFERENCING_CONVENTION">PIXEL_CENTER</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Metadata>
+          <MDI key="STATISTICS_MINIMUM">0.010219072923064</MDI>
+          <MDI key="STATISTICS_MAXIMUM">0.3030072748661</MDI>
+          <MDI key="STATISTICS_MEAN">0.16352242865609</MDI>
+          <MDI key="STATISTICS_STDDEV">0.039676821806806</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+  <Subdataset name="band4_refl">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="band4_refl#coordinates">goes_imager_projection x_image y_image</MDI>
+        <MDI key="band4_refl#grid_mapping">spatial_ref</MDI>
+        <MDI key="band4_refl#_FillValue">nan</MDI>
+        <MDI key="NC_GLOBAL#cdm_data_type">Image</MDI>
+        <MDI key="NC_GLOBAL#Conventions">CF-1.7</MDI>
+        <MDI key="NC_GLOBAL#dataset_name">OR_ABI-L1b-RadF-M6C01_G16_s20212301400207_e20212301409515_c20212301409562.nc</MDI>
+        <MDI key="NC_GLOBAL#date_created">2021-08-18T14:09:56.2Z</MDI>
+        <MDI key="NC_GLOBAL#id">694ade65-94ac-4ea5-a8dc-4667e917a3fb</MDI>
+        <MDI key="NC_GLOBAL#institution">DOC/NOAA/NESDIS &gt; U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Environmental Satellite, Data, and Information Services</MDI>
+        <MDI key="NC_GLOBAL#instrument_ID">FM1</MDI>
+        <MDI key="NC_GLOBAL#instrument_type">GOES-R Series Advanced Baseline Imager (ABI)</MDI>
+        <MDI key="NC_GLOBAL#iso_series_metadata_id">a70be540-c38b-11e0-962b-0800200c9a66</MDI>
+        <MDI key="NC_GLOBAL#keywords">SPECTRAL/ENGINEERING &gt; VISIBLE WAVELENGTHS &gt; VISIBLE RADIANCE</MDI>
+        <MDI key="NC_GLOBAL#keywords_vocabulary">NASA Global Change Master Directory (GCMD) Earth Science Keywords, Version 7.0.0.0.0</MDI>
+        <MDI key="NC_GLOBAL#license">Unclassified data.  Access is restricted to approved users only.</MDI>
+        <MDI key="NC_GLOBAL#LUT_Filenames">SpaceLookParams(FM1A_CDRL79RevP_PR_09_00_02)-637827000.0.h5 QTableBand01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.h5 CalTargetTimeIntervals(FM1A_CDRL79RevP_DO_08_00_01)-611906620.0.h5 BandSaturationLimits(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SolarSpaceLookParams(FM1A_CDRL79RevH_DO_09_00_00)-600765435.0.h5 DeadRowListParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 Mirror_Record(FM1A_CDRL79RevG_DO_07_00_00)-582860861.0.h5 KalmanAstroConsts(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml KalmanFilterControls(FM1A_PR_09_08_02)-677650371.0.xml KalmanMeasMaxSensibles(FMAA_INT_ONLY_DO_09_01_00)-652936814.0.xml KalmanPreprocessorControls(FM1A_CDRL79RevJ_PR_09_06_02)-657795700.0.xml KalmanReferenceData(FM1A_CDRL79RevH_DO_08_00_00)-888.0.xml KalmanStarCatalogs(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml ABI_NavigationRDP_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ABI_NavigationParameters_Band01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.xml ABI_ResamplingImplementation_Band01(FM1A_CDRL79RevH_DO_07_02_00)-602129336.0.xml ABI_ResamplingParameters_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml StarLookParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 StarDetectionParams(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ResamplingScaledConversion(FMAA_INT_ONLY_DO_08_00_00)-1111.0.xml BlockReleaseRegions(FMAA_INT_ONLY_DO_08_00_00)-2222.0.csv VNIR_RetrievalParameters(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SCT_Record(FM1A_CDRL79RevM_DO_09_00_00)-600765435.0.h5 ICM_ConversionConsts(FM1A_CDRL43-18_DO_09_01_00)-652936750.0.h5 ICM_SensorCoefficients(FM1A_TMABI_18_159_TMABI_18_533_DO_09_05_00)-676949608.0.h5</MDI>
+        <MDI key="NC_GLOBAL#Metadata_Conventions">Unidata Dataset Discovery v1.0</MDI>
+        <MDI key="NC_GLOBAL#naming_authority">gov.nesdis.noaa</MDI>
+        <MDI key="NC_GLOBAL#orbital_slot">GOES-East</MDI>
+        <MDI key="NC_GLOBAL#platform_ID">G16</MDI>
+        <MDI key="NC_GLOBAL#processing_level">National Aeronautics and Space Administration (NASA) L1b</MDI>
+        <MDI key="NC_GLOBAL#production_data_source">Realtime</MDI>
+        <MDI key="NC_GLOBAL#production_environment">OE</MDI>
+        <MDI key="NC_GLOBAL#production_site">WCDAS</MDI>
+        <MDI key="NC_GLOBAL#project">GOES</MDI>
+        <MDI key="NC_GLOBAL#scene_id">Full Disk</MDI>
+        <MDI key="NC_GLOBAL#spatial_resolution">1km at nadir</MDI>
+        <MDI key="NC_GLOBAL#standard_name_vocabulary">CF Standard Name Table (v35, 20 July 2016)</MDI>
+        <MDI key="NC_GLOBAL#summary">Single reflective band ABI L1b Radiance Products are digital maps of outgoing radiance values at the top of the atmosphere for visible and near-IR bands.</MDI>
+        <MDI key="NC_GLOBAL#timeline_id">ABI Mode 6</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_end">2021-08-18T14:09:51.5Z</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_start">2021-08-18T14:00:20.7Z</MDI>
+        <MDI key="NC_GLOBAL#title">ABI L1b Radiances</MDI>
+        <MDI key="spatial_ref#crs_wkt">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="spatial_ref#geographic_crs_name">WGS 84</MDI>
+        <MDI key="spatial_ref#GeoTransform">-65.3581113969933 0.01237527939943406 0.0 -30.863362666217075 0.0 -0.01237527939943406</MDI>
+        <MDI key="spatial_ref#grid_mapping_name">latitude_longitude</MDI>
+        <MDI key="spatial_ref#horizontal_datum_name">World Geodetic System 1984</MDI>
+        <MDI key="spatial_ref#inverse_flattening">298.257223563</MDI>
+        <MDI key="spatial_ref#longitude_of_prime_meridian">0</MDI>
+        <MDI key="spatial_ref#prime_meridian_name">Greenwich</MDI>
+        <MDI key="spatial_ref#reference_ellipsoid_name">WGS 84</MDI>
+        <MDI key="spatial_ref#semi_major_axis">6378137</MDI>
+        <MDI key="spatial_ref#semi_minor_axis">6356752.314245179</MDI>
+        <MDI key="spatial_ref#spatial_ref">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="x#axis">X</MDI>
+        <MDI key="x#long_name">longitude</MDI>
+        <MDI key="x#standard_name">longitude</MDI>
+        <MDI key="x#units">degrees_east</MDI>
+        <MDI key="x#_FillValue">nan</MDI>
+        <MDI key="y#axis">Y</MDI>
+        <MDI key="y#long_name">latitude</MDI>
+        <MDI key="y#standard_name">latitude</MDI>
+        <MDI key="y#units">degrees_north</MDI>
+        <MDI key="y#_FillValue">nan</MDI>
+      </Metadata>
+      <Metadata domain="GEOLOCATION">
+        <MDI key="SRS">GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]]</MDI>
+        <MDI key="X_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":x_image</MDI>
+        <MDI key="X_BAND">1</MDI>
+        <MDI key="Y_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":y_image</MDI>
+        <MDI key="Y_BAND">1</MDI>
+        <MDI key="PIXEL_OFFSET">0</MDI>
+        <MDI key="PIXEL_STEP">1</MDI>
+        <MDI key="LINE_OFFSET">0</MDI>
+        <MDI key="LINE_STEP">1</MDI>
+        <MDI key="GEOREFERENCING_CONVENTION">PIXEL_CENTER</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Metadata>
+          <MDI key="STATISTICS_MINIMUM">-0.00043372387881391</MDI>
+          <MDI key="STATISTICS_MAXIMUM">0.011196015402675</MDI>
+          <MDI key="STATISTICS_MEAN">0.0015008653865089</MDI>
+          <MDI key="STATISTICS_STDDEV">0.0017207903892625</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+  <Subdataset name="band5_refl">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="band5_refl#coordinates">goes_imager_projection x_image y_image</MDI>
+        <MDI key="band5_refl#grid_mapping">spatial_ref</MDI>
+        <MDI key="band5_refl#_FillValue">nan</MDI>
+        <MDI key="NC_GLOBAL#cdm_data_type">Image</MDI>
+        <MDI key="NC_GLOBAL#Conventions">CF-1.7</MDI>
+        <MDI key="NC_GLOBAL#dataset_name">OR_ABI-L1b-RadF-M6C01_G16_s20212301400207_e20212301409515_c20212301409562.nc</MDI>
+        <MDI key="NC_GLOBAL#date_created">2021-08-18T14:09:56.2Z</MDI>
+        <MDI key="NC_GLOBAL#id">694ade65-94ac-4ea5-a8dc-4667e917a3fb</MDI>
+        <MDI key="NC_GLOBAL#institution">DOC/NOAA/NESDIS &gt; U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Environmental Satellite, Data, and Information Services</MDI>
+        <MDI key="NC_GLOBAL#instrument_ID">FM1</MDI>
+        <MDI key="NC_GLOBAL#instrument_type">GOES-R Series Advanced Baseline Imager (ABI)</MDI>
+        <MDI key="NC_GLOBAL#iso_series_metadata_id">a70be540-c38b-11e0-962b-0800200c9a66</MDI>
+        <MDI key="NC_GLOBAL#keywords">SPECTRAL/ENGINEERING &gt; VISIBLE WAVELENGTHS &gt; VISIBLE RADIANCE</MDI>
+        <MDI key="NC_GLOBAL#keywords_vocabulary">NASA Global Change Master Directory (GCMD) Earth Science Keywords, Version 7.0.0.0.0</MDI>
+        <MDI key="NC_GLOBAL#license">Unclassified data.  Access is restricted to approved users only.</MDI>
+        <MDI key="NC_GLOBAL#LUT_Filenames">SpaceLookParams(FM1A_CDRL79RevP_PR_09_00_02)-637827000.0.h5 QTableBand01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.h5 CalTargetTimeIntervals(FM1A_CDRL79RevP_DO_08_00_01)-611906620.0.h5 BandSaturationLimits(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SolarSpaceLookParams(FM1A_CDRL79RevH_DO_09_00_00)-600765435.0.h5 DeadRowListParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 Mirror_Record(FM1A_CDRL79RevG_DO_07_00_00)-582860861.0.h5 KalmanAstroConsts(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml KalmanFilterControls(FM1A_PR_09_08_02)-677650371.0.xml KalmanMeasMaxSensibles(FMAA_INT_ONLY_DO_09_01_00)-652936814.0.xml KalmanPreprocessorControls(FM1A_CDRL79RevJ_PR_09_06_02)-657795700.0.xml KalmanReferenceData(FM1A_CDRL79RevH_DO_08_00_00)-888.0.xml KalmanStarCatalogs(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml ABI_NavigationRDP_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ABI_NavigationParameters_Band01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.xml ABI_ResamplingImplementation_Band01(FM1A_CDRL79RevH_DO_07_02_00)-602129336.0.xml ABI_ResamplingParameters_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml StarLookParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 StarDetectionParams(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ResamplingScaledConversion(FMAA_INT_ONLY_DO_08_00_00)-1111.0.xml BlockReleaseRegions(FMAA_INT_ONLY_DO_08_00_00)-2222.0.csv VNIR_RetrievalParameters(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SCT_Record(FM1A_CDRL79RevM_DO_09_00_00)-600765435.0.h5 ICM_ConversionConsts(FM1A_CDRL43-18_DO_09_01_00)-652936750.0.h5 ICM_SensorCoefficients(FM1A_TMABI_18_159_TMABI_18_533_DO_09_05_00)-676949608.0.h5</MDI>
+        <MDI key="NC_GLOBAL#Metadata_Conventions">Unidata Dataset Discovery v1.0</MDI>
+        <MDI key="NC_GLOBAL#naming_authority">gov.nesdis.noaa</MDI>
+        <MDI key="NC_GLOBAL#orbital_slot">GOES-East</MDI>
+        <MDI key="NC_GLOBAL#platform_ID">G16</MDI>
+        <MDI key="NC_GLOBAL#processing_level">National Aeronautics and Space Administration (NASA) L1b</MDI>
+        <MDI key="NC_GLOBAL#production_data_source">Realtime</MDI>
+        <MDI key="NC_GLOBAL#production_environment">OE</MDI>
+        <MDI key="NC_GLOBAL#production_site">WCDAS</MDI>
+        <MDI key="NC_GLOBAL#project">GOES</MDI>
+        <MDI key="NC_GLOBAL#scene_id">Full Disk</MDI>
+        <MDI key="NC_GLOBAL#spatial_resolution">1km at nadir</MDI>
+        <MDI key="NC_GLOBAL#standard_name_vocabulary">CF Standard Name Table (v35, 20 July 2016)</MDI>
+        <MDI key="NC_GLOBAL#summary">Single reflective band ABI L1b Radiance Products are digital maps of outgoing radiance values at the top of the atmosphere for visible and near-IR bands.</MDI>
+        <MDI key="NC_GLOBAL#timeline_id">ABI Mode 6</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_end">2021-08-18T14:09:51.5Z</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_start">2021-08-18T14:00:20.7Z</MDI>
+        <MDI key="NC_GLOBAL#title">ABI L1b Radiances</MDI>
+        <MDI key="spatial_ref#crs_wkt">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="spatial_ref#geographic_crs_name">WGS 84</MDI>
+        <MDI key="spatial_ref#GeoTransform">-65.3581113969933 0.01237527939943406 0.0 -30.863362666217075 0.0 -0.01237527939943406</MDI>
+        <MDI key="spatial_ref#grid_mapping_name">latitude_longitude</MDI>
+        <MDI key="spatial_ref#horizontal_datum_name">World Geodetic System 1984</MDI>
+        <MDI key="spatial_ref#inverse_flattening">298.257223563</MDI>
+        <MDI key="spatial_ref#longitude_of_prime_meridian">0</MDI>
+        <MDI key="spatial_ref#prime_meridian_name">Greenwich</MDI>
+        <MDI key="spatial_ref#reference_ellipsoid_name">WGS 84</MDI>
+        <MDI key="spatial_ref#semi_major_axis">6378137</MDI>
+        <MDI key="spatial_ref#semi_minor_axis">6356752.314245179</MDI>
+        <MDI key="spatial_ref#spatial_ref">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="x#axis">X</MDI>
+        <MDI key="x#long_name">longitude</MDI>
+        <MDI key="x#standard_name">longitude</MDI>
+        <MDI key="x#units">degrees_east</MDI>
+        <MDI key="x#_FillValue">nan</MDI>
+        <MDI key="y#axis">Y</MDI>
+        <MDI key="y#long_name">latitude</MDI>
+        <MDI key="y#standard_name">latitude</MDI>
+        <MDI key="y#units">degrees_north</MDI>
+        <MDI key="y#_FillValue">nan</MDI>
+      </Metadata>
+      <Metadata domain="GEOLOCATION">
+        <MDI key="SRS">GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]]</MDI>
+        <MDI key="X_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":x_image</MDI>
+        <MDI key="X_BAND">1</MDI>
+        <MDI key="Y_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":y_image</MDI>
+        <MDI key="Y_BAND">1</MDI>
+        <MDI key="PIXEL_OFFSET">0</MDI>
+        <MDI key="PIXEL_STEP">1</MDI>
+        <MDI key="LINE_OFFSET">0</MDI>
+        <MDI key="LINE_STEP">1</MDI>
+        <MDI key="GEOREFERENCING_CONVENTION">PIXEL_CENTER</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Metadata>
+          <MDI key="STATISTICS_MINIMUM">0.0038931400049478</MDI>
+          <MDI key="STATISTICS_MAXIMUM">0.63060867786407</MDI>
+          <MDI key="STATISTICS_MEAN">0.19294248872188</MDI>
+          <MDI key="STATISTICS_STDDEV">0.042355123770294</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+  <Subdataset name="band6_refl">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="band6_refl#coordinates">goes_imager_projection x_image y_image</MDI>
+        <MDI key="band6_refl#grid_mapping">spatial_ref</MDI>
+        <MDI key="band6_refl#_FillValue">nan</MDI>
+        <MDI key="NC_GLOBAL#cdm_data_type">Image</MDI>
+        <MDI key="NC_GLOBAL#Conventions">CF-1.7</MDI>
+        <MDI key="NC_GLOBAL#dataset_name">OR_ABI-L1b-RadF-M6C01_G16_s20212301400207_e20212301409515_c20212301409562.nc</MDI>
+        <MDI key="NC_GLOBAL#date_created">2021-08-18T14:09:56.2Z</MDI>
+        <MDI key="NC_GLOBAL#id">694ade65-94ac-4ea5-a8dc-4667e917a3fb</MDI>
+        <MDI key="NC_GLOBAL#institution">DOC/NOAA/NESDIS &gt; U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Environmental Satellite, Data, and Information Services</MDI>
+        <MDI key="NC_GLOBAL#instrument_ID">FM1</MDI>
+        <MDI key="NC_GLOBAL#instrument_type">GOES-R Series Advanced Baseline Imager (ABI)</MDI>
+        <MDI key="NC_GLOBAL#iso_series_metadata_id">a70be540-c38b-11e0-962b-0800200c9a66</MDI>
+        <MDI key="NC_GLOBAL#keywords">SPECTRAL/ENGINEERING &gt; VISIBLE WAVELENGTHS &gt; VISIBLE RADIANCE</MDI>
+        <MDI key="NC_GLOBAL#keywords_vocabulary">NASA Global Change Master Directory (GCMD) Earth Science Keywords, Version 7.0.0.0.0</MDI>
+        <MDI key="NC_GLOBAL#license">Unclassified data.  Access is restricted to approved users only.</MDI>
+        <MDI key="NC_GLOBAL#LUT_Filenames">SpaceLookParams(FM1A_CDRL79RevP_PR_09_00_02)-637827000.0.h5 QTableBand01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.h5 CalTargetTimeIntervals(FM1A_CDRL79RevP_DO_08_00_01)-611906620.0.h5 BandSaturationLimits(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SolarSpaceLookParams(FM1A_CDRL79RevH_DO_09_00_00)-600765435.0.h5 DeadRowListParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 Mirror_Record(FM1A_CDRL79RevG_DO_07_00_00)-582860861.0.h5 KalmanAstroConsts(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml KalmanFilterControls(FM1A_PR_09_08_02)-677650371.0.xml KalmanMeasMaxSensibles(FMAA_INT_ONLY_DO_09_01_00)-652936814.0.xml KalmanPreprocessorControls(FM1A_CDRL79RevJ_PR_09_06_02)-657795700.0.xml KalmanReferenceData(FM1A_CDRL79RevH_DO_08_00_00)-888.0.xml KalmanStarCatalogs(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml ABI_NavigationRDP_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ABI_NavigationParameters_Band01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.xml ABI_ResamplingImplementation_Band01(FM1A_CDRL79RevH_DO_07_02_00)-602129336.0.xml ABI_ResamplingParameters_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml StarLookParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 StarDetectionParams(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ResamplingScaledConversion(FMAA_INT_ONLY_DO_08_00_00)-1111.0.xml BlockReleaseRegions(FMAA_INT_ONLY_DO_08_00_00)-2222.0.csv VNIR_RetrievalParameters(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SCT_Record(FM1A_CDRL79RevM_DO_09_00_00)-600765435.0.h5 ICM_ConversionConsts(FM1A_CDRL43-18_DO_09_01_00)-652936750.0.h5 ICM_SensorCoefficients(FM1A_TMABI_18_159_TMABI_18_533_DO_09_05_00)-676949608.0.h5</MDI>
+        <MDI key="NC_GLOBAL#Metadata_Conventions">Unidata Dataset Discovery v1.0</MDI>
+        <MDI key="NC_GLOBAL#naming_authority">gov.nesdis.noaa</MDI>
+        <MDI key="NC_GLOBAL#orbital_slot">GOES-East</MDI>
+        <MDI key="NC_GLOBAL#platform_ID">G16</MDI>
+        <MDI key="NC_GLOBAL#processing_level">National Aeronautics and Space Administration (NASA) L1b</MDI>
+        <MDI key="NC_GLOBAL#production_data_source">Realtime</MDI>
+        <MDI key="NC_GLOBAL#production_environment">OE</MDI>
+        <MDI key="NC_GLOBAL#production_site">WCDAS</MDI>
+        <MDI key="NC_GLOBAL#project">GOES</MDI>
+        <MDI key="NC_GLOBAL#scene_id">Full Disk</MDI>
+        <MDI key="NC_GLOBAL#spatial_resolution">1km at nadir</MDI>
+        <MDI key="NC_GLOBAL#standard_name_vocabulary">CF Standard Name Table (v35, 20 July 2016)</MDI>
+        <MDI key="NC_GLOBAL#summary">Single reflective band ABI L1b Radiance Products are digital maps of outgoing radiance values at the top of the atmosphere for visible and near-IR bands.</MDI>
+        <MDI key="NC_GLOBAL#timeline_id">ABI Mode 6</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_end">2021-08-18T14:09:51.5Z</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_start">2021-08-18T14:00:20.7Z</MDI>
+        <MDI key="NC_GLOBAL#title">ABI L1b Radiances</MDI>
+        <MDI key="spatial_ref#crs_wkt">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="spatial_ref#geographic_crs_name">WGS 84</MDI>
+        <MDI key="spatial_ref#GeoTransform">-65.3581113969933 0.01237527939943406 0.0 -30.863362666217075 0.0 -0.01237527939943406</MDI>
+        <MDI key="spatial_ref#grid_mapping_name">latitude_longitude</MDI>
+        <MDI key="spatial_ref#horizontal_datum_name">World Geodetic System 1984</MDI>
+        <MDI key="spatial_ref#inverse_flattening">298.257223563</MDI>
+        <MDI key="spatial_ref#longitude_of_prime_meridian">0</MDI>
+        <MDI key="spatial_ref#prime_meridian_name">Greenwich</MDI>
+        <MDI key="spatial_ref#reference_ellipsoid_name">WGS 84</MDI>
+        <MDI key="spatial_ref#semi_major_axis">6378137</MDI>
+        <MDI key="spatial_ref#semi_minor_axis">6356752.314245179</MDI>
+        <MDI key="spatial_ref#spatial_ref">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="x#axis">X</MDI>
+        <MDI key="x#long_name">longitude</MDI>
+        <MDI key="x#standard_name">longitude</MDI>
+        <MDI key="x#units">degrees_east</MDI>
+        <MDI key="x#_FillValue">nan</MDI>
+        <MDI key="y#axis">Y</MDI>
+        <MDI key="y#long_name">latitude</MDI>
+        <MDI key="y#standard_name">latitude</MDI>
+        <MDI key="y#units">degrees_north</MDI>
+        <MDI key="y#_FillValue">nan</MDI>
+      </Metadata>
+      <Metadata domain="GEOLOCATION">
+        <MDI key="SRS">GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]]</MDI>
+        <MDI key="X_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":x_image</MDI>
+        <MDI key="X_BAND">1</MDI>
+        <MDI key="Y_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":y_image</MDI>
+        <MDI key="Y_BAND">1</MDI>
+        <MDI key="PIXEL_OFFSET">0</MDI>
+        <MDI key="PIXEL_STEP">1</MDI>
+        <MDI key="LINE_OFFSET">0</MDI>
+        <MDI key="LINE_STEP">1</MDI>
+        <MDI key="GEOREFERENCING_CONVENTION">PIXEL_CENTER</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Metadata>
+          <MDI key="STATISTICS_MINIMUM">0.033134210854769</MDI>
+          <MDI key="STATISTICS_MAXIMUM">0.8569792509079</MDI>
+          <MDI key="STATISTICS_MEAN">0.12888627325653</MDI>
+          <MDI key="STATISTICS_STDDEV">0.030907533799462</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+  <Subdataset name="band7_BT">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="band7_BT#coordinates">goes_imager_projection x_image y_image</MDI>
+        <MDI key="band7_BT#grid_mapping">spatial_ref</MDI>
+        <MDI key="band7_BT#_FillValue">nan</MDI>
+        <MDI key="NC_GLOBAL#cdm_data_type">Image</MDI>
+        <MDI key="NC_GLOBAL#Conventions">CF-1.7</MDI>
+        <MDI key="NC_GLOBAL#dataset_name">OR_ABI-L1b-RadF-M6C01_G16_s20212301400207_e20212301409515_c20212301409562.nc</MDI>
+        <MDI key="NC_GLOBAL#date_created">2021-08-18T14:09:56.2Z</MDI>
+        <MDI key="NC_GLOBAL#id">694ade65-94ac-4ea5-a8dc-4667e917a3fb</MDI>
+        <MDI key="NC_GLOBAL#institution">DOC/NOAA/NESDIS &gt; U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Environmental Satellite, Data, and Information Services</MDI>
+        <MDI key="NC_GLOBAL#instrument_ID">FM1</MDI>
+        <MDI key="NC_GLOBAL#instrument_type">GOES-R Series Advanced Baseline Imager (ABI)</MDI>
+        <MDI key="NC_GLOBAL#iso_series_metadata_id">a70be540-c38b-11e0-962b-0800200c9a66</MDI>
+        <MDI key="NC_GLOBAL#keywords">SPECTRAL/ENGINEERING &gt; VISIBLE WAVELENGTHS &gt; VISIBLE RADIANCE</MDI>
+        <MDI key="NC_GLOBAL#keywords_vocabulary">NASA Global Change Master Directory (GCMD) Earth Science Keywords, Version 7.0.0.0.0</MDI>
+        <MDI key="NC_GLOBAL#license">Unclassified data.  Access is restricted to approved users only.</MDI>
+        <MDI key="NC_GLOBAL#LUT_Filenames">SpaceLookParams(FM1A_CDRL79RevP_PR_09_00_02)-637827000.0.h5 QTableBand01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.h5 CalTargetTimeIntervals(FM1A_CDRL79RevP_DO_08_00_01)-611906620.0.h5 BandSaturationLimits(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SolarSpaceLookParams(FM1A_CDRL79RevH_DO_09_00_00)-600765435.0.h5 DeadRowListParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 Mirror_Record(FM1A_CDRL79RevG_DO_07_00_00)-582860861.0.h5 KalmanAstroConsts(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml KalmanFilterControls(FM1A_PR_09_08_02)-677650371.0.xml KalmanMeasMaxSensibles(FMAA_INT_ONLY_DO_09_01_00)-652936814.0.xml KalmanPreprocessorControls(FM1A_CDRL79RevJ_PR_09_06_02)-657795700.0.xml KalmanReferenceData(FM1A_CDRL79RevH_DO_08_00_00)-888.0.xml KalmanStarCatalogs(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml ABI_NavigationRDP_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ABI_NavigationParameters_Band01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.xml ABI_ResamplingImplementation_Band01(FM1A_CDRL79RevH_DO_07_02_00)-602129336.0.xml ABI_ResamplingParameters_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml StarLookParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 StarDetectionParams(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ResamplingScaledConversion(FMAA_INT_ONLY_DO_08_00_00)-1111.0.xml BlockReleaseRegions(FMAA_INT_ONLY_DO_08_00_00)-2222.0.csv VNIR_RetrievalParameters(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SCT_Record(FM1A_CDRL79RevM_DO_09_00_00)-600765435.0.h5 ICM_ConversionConsts(FM1A_CDRL43-18_DO_09_01_00)-652936750.0.h5 ICM_SensorCoefficients(FM1A_TMABI_18_159_TMABI_18_533_DO_09_05_00)-676949608.0.h5</MDI>
+        <MDI key="NC_GLOBAL#Metadata_Conventions">Unidata Dataset Discovery v1.0</MDI>
+        <MDI key="NC_GLOBAL#naming_authority">gov.nesdis.noaa</MDI>
+        <MDI key="NC_GLOBAL#orbital_slot">GOES-East</MDI>
+        <MDI key="NC_GLOBAL#platform_ID">G16</MDI>
+        <MDI key="NC_GLOBAL#processing_level">National Aeronautics and Space Administration (NASA) L1b</MDI>
+        <MDI key="NC_GLOBAL#production_data_source">Realtime</MDI>
+        <MDI key="NC_GLOBAL#production_environment">OE</MDI>
+        <MDI key="NC_GLOBAL#production_site">WCDAS</MDI>
+        <MDI key="NC_GLOBAL#project">GOES</MDI>
+        <MDI key="NC_GLOBAL#scene_id">Full Disk</MDI>
+        <MDI key="NC_GLOBAL#spatial_resolution">1km at nadir</MDI>
+        <MDI key="NC_GLOBAL#standard_name_vocabulary">CF Standard Name Table (v35, 20 July 2016)</MDI>
+        <MDI key="NC_GLOBAL#summary">Single reflective band ABI L1b Radiance Products are digital maps of outgoing radiance values at the top of the atmosphere for visible and near-IR bands.</MDI>
+        <MDI key="NC_GLOBAL#timeline_id">ABI Mode 6</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_end">2021-08-18T14:09:51.5Z</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_start">2021-08-18T14:00:20.7Z</MDI>
+        <MDI key="NC_GLOBAL#title">ABI L1b Radiances</MDI>
+        <MDI key="spatial_ref#crs_wkt">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="spatial_ref#geographic_crs_name">WGS 84</MDI>
+        <MDI key="spatial_ref#GeoTransform">-65.3581113969933 0.01237527939943406 0.0 -30.863362666217075 0.0 -0.01237527939943406</MDI>
+        <MDI key="spatial_ref#grid_mapping_name">latitude_longitude</MDI>
+        <MDI key="spatial_ref#horizontal_datum_name">World Geodetic System 1984</MDI>
+        <MDI key="spatial_ref#inverse_flattening">298.257223563</MDI>
+        <MDI key="spatial_ref#longitude_of_prime_meridian">0</MDI>
+        <MDI key="spatial_ref#prime_meridian_name">Greenwich</MDI>
+        <MDI key="spatial_ref#reference_ellipsoid_name">WGS 84</MDI>
+        <MDI key="spatial_ref#semi_major_axis">6378137</MDI>
+        <MDI key="spatial_ref#semi_minor_axis">6356752.314245179</MDI>
+        <MDI key="spatial_ref#spatial_ref">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="x#axis">X</MDI>
+        <MDI key="x#long_name">longitude</MDI>
+        <MDI key="x#standard_name">longitude</MDI>
+        <MDI key="x#units">degrees_east</MDI>
+        <MDI key="x#_FillValue">nan</MDI>
+        <MDI key="y#axis">Y</MDI>
+        <MDI key="y#long_name">latitude</MDI>
+        <MDI key="y#standard_name">latitude</MDI>
+        <MDI key="y#units">degrees_north</MDI>
+        <MDI key="y#_FillValue">nan</MDI>
+      </Metadata>
+      <Metadata domain="GEOLOCATION">
+        <MDI key="SRS">GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]]</MDI>
+        <MDI key="X_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":x_image</MDI>
+        <MDI key="X_BAND">1</MDI>
+        <MDI key="Y_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":y_image</MDI>
+        <MDI key="Y_BAND">1</MDI>
+        <MDI key="PIXEL_OFFSET">0</MDI>
+        <MDI key="PIXEL_STEP">1</MDI>
+        <MDI key="LINE_OFFSET">0</MDI>
+        <MDI key="LINE_STEP">1</MDI>
+        <MDI key="GEOREFERENCING_CONVENTION">PIXEL_CENTER</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Metadata>
+          <MDI key="STATISTICS_MINIMUM">291.67108154297</MDI>
+          <MDI key="STATISTICS_MAXIMUM">395.49984741211</MDI>
+          <MDI key="STATISTICS_MEAN">302.89188375732</MDI>
+          <MDI key="STATISTICS_STDDEV">3.6353598284525</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+  <Subdataset name="bandSG_refl">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="bandSG_refl#coordinates">goes_imager_projection x_image y_image</MDI>
+        <MDI key="bandSG_refl#grid_mapping">spatial_ref</MDI>
+        <MDI key="bandSG_refl#_FillValue">nan</MDI>
+        <MDI key="NC_GLOBAL#cdm_data_type">Image</MDI>
+        <MDI key="NC_GLOBAL#Conventions">CF-1.7</MDI>
+        <MDI key="NC_GLOBAL#dataset_name">OR_ABI-L1b-RadF-M6C01_G16_s20212301400207_e20212301409515_c20212301409562.nc</MDI>
+        <MDI key="NC_GLOBAL#date_created">2021-08-18T14:09:56.2Z</MDI>
+        <MDI key="NC_GLOBAL#id">694ade65-94ac-4ea5-a8dc-4667e917a3fb</MDI>
+        <MDI key="NC_GLOBAL#institution">DOC/NOAA/NESDIS &gt; U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Environmental Satellite, Data, and Information Services</MDI>
+        <MDI key="NC_GLOBAL#instrument_ID">FM1</MDI>
+        <MDI key="NC_GLOBAL#instrument_type">GOES-R Series Advanced Baseline Imager (ABI)</MDI>
+        <MDI key="NC_GLOBAL#iso_series_metadata_id">a70be540-c38b-11e0-962b-0800200c9a66</MDI>
+        <MDI key="NC_GLOBAL#keywords">SPECTRAL/ENGINEERING &gt; VISIBLE WAVELENGTHS &gt; VISIBLE RADIANCE</MDI>
+        <MDI key="NC_GLOBAL#keywords_vocabulary">NASA Global Change Master Directory (GCMD) Earth Science Keywords, Version 7.0.0.0.0</MDI>
+        <MDI key="NC_GLOBAL#license">Unclassified data.  Access is restricted to approved users only.</MDI>
+        <MDI key="NC_GLOBAL#LUT_Filenames">SpaceLookParams(FM1A_CDRL79RevP_PR_09_00_02)-637827000.0.h5 QTableBand01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.h5 CalTargetTimeIntervals(FM1A_CDRL79RevP_DO_08_00_01)-611906620.0.h5 BandSaturationLimits(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SolarSpaceLookParams(FM1A_CDRL79RevH_DO_09_00_00)-600765435.0.h5 DeadRowListParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 Mirror_Record(FM1A_CDRL79RevG_DO_07_00_00)-582860861.0.h5 KalmanAstroConsts(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml KalmanFilterControls(FM1A_PR_09_08_02)-677650371.0.xml KalmanMeasMaxSensibles(FMAA_INT_ONLY_DO_09_01_00)-652936814.0.xml KalmanPreprocessorControls(FM1A_CDRL79RevJ_PR_09_06_02)-657795700.0.xml KalmanReferenceData(FM1A_CDRL79RevH_DO_08_00_00)-888.0.xml KalmanStarCatalogs(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.xml ABI_NavigationRDP_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ABI_NavigationParameters_Band01(FM1A_CDRL79RevH_DO_07_00_00)-582860861.0.xml ABI_ResamplingImplementation_Band01(FM1A_CDRL79RevH_DO_07_02_00)-602129336.0.xml ABI_ResamplingParameters_Band01(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml StarLookParams(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 StarDetectionParams(FM1A_CDRL79RevJ_DO_07_00_00)-582860861.0.xml ResamplingScaledConversion(FMAA_INT_ONLY_DO_08_00_00)-1111.0.xml BlockReleaseRegions(FMAA_INT_ONLY_DO_08_00_00)-2222.0.csv VNIR_RetrievalParameters(FM1A_CDRL79RevH_DO_08_00_00)-600000000.0.h5 SCT_Record(FM1A_CDRL79RevM_DO_09_00_00)-600765435.0.h5 ICM_ConversionConsts(FM1A_CDRL43-18_DO_09_01_00)-652936750.0.h5 ICM_SensorCoefficients(FM1A_TMABI_18_159_TMABI_18_533_DO_09_05_00)-676949608.0.h5</MDI>
+        <MDI key="NC_GLOBAL#Metadata_Conventions">Unidata Dataset Discovery v1.0</MDI>
+        <MDI key="NC_GLOBAL#naming_authority">gov.nesdis.noaa</MDI>
+        <MDI key="NC_GLOBAL#orbital_slot">GOES-East</MDI>
+        <MDI key="NC_GLOBAL#platform_ID">G16</MDI>
+        <MDI key="NC_GLOBAL#processing_level">National Aeronautics and Space Administration (NASA) L1b</MDI>
+        <MDI key="NC_GLOBAL#production_data_source">Realtime</MDI>
+        <MDI key="NC_GLOBAL#production_environment">OE</MDI>
+        <MDI key="NC_GLOBAL#production_site">WCDAS</MDI>
+        <MDI key="NC_GLOBAL#project">GOES</MDI>
+        <MDI key="NC_GLOBAL#scene_id">Full Disk</MDI>
+        <MDI key="NC_GLOBAL#spatial_resolution">1km at nadir</MDI>
+        <MDI key="NC_GLOBAL#standard_name_vocabulary">CF Standard Name Table (v35, 20 July 2016)</MDI>
+        <MDI key="NC_GLOBAL#summary">Single reflective band ABI L1b Radiance Products are digital maps of outgoing radiance values at the top of the atmosphere for visible and near-IR bands.</MDI>
+        <MDI key="NC_GLOBAL#timeline_id">ABI Mode 6</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_end">2021-08-18T14:09:51.5Z</MDI>
+        <MDI key="NC_GLOBAL#time_coverage_start">2021-08-18T14:00:20.7Z</MDI>
+        <MDI key="NC_GLOBAL#title">ABI L1b Radiances</MDI>
+        <MDI key="spatial_ref#crs_wkt">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="spatial_ref#geographic_crs_name">WGS 84</MDI>
+        <MDI key="spatial_ref#GeoTransform">-65.3581113969933 0.01237527939943406 0.0 -30.863362666217075 0.0 -0.01237527939943406</MDI>
+        <MDI key="spatial_ref#grid_mapping_name">latitude_longitude</MDI>
+        <MDI key="spatial_ref#horizontal_datum_name">World Geodetic System 1984</MDI>
+        <MDI key="spatial_ref#inverse_flattening">298.257223563</MDI>
+        <MDI key="spatial_ref#longitude_of_prime_meridian">0</MDI>
+        <MDI key="spatial_ref#prime_meridian_name">Greenwich</MDI>
+        <MDI key="spatial_ref#reference_ellipsoid_name">WGS 84</MDI>
+        <MDI key="spatial_ref#semi_major_axis">6378137</MDI>
+        <MDI key="spatial_ref#semi_minor_axis">6356752.314245179</MDI>
+        <MDI key="spatial_ref#spatial_ref">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</MDI>
+        <MDI key="x#axis">X</MDI>
+        <MDI key="x#long_name">longitude</MDI>
+        <MDI key="x#standard_name">longitude</MDI>
+        <MDI key="x#units">degrees_east</MDI>
+        <MDI key="x#_FillValue">nan</MDI>
+        <MDI key="y#axis">Y</MDI>
+        <MDI key="y#long_name">latitude</MDI>
+        <MDI key="y#standard_name">latitude</MDI>
+        <MDI key="y#units">degrees_north</MDI>
+        <MDI key="y#_FillValue">nan</MDI>
+      </Metadata>
+      <Metadata domain="GEOLOCATION">
+        <MDI key="SRS">GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]]</MDI>
+        <MDI key="X_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":x_image</MDI>
+        <MDI key="X_BAND">1</MDI>
+        <MDI key="Y_DATASET">NETCDF:"C:/Users/win10/Documents/GitHub/MAIE_devs_pub/ITLDTC/TP4-GOES_PROCSS/Data/fire_event_goes.nc":y_image</MDI>
+        <MDI key="Y_BAND">1</MDI>
+        <MDI key="PIXEL_OFFSET">0</MDI>
+        <MDI key="PIXEL_STEP">1</MDI>
+        <MDI key="LINE_OFFSET">0</MDI>
+        <MDI key="LINE_STEP">1</MDI>
+        <MDI key="GEOREFERENCING_CONVENTION">PIXEL_CENTER</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Metadata>
+          <MDI key="STATISTICS_MINIMUM">0.038056958466768</MDI>
+          <MDI key="STATISTICS_MAXIMUM">0.16364800930023</MDI>
+          <MDI key="STATISTICS_MEAN">0.10117864680324</MDI>
+          <MDI key="STATISTICS_STDDEV">0.019413379402655</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+</PAMDataset>
