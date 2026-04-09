@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "qa_sampling",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "sample": "urbano" }, "geometry": { "type": "Point", "coordinates": [ -64.117826170468661, -32.173789167040944 ] } },
+{ "type": "Feature", "properties": { "id": 2, "sample": "c_agua" }, "geometry": { "type": "Point", "coordinates": [ -64.263592948544968, -32.171114547259727 ] } },
+{ "type": "Feature", "properties": { "id": 3, "sample": "cultivo" }, "geometry": { "type": "Point", "coordinates": [ -64.137217163882482, -32.227615890137933 ] } },
+{ "type": "Feature", "properties": { "id": 4, "sample": "nube" }, "geometry": { "type": "Point", "coordinates": [ -63.909874482479069, -32.254027760477449 ] } },
+{ "type": "Feature", "properties": { "id": 5, "sample": "cloud_02" }, "geometry": { "type": "Point", "coordinates": [ -64.039297258556118, -32.246529314049823 ] } },
+{ "type": "Feature", "properties": { "id": 6, "sample": "cloud_03" }, "geometry": { "type": "Point", "coordinates": [ -63.734277623868763, -32.191953236272788 ] } }
+]
+}
