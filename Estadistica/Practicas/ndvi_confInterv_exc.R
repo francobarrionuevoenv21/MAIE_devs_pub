@@ -1,8 +1,10 @@
+## Read dataset
 datos_ndvi <- read.table("datos/ndvi_p.txt")
 
+## Display dataset head
 head(datos_ndvi)
 
-
+## Filter data by "zona"
 ndvi_agri <- datos_ndvi$ndvi[datos_ndvi$zona == "agricola"]
 ndvi_sier <- datos_ndvi$ndvi[datos_ndvi$zona == "sierra"]
 
@@ -34,6 +36,7 @@ max_agri <- xMean_agri + zDer_agri*sd_agri/sqrt(length(ndvi_agri))
 min_sier <- xMean_sier + zIzq_sier*sd_sier/sqrt(length(ndvi_sier))
 max_sier <- xMean_sier + zDer_sier*sd_sier/sqrt(length(ndvi_sier))
 
+## Display results
 print("Intervalo ndvi agrícola")
 print("Min: ")
 print(min_agri)
@@ -45,9 +48,3 @@ print("Min: ")
 print(min_sier)
 print("Max: ")
 print(max_sier)
-
-
-length(ndvi_agri)
-
-
-
