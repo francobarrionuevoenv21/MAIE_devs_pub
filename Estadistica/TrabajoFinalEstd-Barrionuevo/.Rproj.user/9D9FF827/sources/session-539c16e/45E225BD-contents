@@ -2,6 +2,12 @@
 title: "TrabajoFinalEstd-Barrionuevo"
 ---
 
+```{r}
+
+## Cargo paquetes
+library(dplyr)
+```
+
 ## NDVI y efecto de la época del año
 
 ### Contexto
@@ -10,25 +16,55 @@ Se dispone de una base de datos de mediciones del Índice de Vegetación de Dife
 
 #### Exploración inicial
 
-1.  Cargue la base de datos e indique: ¿cuántas observaciones tiene en total? ¿Cuántas observaciones hay por época? Presente el output de R que respalde su respuesta.
+1.  Cargue la base de datos e indique: ¿Cuántas observaciones tiene en total? ¿Cuántas observaciones hay por época? Presente el output de R que respalde su respuesta.
 
-    ```{r}
+```{r}
 
-    ## Carga de los datos en una tabla  
-    data_ndvi <- read.table("datos/ndvi_4_estaciones.txt")
+## Carga de los datos en una tabla  
+data_ndvi <- read.table("datos/ndvi_4_estaciones.txt")
 
-    ## Mostrar head de la tabla
-    head(data_ndvi)
-    ```
+## Mostrar head de la tabla
+head(data_ndvi)
+```
+
+```{r}
+
+## Cuenta la cantidad de observaciones por estación
+table(data_ndvi$estacion)
+```
+
+**Respuesta:** Por cada estación hay un total de 28 observaciones del NDVI.
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 2.  Construya una tabla de estadística descriptiva que incluya, para cada época: n, media, desvío estándar, coeficiente de variación, mínimo y máximo. Presente la tabla en el informe.
 
-3.  
+```{r}
 
-4.  Construya un gráfico de caja (*boxplot*) que permita comparar visualmente la distribución del NDVI entre épocas. Incluya el gráfico en el informe y describa en 2–3 oraciones lo que observa: tendencias, variabilidad, presencia de valores atípicos.
+## Tabla de estadística descriptiva
+data_ndvi %>%
+  group_by(estacion) %>%
+  summarise(
+    n = n(),
+    media = mean(ndvi),
+    de = sd(ndvi),
+    cv = sd(ndvi) / mean(ndvi) * 100, 
+    min = min(ndvi),
+    max = max(ndvi)
+  )
+```
 
-5.  
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+3.  Construya un gráfico de caja (*boxplot*) que permita comparar visualmente la distribución del NDVI entre épocas. \
+    Incluya el gráfico en el informe y describa en 2–3 oraciones lo que observa: tendencias, variabilidad, presencia de valores atípicos.
 
 ```{r}
-1 + 1
+
+## Graficar boxplot con librería por default
+boxplot(ndvi ~ estacion, data = data_ndvi, xlab = "Estación", ylab = "NDVI")
 ```
+
+**Respuesta:**
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_

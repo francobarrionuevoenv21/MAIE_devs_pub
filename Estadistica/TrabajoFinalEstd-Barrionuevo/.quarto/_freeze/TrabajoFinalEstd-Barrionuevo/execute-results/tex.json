@@ -1,0 +1,15 @@
+{
+  "hash": "60fc243806ca7c42f0a306aa9f0164f1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"TrabajoFinalEstd-Barrionuevo\"\n---\n\n## NDVI y efecto de la época del año\n\n### Contexto\n\nSe dispone de una base de datos de mediciones del Índice de Vegetación de Diferencia Normalizada (NDVI) registradas en las cuatro estaciones del año 2020 en sitios de la región Pampeana con cobertura agrícola (*ndvi_4_estaciones.txt*). Cada observación corresponde a un sitio diferente y puede considerarse independiente. El objetivo es evaluar si el NDVI varía significativamente según la época del año.\n\n#### Exploración inicial\n\n1\\. Cargue la base de datos e indique: ¿Cuántas observaciones tiene en total? ¿Cuántas observaciones hay por época? Presente el output de R que respalde su respuesta.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n## Carga de los datos en una tabla  \ndata_ndvi <- read.table(\"datos/ndvi_4_estaciones.txt\")\n\n## Mostrar head de la tabla\nhead(data_ndvi)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n  estacion      ndvi\n1 invierno 0.3135280\n2 invierno 0.2442600\n3 invierno 0.1949603\n4 invierno 0.3098044\n5 invierno 0.2584004\n6 invierno 0.3417368\n```\n\n\n:::\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

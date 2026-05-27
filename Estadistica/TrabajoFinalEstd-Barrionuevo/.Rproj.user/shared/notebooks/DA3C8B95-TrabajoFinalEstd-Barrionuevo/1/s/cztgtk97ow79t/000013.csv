@@ -1,0 +1,17 @@
+"0","## Cuenta la cantidad de observaciones por estación
+table(data_ndvi$estacion)
+"
+"1","
+"
+"1"," invierno "
+"1","    otono "
+"1","primavera "
+"1","   verano "
+"1","
+"
+"1","       28 "
+"1","       28 "
+"1","       28 "
+"1","       28 "
+"1","
+"
