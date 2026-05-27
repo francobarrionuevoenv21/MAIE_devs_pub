@@ -1,0 +1,34 @@
+---
+title: "TrabajoFinalEstd-Barrionuevo"
+---
+
+## NDVI y efecto de la época del año
+
+### Contexto
+
+Se dispone de una base de datos de mediciones del Índice de Vegetación de Diferencia Normalizada (NDVI) registradas en las cuatro estaciones del año 2020 en sitios de la región Pampeana con cobertura agrícola (*ndvi_4_estaciones.txt*). Cada observación corresponde a un sitio diferente y puede considerarse independiente. El objetivo es evaluar si el NDVI varía significativamente según la época del año.
+
+#### Exploración inicial
+
+1.  Cargue la base de datos e indique: ¿cuántas observaciones tiene en total? ¿Cuántas observaciones hay por época? Presente el output de R que respalde su respuesta.
+
+    ```{r}
+
+    ## Carga de los datos en una tabla  
+    data_ndvi <- read.table("datos/ndvi_4_estaciones.txt")
+
+    ## Mostrar head de la tabla
+    head(data_ndvi)
+    ```
+
+2.  Construya una tabla de estadística descriptiva que incluya, para cada época: n, media, desvío estándar, coeficiente de variación, mínimo y máximo. Presente la tabla en el informe.
+
+3.  
+
+4.  Construya un gráfico de caja (*boxplot*) que permita comparar visualmente la distribución del NDVI entre épocas. Incluya el gráfico en el informe y describa en 2–3 oraciones lo que observa: tendencias, variabilidad, presencia de valores atípicos.
+
+5.  
+
+```{r}
+1 + 1
+```

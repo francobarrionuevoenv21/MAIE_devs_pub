@@ -1,0 +1,16 @@
+Estacion;Situacion;Y;X;Altura msnm;Pp media anual
+Villa Caeiro;Externa;6537215.21;361037.79;681;710.5
+Cerro San Roque;Externa;6529145.77;380962.9;1100;744
+Las Juntas;Externa;6546329.72;358640.92;716;736.5
+Pan de Azúcar;Interna;6543670.73;364869.96;1100;804.5
+Cont. Saldan;Interna;6533734.54;375730.58;497;701.5
+Chateau;Externa;6529145;380962;2200;791.5
+Las Minas;Externa;6581588.93;381247.98;1723;1431
+El Diquecito;Externa;6530400.23;367470.9;536;640.5
+Capilla Buffo;Interna;6548046.67;370003.56;818;746.5
+Dique La Quebrada;Interna;6553269.53;371528.25;807;550
+Camino de las Sierras;Externa;6520078.71;372010.75;555;863
+Camino Cuadrado;Externa;6558661.62;362000.16;1378;827
+Ascochinga;Externa;6573617.82;381601.02;672;663.5
+A Chiviquin;Interna;6551484.8;371535.96;829;602.5
+A Quebrachito;Interna;6546261.08;370446.69;832;743.5

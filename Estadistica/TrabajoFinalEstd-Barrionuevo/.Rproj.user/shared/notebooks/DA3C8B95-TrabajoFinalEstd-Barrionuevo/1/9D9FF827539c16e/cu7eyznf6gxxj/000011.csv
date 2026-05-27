@@ -1,0 +1,5 @@
+"0","    ## Mostrar head de la tabla
+    head(data_ndvi)
+"
+"2","Error: objeto 'data_ndvi' no encontrado
+"

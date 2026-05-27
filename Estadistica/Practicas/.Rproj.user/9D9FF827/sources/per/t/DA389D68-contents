@@ -68,13 +68,23 @@ y2 <- coef(modelo)[2]*x2 + coef(modelo)[1]
 c(y1, y2)
 
 ##****************************************************************************##
-## 1. Salinidad y Biomasa
+## 2. Salinidad y Biomasa
+
 "
 El archivo salinidad.txt contiene datos que corresponden a la medición de la producción de biomasa de
 una forrajera (medido en gr) y a valores de propiedades químicas del suelo (pH, salinidad, contenido
 de zinc (Zn) y contenido de potasio (K)) donde crecieron las plantas. Se desea modelar la producción
 de biomasa en función de las propiedades químicas del suelo.
 
+1. ¿Cual es la variable respuesta y cuales podrían ser las regresoras?
+2. Realice una regresión lineal múltiple contemplando a la biomasa como variable respuesta y el
+resto de las variables como regresoras. 1.Para examinar el ajuste múltiple grafique los residuos
+parciales. ¿Encontró algún patrón que indique problema de ajuste?
+3. Enbase al examen de los residuos parciales modifique el modelo de ajuste y evalúe su desempeño.
+4. Proponga un modelo que pueda explicar mejor la dependencia de la biomasa en relación a las
+condiciones del suelo. ¿Cuál sería la ecuación de ajuste?
+5. Interprete las pendientes parciales para el pH y el contenido de Zinc en el suelo en el que
+crecen la plantas.
 "
 ##****************************************************************************##
 
@@ -205,4 +215,148 @@ for(i in names(X)) {
   abline(h = 0, col = "red")
 }
 
+##------------------------------------------------------------------------------
+
+## Define new model
+model_3 <- lm(Biomasa ~ pH + Salinidad + I(Salinidad^2) + Zinc, data = data_sal)
+
+## Model summary
+summary(model_3)
+
+
+##------------------------------------------------------------------------------
+
+"
+Call:
+lm(formula = Biomasa ~ pH + Salinidad + I(Salinidad^2) + Zinc, 
+    data = data_sal)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-259.578  -82.976   -2.374   54.814  236.063 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    9895.127   1442.856   6.858 2.96e-08 ***
+pH              215.024     25.638   8.387 2.38e-10 ***
+Salinidad      -558.136     87.708  -6.364 1.46e-07 ***
+I(Salinidad^2)    8.355      1.396   5.983 5.00e-07 ***
+Zinc            -38.010      4.336  -8.766 7.47e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 118.2 on 40 degrees of freedom
+Multiple R-squared:  0.9574,	Adjusted R-squared:  0.9531 
+F-statistic: 224.8 on 4 and 40 DF,  p-value: < 2.2e-16
+"
+
+##------------------------------------------------------------------------------
+
+##****************************************************************************##
+## 3. Crecimiento árboles
+
+"
+Se desea conocer la tasa de crecimiento de árboles de eucalipto que crecen en sitios diferentes. En
+cada rodal se midió el índice de sitio (altura promedio alcanzada por árboles dominantes a una edad
+determinada) y se toman muestras de suelo en cada una de las cuales se determina el porcentaje de
+arena, el porcentaje de arcilla y la densidad aparente (gr/cc). Los datos se encuentra en el archivo
+altura_media.txt.
+
+1. Ajuste un modelo lineal de la altura media en función de las demás variables.
+2. ¿Que variables de sitio podrían ser usadas para predecir la altura media? A partir de los
+p-valores observados, ¿ajustaría otro modelo?
+3. Interprete los coeficientes estimados y su intervalo de confianza.
+
+"
+##****************************************************************************##
+
+## Read data
+data_arb <- read.table("datos/altura_media.txt", head=TRUE)
+
+## Display head
+head(data_arb)
+
+## Define model
+model <- lm(altura.media ~ arena + arcilla + densidad, data = data_arb)
+
+## Summary model
+summary(model)
+
+
+##------------------------------------------------------------------------------
+
+"
+Call:
+lm(formula = altura.media ~ arena + arcilla + densidad, data = data_arb)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.5936 -0.7117 -0.1316  0.7864  2.0917 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  42.30968    7.42055   5.702 9.89e-05 ***
+arena         0.15983    0.09785   1.633 0.128329    
+arcilla      -0.05324    0.07295  -0.730 0.479532    
+densidad    -17.64087    3.59787  -4.903 0.000364 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.224 on 12 degrees of freedom
+Multiple R-squared:  0.7029,	Adjusted R-squared:  0.6287 
+F-statistic: 9.465 on 3 and 12 DF,  p-value: 0.00174
+"
+
+##------------------------------------------------------------------------------
+
+## Define model
+model_2 <- lm(altura.media ~ arena + densidad, data = data_arb)
+
+## Summary model
+summary(model_2)
+
+##------------------------------------------------------------------------------
+
+"
+Call:
+lm(formula = altura.media ~ arena + densidad, data = data_arb)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.1899 -0.6477 -0.2151  1.0057  1.9104 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  39.0984     5.8667   6.664 1.55e-05 ***
+arena         0.1942     0.0842   2.307 0.038180 *  
+densidad    -17.6930     3.5319  -5.009 0.000239 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.202 on 13 degrees of freedom
+Multiple R-squared:  0.6897,	Adjusted R-squared:  0.642 
+F-statistic: 14.45 on 2 and 13 DF,  p-value: 0.0004969
+"
+
+##------------------------------------------------------------------------------
+
+# Standardized residuals
+res <- rstandard(model_2)
+
+# Select predictor variables
+X <- data_arb[, c("arena", "densidad")]
+
+# Define plot layout
+par(mfrow = c(2,2))
+
+# Loop through predictors
+for(i in names(X)) {
+  
+  plot(X[[i]], res,
+       xlab = i,
+       ylab = "Residuos estandarizados",
+       main = paste("Residuos vs", i))
+  
+  abline(h = 0, col = "red")
+}
 
