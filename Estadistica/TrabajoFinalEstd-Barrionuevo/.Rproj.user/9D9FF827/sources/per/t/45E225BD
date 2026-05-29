@@ -3,7 +3,7 @@
     "path": "~/GitHub/MAIE_devs_pub/Estadistica/TrabajoFinalEstd-Barrionuevo/TrabajoFinalEstd-Barrionuevo.qmd",
     "project_path": "TrabajoFinalEstd-Barrionuevo.qmd",
     "type": "quarto_markdown",
-    "hash": "1263635558",
+    "hash": "3326229744",
     "contents": "",
     "dirty": false,
     "created": 1779907114131.0,
@@ -16,17 +16,17 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "1",
-        "rmdVisualModeLocation": "2064:1870.4000244140625",
-        "docOutlineSize": "93",
-        "cursorPosition": "61,0",
-        "scrollLine": "0"
+        "rmdVisualModeLocation": "10690:8334.400390625",
+        "docOutlineSize": "183",
+        "cursorPosition": "232,0",
+        "scrollLine": "203"
     },
     "folds": "",
-    "lastKnownWriteTime": 1779918647,
+    "lastKnownWriteTime": 1780025513,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1779918647149,
+    "last_content_update": 1780025513710,
     "read_only": false,
     "read_only_alternatives": []
 }

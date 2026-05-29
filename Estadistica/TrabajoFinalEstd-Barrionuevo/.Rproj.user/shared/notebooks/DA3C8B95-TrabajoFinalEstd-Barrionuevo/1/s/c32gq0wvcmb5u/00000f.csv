@@ -1,0 +1,6 @@
+"0",""
+"0","## Carga de los datos en una tabla  "
+"0","data_ndvi <- read.table(""datos/ndvi_4_estaciones.txt"")"
+"0",""
+"0","## Mostrar head de la tabla"
+"0","head(data_ndvi)"

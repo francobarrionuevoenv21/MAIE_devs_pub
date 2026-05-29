@@ -1,0 +1,3 @@
+"0",""
+"0","## Ploteo QQplot para evaluar normalidad de los residuos"
+"0","qqnorm(rstandard(fit))"

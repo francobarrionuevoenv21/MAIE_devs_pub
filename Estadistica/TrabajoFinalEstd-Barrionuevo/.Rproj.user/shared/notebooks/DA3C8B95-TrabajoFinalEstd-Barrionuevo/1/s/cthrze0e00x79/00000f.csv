@@ -1,0 +1,3 @@
+"0",""
+"0","## Graficar boxplot con librería por default"
+"0","boxplot(ndvi ~ estacion, data = data_ndvi, xlab = ""Estación"", ylab = ""NDVI"")"

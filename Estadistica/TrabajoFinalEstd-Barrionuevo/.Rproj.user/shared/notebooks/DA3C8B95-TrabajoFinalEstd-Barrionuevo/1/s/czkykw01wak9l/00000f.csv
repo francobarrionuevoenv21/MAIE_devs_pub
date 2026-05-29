@@ -1,6 +1,6 @@
-"0","## Cuenta la cantidad de observaciones por estación
-table(data_ndvi$estacion)
-"
+"0",""
+"0","## Cuenta la cantidad de observaciones por estación"
+"0","table(data_ndvi$estacion)"
 "1","
 "
 "1"," invierno "
