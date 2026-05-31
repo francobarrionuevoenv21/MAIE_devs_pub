@@ -1,6 +1,0 @@
-"0",""
-"0","## Carga de los datos"
-"0","data_evap <- read.table(""datos/evaporacion.txt"", head = TRUE)"
-"0",""
-"0","## Mostrar head de la tabla"
-"0","head(data_evap)"

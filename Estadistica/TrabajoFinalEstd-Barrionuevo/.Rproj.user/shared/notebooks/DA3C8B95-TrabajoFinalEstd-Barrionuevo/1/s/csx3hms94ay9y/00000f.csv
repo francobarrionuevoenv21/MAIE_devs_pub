@@ -1,6 +1,0 @@
-"0",""
-"0","## Ploteo de gráfico de residuos estandarizados vs valores predichos para evaluar"
-"0","## homogeneidad de varianzas"
-"0",""
-"0","plot(fitted.values(fit), rstandard(fit),"
-"0","     xlab = ""Valores predichos"", ylab = ""Residuos estandarizados"")"
