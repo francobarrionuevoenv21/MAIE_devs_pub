@@ -1,5 +1,0 @@
-"0",""
-"0","## "
-"0","plot(data_evap$tpsuelma, data_evap$agua_eva, "
-"0","     xlab = ""T. Máx. Suelo (°F)"", "
-"0","     ylab = ""Evaporación agua (mm)"")"

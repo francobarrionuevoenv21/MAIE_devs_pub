@@ -1,0 +1,3 @@
+"0",""
+"0","## Visualización de la scatterplot matrix"
+"0","pairs(data_evap)"
