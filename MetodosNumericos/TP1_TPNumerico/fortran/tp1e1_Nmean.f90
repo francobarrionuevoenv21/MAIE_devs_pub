@@ -11,7 +11,7 @@ program n_mean
     integer, allocatable :: arrayn(:) ! Allows us to define the size of the array at runtime.
 
     ! Initialization
-    mean_acum = 0
+    mean_acum = 0 
 
     print *, 'Enter the number of elements:'
     read(*,*) n

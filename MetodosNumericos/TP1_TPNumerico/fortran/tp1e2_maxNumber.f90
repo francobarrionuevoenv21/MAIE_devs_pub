@@ -1,5 +1,5 @@
-! Problema 2: Escribir un programa que pida dos n´umeros reales e imprima en la pantalla el mayor de
-! ellos. El programa debe indicar si los n´umeros son iguales.
+! Problema 2: Escribir un programa que pida dos numeros reales e imprima en la pantalla el mayor de
+! ellos. El programa debe indicar si los numeros son iguales.
 
 program max_number
     implicit none
