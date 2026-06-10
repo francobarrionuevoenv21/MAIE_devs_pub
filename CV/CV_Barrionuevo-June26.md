@@ -70,8 +70,9 @@ Performed laboratory work, including the characterization of anaerobic sludges a
 **Instituto Gulich. Córdoba, Argentina**  
 02/2026 – In progress
 
-### Courses and topics covered
-Remote sensing, satellite image processing, geographic information systems, radar applications, numerical modeling, spatial analysis, statistics, and computational methods for Earth observation
+**Courses completed and approved:** Mathematics, Introduction to Remote Sensing, Introduction to intelligent methods for planning, scheduling, and execution problem solving, Statistics, and Numerical Methods Applied to Satellite Data Processing  
+
+**Remaining Coursework:** Environmental Remote Sensing, Digital Processing of Satellite Imagery and Geographic Information Systems (GIS), Applications of Synthetic Aperture Radar (SAR) Imagery, Numerical Models for Early Warning Systems, Risk Mapping, and Simulation, Spatial Analysis and Risk Assessment, Environmental Assessment, Monitoring, and Management Tools, Research Methodology and Thesis Development Tools, and Integrative Project. 
 
 ## Environmental Engineering
 **Universidad Nacional de San Martín (UNSAM). Buenos Aires, Argentina**  
@@ -102,8 +103,8 @@ Remote sensing, satellite image processing, geographic information systems, rada
 **Gulich Institute. Córdoba, Argentina**  
 09/2025
 
-### Remote Sensing as a Tool for Earth and Forest Resource Monitoring: Uses and Applications of the SAR SAOCOM and Sentinel-1 Missiones
-**Gulich Institute, Geoscience and Remote Sensing Society (GRSS) & European Space Agency (ESA). Córdoba, Argentina**  
+### Remote Sensing as a Tool for Earth and Forest Resource Monitoring: Uses and Applications of the SAR SAOCOM and Sentinel-1 Missions
+**Gulich Institute, GRSS & European Space Agency (ESA). Córdoba, Argentina**  
 10/2024
 
 # Language Skills
@@ -143,10 +144,6 @@ Remote sensing, satellite image processing, geographic information systems, rada
 ### VII Congreso Nacional de Conservación de la Biodiversidad 
 **San Juan, Argentina** | 2025  
 **Title:** *Degradación de las vegas y bosquecitos de chacay por cambios de cobertura e incendios en la cuenca del río Blanco (Mendoza, Argentina)*. Torre Azzaroni, María Luisina; **Barrionuevo, Franco David**; Rubio, María Cecilia; Morandeira, Natalia Soledad.
-
-### Sesión de Pósters Becas PEFI 2024
-**Buenos Aires, Argentina** | 2024  
-**Title:** *Uso de información satelital para evaluar el impacto ambiental de las quemas en arroceras del Bajo de los Saladillos (Santa Fe)*. **Barrionuevo, Franco David**; Clauser, Carlos David; Morandeira, Natalia Soledad.
 
 ### Expo EHyS 2024 (EHyS-UNSAM) 
 **Buenos Aires, Argentina** | 2024  
