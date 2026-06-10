@@ -48,3 +48,48 @@ contains
     end subroutine euler
 
 end module euler_solver
+
+!--
+module function_ode
+
+contains
+
+    ! ODE definition
+    function f_ode(t, x) result(dxdt)
+
+        real :: t, x
+        real :: dxdt
+
+        ! dx/dt = (t-x)/2
+        dxdt = (t - x)/2.0
+
+    end function f_ode
+
+! --
+end module function_ode
+
+program solve_edo_euler
+
+    use euler_solver
+    use function_ode
+    implicit none
+
+    real :: t0, tf, x0, h
+    integer :: u_file
+
+    ! Initial conditions
+    t0 = 0.0
+    tf = 3.0
+    x0 = 1.0
+    h  = 0.1
+
+    !-
+    call system('mkdir -p tp3e3')
+    u_file = 10
+    open(unit=u_file, file='tp3e3/outputData1_.csv', status='replace')
+
+    ! Call Euler solver
+    call euler(f_ode, t0, tf, x0, h, u_file)
+
+end program solve_edo_euler
+    
