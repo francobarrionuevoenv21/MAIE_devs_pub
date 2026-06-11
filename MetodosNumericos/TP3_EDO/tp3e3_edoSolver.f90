@@ -58,7 +58,7 @@ program solve_edo_euler
     !-
     call system('mkdir -p tp3e3')
     u_file = 10
-    open(unit=u_file, file='tp3e3/output_' // suffix // '.csv', status='replace')
+    open(unit=u_file, file='tp3e3/output_' // trim(suffix) // '.csv', status='replace')
 
     ! Call Euler solver
     call euler(f_ode, t0, tf, x0, h, u_file)

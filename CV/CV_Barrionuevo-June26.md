@@ -22,7 +22,7 @@ Master of Spatial Information Applications (MAIE) Student · Córdoba, Argentina
 **Instituto Gulich**  
 02/2026 – Present
 
-Full-time, fully funded scholarship to attend the Master of Spatial Information Applications (MAIE) program at the CONAE's Teófilo Tabanera Space Center (CETT).  
+Full-time, fully funded scholarship to attend the Master of Spatial Information Applications (MAIE) program courses at the CONAE's Teófilo Tabanera Space Center (CETT).  
 
 Research topic: Implementation of an Air Quality Model System, and its Evaluation Using Satellite Data.
 
