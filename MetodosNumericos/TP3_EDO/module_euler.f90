@@ -37,12 +37,11 @@ contains
         do i = 0, steps
 
             print *, t, x
-            write(u_file,*) t, x
+            write(u_file,'(F12.6,",",F12.6)') t, x
 
             x = x + h * f_ode(t, x)
             t = t + h
-
-
+            
         end do
 
     end subroutine euler
