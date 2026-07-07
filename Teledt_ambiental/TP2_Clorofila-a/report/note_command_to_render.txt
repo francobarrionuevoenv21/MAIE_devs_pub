@@ -1,0 +1,3 @@
+% Command to render .md 
+
+pandoc CV_Barrionuevo-June26.md --pdf-engine=xelatex -H header.tex -o CV_Barrionuevo-June26.pdf
