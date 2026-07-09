@@ -30,7 +30,7 @@ El día 25 de junio del 2026 se realizó una recorrida por el Centro Espacial Te
 
 ### 2.3.1. Datos de campo
 
-A los datos de campo recolectados se les agregaron datos de puntos a los que previamente se les había asignado un tipo de cobertura y/o uso de suelo. De esta forma se contó con un total de 21 registros dentro del CETT para las clasificaciones posteriores. Las operaciones de geoprocesamiento necesarias para este paso se realizaron empleando el software QGIS.
+A los datos de campo recolectados se les agregaron datos de puntos a los que previamente se les había asignado un tipo de cobertura y/o uso de suelo. De esta forma se contó con un total de 21 registros dentro del CETT para las clasificaciones posteriores, que se volcaron en una capa vectorial. Las operaciones de geoprocesamiento necesarias para este paso se realizaron empleando el software QGIS.
 
 ### 2.3.2. Imágenes satelitales
 
@@ -50,53 +50,37 @@ La obtención y procesamiento de las imágenes de S2, así como la obtención de
 
 ## 2.4. Clasificación y evaluación de los resultados
 
-La ejecución de la clasificación con la posterior elaboración de los mapas de coberturas en el área de estudio, se realizó empleando el modelo de clasificación *Random Forest*. 
+### 2.4.1. Modelo empleado
 
-![alt text](../images_report/fig01.png){ width=18% }
-**Figura X**. ---
+La ejecución de la clasificación para la posterior elaboración de los mapas de coberturas en el área de estudio, se realizó empleando el modelo de clasificación *Random Forest* (RF). Este tipo de modelo de machine learning se caracteriza por construir múltiples árboles de decisión durante el entrenamiento, en lugar de depender de un solo árbol. Luego combina las predicciones de todos ellos, mediante votación o promediando, lo que da un resultado más estable. 
 
-## 2.2. Procesamiento de los datos
+Este paso, al igual que en el ítem 2.3, se ha realizado en la nube a través de la infraestructura de GEE, y se ha empleado el clasificador *SMILE Random Forest*, el cual arroja como resultado la clase más votada entre todos los árboles. Su configuración incluye una serie de parámetros tales como la cantidad de árboles, la cantidad de variables por división, y la fracción de los datos a usar durante el entranamiento de cada arbol, entre otros. 
 
-Tanto la escena de L8, así como los archivos vectoriales fueron enteramente procesados mediante scripts desarrollados en Python. Las operaciones de algebra de bandas, stackeado de bandas, clipping, así cómo extracción de datos de reflectancia se realizaron empleando las librerías *numpy*, *rasterio*, *pandas* y *geopandas*. El ajuste del modelo semiempirico se realizó empleando la funcion *OLS* de *Stats Models*. Los códigos se encuentran públicos en el siguiente [repositorio de GitHub](https://github.com/francobarrionuevoenv21/MAIE_devs_pub/tree/main/Teledt_ambiental/TP2_Clorofila-a).
+### 2.4.2. Datos de entrenamiento
 
-### 2.2.1. Actualización límites del Lago San Roque
+El entrenamiento del modelo se realizó a partir de muestras extraídas sobre las bandas de reflectancia 2-12 de las dos escenas de S2 (época seca y época húmeda), los índices derivados para cada escena, y el MDE. Las muestras, por un lado, se obtuvieron a partir de polígonos alrededor de los puntos donde habían datos de campo. A estos se le sumaron polígonos previamente cargadas y clasificados, junto a nuevos polígonos de generados a partir de la inspección visual de las imágenes de S8. A cada uno de ellos se le asignó alguna de las siguientes categorías según conocimientos previos del área y de la jornada de recolección de datos de campo: bosque, arbustal, pastizal, roca, agua, cultivo y urbanización. 
 
-Debido a las variaciones que puede sufrir el lago, como por ejemplo cambios en el su nivel, se han actualizado los límites del cuerpo de agua. Para ello se ha computado e índice Índice de Agua de Diferencia Normalizada Modificada (MNDWI) **(Ecuación X)** a partir de la escena de L8 adquirida el 22 de febrero del año 2017. Se han enmascarado los valores menores a 0, y finalmente se ha vectorizado el resultado
+El total de muestras, posteriormente, se dividió en un subconjunto de entrenamiento y en otro de testeo. La asignación fue aleatoria, y la proporción se definió en 70% de los datos para el entrenamiento, y el 30% restante para el testeo del modelo y el cómputo de los parámetros de evaluación de su performance.
 
-$MNDWI = \frac{Green-SWIR}{Green+SWIR}$ **Ecuacion X**
+### 2.4.3. Evaluación del modelo y pruebas
 
-### 2.2.2. Datos de reflectancia y ajuste de un modelo semiempírico
-
-Para cada de unos de los puntos de muestreo sobre los cuales se contaba con datos de medición en campo de la concentración de clorofila **(FIGURA X)**, se han extráido los valores de valores de reflectancia de la escena de L8 para las bandas 1 a 7. A partir de ellos, luego se elaboró un *feature* derivado a partir de la relación entre las bandas 5 y 4 (B5/B4). Empleando los datos de B5/B4 como variable explicativa y la concentración de clorofila medida en campo como variable explicada, se ajustó un modelo de regresión lineal. A partir de este modelo, luego se predijo la concentración de clorofila dentro del Lago San Roque a partir de relación entre las reflectancias de las bandas 5 y 4. 
+Los resultados de las clasificaciones ejecutadas fueron evaluadas a partir de su matriz de confusión, la exactitud del usuario (EU), la exactitud del productor (EP) y la exactitud global (EG). Bajo estos criterios, se realizaron dos clasificaciones en total, donde en cada una se han modificado los polígonos de muestreo (incluido y/o eliminado) y los parámetros del modelo. Las modificaciones realizadas tuvieron como objetivo la búsqueda de la mejora en los resultados de la clasificación. 
 
 # 3. Resultados
 
-## 3.1. Actualización límites de Lago San Roque
+## 3.1. Datos de campo
 
-La actualización de los límites del LSR empleando el índice MNDWI, dió cómo resultado un área levemente un poco menor al del original. De esta forma, se pasó de un área computada total de 20,18 $km^{2}$ a 19,69 $km^{2}$ **(FIGURA X)**. Si bien, no es posible concluir sobre si esta diferencia se debe a cambios en las condiciones físicas del lago, se garantiza que la predicción de la concentración de clorofila en el LSR se hará sobre la superficie de agua definida como aquella con $MDNWI > 0$ a partir de la escena de L8 utilizada.
+Tal como se ha mencionado en el ítem 2.3.1, a los datos recolectados la jornada del 25 de junio del 2025 en el CETT, se le sumaron los de registros anteriores. En total sumaron 21 puntos sobre los cuales se contaba con información de campo sobre la cobertura y/o uso del suelo dentro del precio del centro espacial. 
 
-![alt text](../images_report/fig03.png){ width=18% }
-**Figura X**. ---
+![alt text](qgis/images/fig01.png)
 
-## 3.2. Datos ajuste del modelo
+## 3.2. Primer modelo
 
-El ajuste del modelo semiempírico para la predicción de la concentración de clorofila en el LSR, como se ha mencionado, se ha realizado empleando los datos de reflectancia de Landsat 8 y los datos medidos en campo de la concetración de este microorganismo, ambos corresponden a mediciones realizadas la misma fecha. Se menciona que el dato del punto denominado como GAR (Garganta) fue excluido debido a que el pixel contiene una mayor proporción de suelo que de agua. Tal como se observa en la **FIGURA X (Derecha)**, la mayor concentración de clorofila se midió en los puntos *SAT2*, *CENT*, y *ZB*, destacándose este último con una concentración medida mayor a 250 $\mu$$g/L$.
+## 3.3. Segundo modelo
 
-La reflectancia medida en en la mayoría los sitios de muestreo presentaron firmas espectrales asimilables a la de la vegetación, con un pico en el rango del verde, un valle de alta absorción en la banda del rojo (B4) y un pico en la banda del NIR (B5). Se destacan la alta reflectancia relativa registrada en los sitios *SAT1*, *SAT2* y *ZB*. La excepción la cumple el punto *SAT3* que presenta una firma típica de agua **FIGURA X (Izquierda)**
+## 2.1. Área de estudio
 
-En general, a modo de primer análisis de los resultados, se puede observar que los valores medidos tanto para la concentración de cianobacterias como la reflectancia guardan coherencia con lo esperado. Es decir, a mayor concentración de clorofila, debería aumentar la reflectancia y virar de una firma espectral de agua a una asimilable a vegetación. Este supuesto es que posteriormente se utilizó para ajustar el modelo semiempírico. 
-
-![Figura 4](../images_report/fig04a.png){ width=60% }
-**Figura X**. ---
-
-## 3.3. Ajuste del modelo semiempírico
-
-Habiendo recopilado tanto los datos de reflectancia como los de concentración de clorofila para los 7 puntos de muestreo, se prosiguió con el ajuste de un modelo lineal. Para ello se definió como variable predictora la relación entre las reflectancias en el rojo y el NIR, que definió como *B5/B4* según el número de banda de L8. La variable predicha fue el logaritmo de la concentración microorganismos, que es lo que sea conocer sobre toda la extensión del LSR. 
-
-Se eligió un modelo de ajuste lineal, lo cual se realizó empleando la función de *OLS* de la librería *Stats Models* de Python. Primero, se ajustó un modelo preliminar incluyendo los datos de los 7 puntos de muestreo. Luego, análisis exploratorio mediante, se identificó como punto outlier al correspondiente a la estación *SAT 1*. De esta forma, se ajustó un segundo modelo que presentó un mejor coeficiente de determinación ($R^{2}$). Los modelos generados y los parámetros de cada uno se presentan en la **Figura X** y **Tabla X**, respectivamente.
-
-![alt text](../images_report/fig5.png)
-**Figura X**. ---
+El área sobre
 
 | Modelo | b | m | p-valor (m) | $R^{2}$ | Observación |
 |:-------|------------:|--:|--:|--:|--------:|
@@ -105,29 +89,10 @@ Se eligió un modelo de ajuste lineal, lo cual se realizó empleando la función
 
 **Tabla X**. ---
 
-Tal como se puede observar en la tabla anterior, el segundo modelo presentó una mejora en el $R^{2}$. De todas maneras, en ninguno fue posible rechazar la hipótesis nula de la prueba para la pendiente de la recta, ya que en ambos se cumple que *p-valor > 0.05*. Bajo esta situación, se optó por utilizar el modelo 2 (M2) para la predicción de la concentración de clorofila en el LSR. A futuro se deben aumentar el número de puntos de muestreo para mejorar la confianza de los modelos a ajustar.  
-
-## 3.4. Predicción de la concentración de clorofila
-
-Empleando el modelo que quedó definido tal como se muestra en la **Ecuación 1**, se realizó la predicción de la concentración de clorofila en el LSR. Para ello se generó una matriz 2D de datos correspondientes a la relación entre las bandas *B5/B4*, la cual fue clippeada según los límites actualizados del lago (ver ítem 3.1). El resultado para cada pixel se computó como el $log(Conc. de clorofila)$ que posteriormente se convirtió a Conc. de clorofila mediante su función inversa. 
-
-Debido a que el modelo ajustado solo es válido dentro del dominio en el cual fue ajustado, se definieron umbrales. Es decir en aquellos pixeles donde se que cumplía la relación *B5/B4 < 0.98* se le asignó la concentración mínima que devuelve el modelo. Mientras que para aquellos en los cuales se cumplía que la relación *B5/B4 > 4.11*, se le asignó el valor máximo. El resultado final, incluido este postprocesamiento, se muestra en el mapa de la **Figura X**. 
-
-![alt text](../images_report/fig6.png)
-**Figura X**. ---
-
-Tal como se observa en la figura anterior, la concentración de clorofila predicha en el LSR estuvo en el rango entre los 63 y 182 $\mu$$g/L$. Si se compara con los valores medidos en los puntos de muestreo, se observa una subestimación. Esto se explica, entre otros factores, a las restricción que presentó el modelo elegido. Entre ellas el bajo $R^{2}$. De todas formas, los resultados obtenidos si lograron capturar el patrón observado en el anpalisis preliminar de los datos (ver ítem 3.2), donde la mayor concentración del pigmento se halla en el centro y su borde este. 
 
 # Referencias
 
-Cabido, M., Zeballos, S. R., Zak, M., Carranza, M. L., Giorgis, M. A., Cantero, J. J., & Acosta, A. T. 
-R. (2018). Native woody vegetation in central Argentina: Classification of Chaco and Espinal 
-forests. Applied Vegetation Science, 21(2), 298–311.  
-Cabrera, A. L. (1976). Regiones fitogeográficas argentinas. Enciclopedia Argentina de Agricultura 
-y Jardinería. Tomo II. Acme. 
-Cingolani, A. M., Giorgis, M. A., Hoyos, L. E., & Cabido, M. (2022). La vegetación de las montañas 
-de Córdoba (Argentina) a comienzos del siglo XXI: un mapa base para el ordenamiento 
-territorial. Boletín de la Sociedad Argentina de Botánica, 57(1), 65–100. 
-Giorgis, M. A., Cingolani, A. M., Chiarini, F., Chiapella, J., Barboza, G., Ariza Espinar, L., Morero, 
-R., Gurvich, D. E., Tecco, P. A., Subils, R., & Cabido, M. (2011). Composición florística del 
-Bosque Chaqueño Serrano de la provincia de Córdoba, Argentina. Kurtziana, 36(1), 9–43.  
+Cabido, M., Zeballos, S. R., Zak, M., Carranza, M. L., Giorgis, M. A., Cantero, J. J., & Acosta, A. T. R. (2018). Native woody vegetation in central Argentina: Classification of Chaco and Espinal  forests. Applied Vegetation Science, 21(2), 298–311.  
+Cabrera, A. L. (1976). Regiones fitogeográficas argentinas. Enciclopedia Argentina de Agricultura  y Jardinería. Tomo II. Acme. 
+Cingolani, A. M., Giorgis, M. A., Hoyos, L. E., & Cabido, M. (2022). La vegetación de las montañas de Córdoba (Argentina) a comienzos del siglo XXI: un mapa base para el ordenamiento territorial. Boletín de la Sociedad Argentina de Botánica, 57(1), 65–100. 
+Giorgis, M. A., Cingolani, A. M., Chiarini, F., Chiapella, J., Barboza, G., Ariza Espinar, L., Morero,  R., Gurvich, D. E., Tecco, P. A., Subils, R., & Cabido, M. (2011). Composición florística del Bosque Chaqueño Serrano de la provincia de Córdoba, Argentina. Kurtziana, 36(1), 9–43.  
