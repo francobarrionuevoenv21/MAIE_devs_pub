@@ -82,7 +82,7 @@ Para el primer modelo entrenado para la clasificación en el área de estudio se
 
 | Clase     | *Bosque* | *Arbustal* | *Pastizal* | *Roca* | *Agua* | *Cultivo* | *Urbanización* |
 |:----------|-------:|---------:|---------:|-----:|-----:|--------:|-------------:|
-| **Polígonos** | 34     | 34       | 34       | 25   | 19   | 18      | 17       | 
+| **Polígonos** | 34     | 34       | 34       | 25   | 19   | 18      | 17       |  
 
 **Tabla X**. ---
 
