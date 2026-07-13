@@ -70,11 +70,30 @@ Los resultados de las clasificaciones ejecutadas fueron evaluadas a partir de su
 
 ## 3.1. Datos de campo
 
-Tal como se ha mencionado en el ítem 2.3.1, a los datos recolectados la jornada del 25 de junio del 2025 en el CETT, se le sumaron los de registros anteriores. En total sumaron 21 puntos sobre los cuales se contaba con información de campo sobre la cobertura y/o uso del suelo dentro del precio del centro espacial. 
+Tal como se ha mencionado en el ítem 2.3.1, a los datos recolectados la jornada del 25 de junio del 2025 en el CETT, se le sumaron los de registros previos. En total sumaron 21 puntos sobre los cuales se contaba con información de campo sobre la cobertura y/o uso del suelo entre la ciudad de Malagueno y Villa Carlos Paz (Figura X.A) y dentro del predio del centro espacial (Figura X.B). 
 
-![alt text](qgis/images/fig01.png)
+Los diferentes puntos se relacionaron a las clases definidas en el ítem 2.4.2 según cómo fueron identificadas. De esta forma, 10 fueron asignados a arbustal, 7 a bosque, 3 a pastizal y 1 a urbanización. 
+
+![alt text](qgis/images/fig0102.png)
 
 ## 3.2. Primer modelo
+
+Para el primer modelo entrenado para la clasificación en el área de estudio se han definido tanto datos de entrenamiento, así como los parámetros del mismo. En cuanto a los datos de entrenamiento, para este caso se contó con un total de 181 poligonos, que en total sumaban 3307 pixeles. 21 de estos polígonos correspondían a los datos de campo (ver ítem 3.1), mientras que el resto se generaron a partir de la inspección visual de las escenas de S2 para las dos épocas, seca y húmeda. En la **tabla X** se muestra la distribución por clase. Por otro lado, los valores de los parámetros configurados para este modelo, se vuelcan en la **tabla x**.
+
+| Clase     | *Bosque* | *Arbustal* | *Pastizal* | *Roca* | *Agua* | *Cultivo* | *Urbanización* |
+|:----------|-------:|---------:|---------:|-----:|-----:|--------:|-------------:|
+| **Polígonos** | 34     | 34       | 34       | 25   | 19   | 18      | 17       | 
+
+**Tabla X**. ---
+
+| Clase  | Polígonos |
+|:-------|----------:|
+| Bosque | 34 |
+| Arbustal | 34 |
+| Pastizal | 34 |
+
+
+
 
 ## 3.3. Segundo modelo
 
