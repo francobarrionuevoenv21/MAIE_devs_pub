@@ -86,12 +86,16 @@ Para el primer modelo entrenado para la clasificación en el área de estudio se
 
 **Tabla X**. ---
 
-| Clase  | Polígonos |
+| Parámetro | Valor |
 |:-------|----------:|
-| Bosque | 34 |
-| Arbustal | 34 |
-| Pastizal | 34 |
+| Cantidad de árboles | 100 |
+| Variables por ramificación| *Default* (-) |
+| Mínimo de elementos</br>por ramificación | 1 |
+| Fracción de datos de</br>entrenamiento por árbol | 1 |
+| Semilla | *Default* (aleatorio) |
+**Tabla X**. ---
 
+El resultado de la clasificación del área de estudio se muestra en el mapa de la **figura X**. En el mismo
 
 
 
