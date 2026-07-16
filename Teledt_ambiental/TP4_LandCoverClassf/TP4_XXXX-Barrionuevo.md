@@ -86,13 +86,20 @@ Para el primer modelo entrenado para la clasificación en el área de estudio se
 
 **Tabla X**. ---
 
-| Clase  | Polígonos |
+| Parámetro | Valor |
 |:-------|----------:|
-| Bosque | 34 |
-| Arbustal | 34 |
-| Pastizal | 34 |
+| Cantidad de árboles | 100 |
+| Variables por ramificación| *Default* (-) |
+| Mínimo de elementos</br>por ramificación | 1 |
+| Fracción de datos de</br>entrenamiento por árbol | 1 |
+| Semilla | *Default* (aleatorio) |
+**Tabla X**. ---
 
+El resultado de la clasificación del área de estudio se muestra en la Figura X. Por otro lado, Los parámetros de evaluación del modelo (Tabla X, Anexo) indican una precisión global de casi el 85%, aunque se observan diferencias entre las clases. La clase arbustal presentó la menor precisión del productor (61%), indicando que una proporción importante de los píxeles de referencia pertenecientes a esta clase fueron clasificados principalmente como bosque. La clase agua registró la menor precisión del usuario (56%), con una fracción considerable de los píxeles clasificados como agua que en realidad se correspoden a otras clases, principalmente urbanización. 
 
+![alt text](qgis/images/fig02.png)
+
+Cabe destacar que este primer resultado tiene origen en un conjunto de datos de entrenamiento desbalanceado. Si bien el resultado de la precisión global es aceptabla (~ 85%), se puede observar que el resultado muestra errores evidentes. Uno de ellos es la clasificación de zonas urbanas o de cultivos como agua. Contemplando, el desabalanceo de las clases, y los valores bajos de precisión para ciertas clases, el siguiente paso consistió en entrenar un nuevo modelo que mejore estos resultados. 
 
 
 ## 3.3. Segundo modelo
