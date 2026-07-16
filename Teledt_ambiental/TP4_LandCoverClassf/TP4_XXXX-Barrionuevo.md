@@ -95,7 +95,7 @@ Para el primer modelo entrenado para la clasificación en el área de estudio se
 | Semilla | *Default* (aleatorio) |
 **Tabla X**. ---
 
-El resultado de la clasificación del área de estudio se muestra en la Figura X. Por otro lado, Los parámetros de evaluación del modelo (Tabla X, Anexo) indican una precisión global de casi el 85%, aunque se observan diferencias entre las clases. La clase arbustal presentó la menor precisión del productor (61%), indicando que una proporción importante de los píxeles de referencia pertenecientes a esta clase fueron clasificados principalmente como bosque. La clase agua registró la menor precisión del usuario (56%), con una fracción considerable de los píxeles clasificados como agua que en realidad se correspoden a otras clases, principalmente urbanización. 
+El resultado de la clasificación del área de estudio se muestra en la Figura X. Por otro lado, Los parámetros de evaluación del modelo (Tabla X, Anexo) indican una precisión global de casi el 85%, aunque se observan diferencias entre las clases. La clase arbustal presentó la menor precisión del productor (61%), indicando que una proporción importante de los píxeles de referencia pertenecientes a esta clase fueron clasificados principalmente como bosque. La clase agua registró la menor precisión del usuario (56%), con una fracción considerable de los píxeles clasificados como agua que en realidad se correspoden a otras clases, principalmente urbanización.
 
 ![alt text](qgis/images/fig02.png)
 
