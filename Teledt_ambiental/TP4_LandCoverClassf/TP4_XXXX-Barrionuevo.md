@@ -101,20 +101,33 @@ El resultado de la clasificación del área de estudio se muestra en la Figura X
 
 Cabe destacar que este primer resultado tiene origen en un conjunto de datos de entrenamiento desbalanceado. Si bien el resultado de la precisión global es aceptabla (~ 85%), se puede observar que el resultado muestra errores evidentes. Uno de ellos es la clasificación de zonas urbanas o de cultivos como agua. Contemplando, el desabalanceo de las clases, y los valores bajos de precisión para ciertas clases, el siguiente paso consistió en entrenar un nuevo modelo que mejore estos resultados. 
 
-
 ## 3.3. Segundo modelo
 
-## 2.1. Área de estudio
+Para el segundo modelo se partió de la primera prueba realizada, y en función de los resultados obtenidos se propusieron dos modificaciones. Una de ellas tomar más datos de entrenamiento, así como el balanceo entre clases. Por otro lado, se probaron alternativas para los parámetros del *Random Forest*, así como de la semilla. Aquí se la fijó, ya que al ser aleatoria los resultados obtenidos previamente variaban entre ejecuciones del script. 
 
-El área sobre
+Respecto a los datos de entrenamiento, para este caso se contó con un total de 193 poligonos, que en total sumaban 2567 pixeles. Al igual que en el primer intento, 21 de estos polígonos correspondían a los datos de campo (ver ítem 3.1), mientras que el resto se generaron a partir de la inspección visual de las escenas de S2 para las dos épocas, seca y húmeda. En la **tabla X** se muestra la distribución por clase. Por otro lado, los valores de los parámetros configurados para este modelo, se vuelcan en la **tabla x**.
 
-| Modelo | b | m | p-valor (m) | $R^{2}$ | Observación |
-|:-------|------------:|--:|--:|--:|--------:|
-| *M1* | 3.54 | 0.38 | 0.20 | 0.30 | Incluye los 7 ptos. de muestreo |
-| *M2* | 3.82 | 0.33 | 0.17 | 0.41 | Excluye el sitio *SAT 1* |
+| Clase     | *Bosque* | *Arbustal* | *Pastizal* | *Roca* | *Agua* | *Cultivo* | *Urbanización* |
+|:----------|-------:|---------:|---------:|-----:|-----:|--------:|-------------:|
+| **Polígonos** 38 | 39 | 36 | 25 | 22 | 14 | 19  | 
 
 **Tabla X**. ---
 
+| Parámetro | Valor |
+|:-------|----------:|
+| Cantidad de árboles | 120 |
+| Variables por ramificación| 7 |
+| Mínimo de elementos</br>por ramificación | 3 |
+| Fracción de datos de</br>entrenamiento por árbol | 0.8 |
+| Semilla | 42 |
+
+**Tabla X**. ---
+
+El resultado de la clasificación del área de estudio se muestra en la Figura X. Los parámetros de evaluación del modelo (Tabla X, Anexo) indican una precisión global superior al 94%, lo que representa una mejora del 11% respecto del primer modelo. Al igual que en el caso anterior, la clase arbustal presentó la menor precisión del productor (84%), aunque con un incremento significativo respecto al primer modelo. Los píxeles de referencia de esta clase que no fueron correctamente clasificados se asignaron principalmente a las clases bosque y pastizal. Por su parte, las clases pastizal y roca registraron la menor precisión del usuario (83% y 86%, respectivamente), aunque también evidenciaron mejoras en estas métricas. En el primer caso, una fracción de los píxeles clasificados como pastizal correspondía en realidad a arbustal. En el segundo, parte de los píxeles clasificados como roca se correspondía con la clase cultivo.
+
+![alt text](qgis/images/fig03.png)
+
+Tal como se puede observar en la figura anterior, el resultado obtenido a partir del segundo modelo presenta una mejora significativa, cuantificable mediante los parámetros de precisión global, del productor y del usuario. No obstante, al realizar una inspección visual y comparar la clasificación con las imágenes de Sentinel-2, se identifican zonas que fueron clasificadas incorrectamente. En particular, algunas áreas de cultivo fueron asignadas a las clases urbanización y roca, lo que evidencia que, a pesar del incremento en la precisión, estos errores aún persisten. Bajo este resultado, se observa que el área de estudio presenta un predominio de las clases pastizal y arbustal, que ocupan aproximadamente un 25% de la superficie total cada una. Con el fin de refinar la clasificación obtenida, el trabajo futuro deberá centrarse en implementar estrategias durante el entrenamiento del modelo que permitan reducir las fallas en la asignación de clases del mismo. 
 
 # Referencias
 
