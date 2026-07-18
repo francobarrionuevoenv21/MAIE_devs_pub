@@ -76,58 +76,53 @@ Los diferentes puntos se relacionaron a las clases definidas en el ítem 2.4.2 s
 
 ![alt text](qgis/images/fig0102.png)
 
-## 3.2. Primer modelo
 
-Para el primer modelo entrenado para la clasificación en el área de estudio se han definido tanto datos de entrenamiento, así como los parámetros del mismo. En cuanto a los datos de entrenamiento, para este caso se contó con un total de 181 poligonos, que en total sumaban 3307 pixeles. 21 de estos polígonos correspondían a los datos de campo (ver ítem 3.1), mientras que el resto se generaron a partir de la inspección visual de las escenas de S2 para las dos épocas, seca y húmeda. En la **tabla X** se muestra la distribución por clase. Por otro lado, los valores de los parámetros configurados para este modelo, se vuelcan en la **tabla x**.
+## 3.2. Ajuste y evaluación del modelo de clasificación
 
-| Clase     | *Bosque* | *Arbustal* | *Pastizal* | *Roca* | *Agua* | *Cultivo* | *Urbanización* |
-|:----------|-------:|---------:|---------:|-----:|-----:|--------:|-------------:|
-| **Polígonos** | 34     | 34       | 34       | 25   | 19   | 18      | 17       |  
+Con el objetivo de hallar un modelo que clasifique con una mayor precisión las coberturas en el área de estudio, se realizaron dos instancias de entrenamiento del algoritmo *Random Forest*. La primera se utilizó como línea de base para evaluar el comportamiento inicial del modelo, mientras que la segunda incorporó modificaciones tanto en los datos de entrenamiento como en los parámetros del clasificador, definidas a partir del análisis de los resultados obtenidos en la primera prueba.
 
-**Tabla X**. ---
+En ambos casos se emplearon los mismos datos de campo relevados (21 polígonos; ver ítem 3.1), complementados con polígonos digitalizados mediante inspección visual de las imágenes S2 correspondientes a las épocas seca y húmeda. La **Tabla X** resume la cantidad de polígonos utilizados por clase en cada uno de los modelos.
 
-| Parámetro | Valor |
-|:-------|----------:|
-| Cantidad de árboles | 100 |
-| Variables por ramificación| *Default* (-) |
-| Mínimo de elementos</br>por ramificación | 1 |
-| Fracción de datos de</br>entrenamiento por árbol | 1 |
-| Semilla | *Default* (aleatorio) |
-**Tabla X**. ---
+| Clase | **Modelo 1** | **Modelo 2** |
+|:-------|-------------:|-------------:|
+| Bosque | 34 | 38 |
+| Arbustal | 34 | 39 |
+| Pastizal | 34 | 36 |
+| Roca | 25 | 25 |
+| Agua | 19 | 22 |
+| Cultivo | 18 | 14 |
+| Urbanización | 17 | 19 |
+| **Total de polígonos** | **181** | **193** |
+| **Total de píxeles** | **3307** | **2567** |
 
-El resultado de la clasificación del área de estudio se muestra en la Figura X. Por otro lado, Los parámetros de evaluación del modelo (Tabla X, Anexo) indican una precisión global de casi el 85%, aunque se observan diferencias entre las clases. La clase arbustal presentó la menor precisión del productor (61%), indicando que una proporción importante de los píxeles de referencia pertenecientes a esta clase fueron clasificados principalmente como bosque. La clase agua registró la menor precisión del usuario (56%), con una fracción considerable de los píxeles clasificados como agua que en realidad se correspoden a otras clases, principalmente urbanización.
+**Tabla X.** Comparación de los datos de entrenamiento utilizados en ambos modelos.
 
-![alt text](qgis/images/fig02.png)
+Además de modificar el conjunto de entrenamiento, también se ajustaron los parámetros del clasificador. En particular, en el segundo modelo se incrementó la cantidad de árboles, se definió explícitamente el número de variables consideradas en cada ramificación, se aumentó el mínimo de elementos por nodo, se redujo la fracción de datos utilizada para entrenar cada árbol y se fijó la semilla del algoritmo para garantizar la reproducibilidad de los resultados. La **Tabla X** resume la configuración empleada en cada caso.
 
-Cabe destacar que este primer resultado tiene origen en un conjunto de datos de entrenamiento desbalanceado. Si bien el resultado de la precisión global es aceptabla (~ 85%), se puede observar que el resultado muestra errores evidentes. Uno de ellos es la clasificación de zonas urbanas o de cultivos como agua. Contemplando, el desabalanceo de las clases, y los valores bajos de precisión para ciertas clases, el siguiente paso consistió en entrenar un nuevo modelo que mejore estos resultados. 
+| Parámetro | **Modelo 1** | **Modelo 2** |
+|:-----------------------------|:-------------:|:-------------:|
+| Cantidad de árboles | 100 | 120 |
+| Variables por ramificación | *Default* | 7 |
+| Mínimo de elementos por ramificación | 1 | 3 |
+| Fracción de datos por árbol | 1 | 0.8 |
+| Semilla | *Default* (Aleatoria) | 42 |
 
-## 3.3. Segundo modelo
+**Tabla X.** Comparación de los parámetros utilizados para el entrenamiento de ambos modelos.
 
-Para el segundo modelo se partió de la primera prueba realizada, y en función de los resultados obtenidos se propusieron dos modificaciones. Una de ellas tomar más datos de entrenamiento, así como el balanceo entre clases. Por otro lado, se probaron alternativas para los parámetros del *Random Forest*, así como de la semilla. Aquí se la fijó, ya que al ser aleatoria los resultados obtenidos previamente variaban entre ejecuciones del script. 
+Los resultados de ambas clasificaciones se muestran en la **Figura X**. El primer modelo alcanzó una precisión global cercana al 85%, mientras que el segundo obtuvo una precisión superior al 94%, lo que representa una mejora aproximada del 11%.
 
-Respecto a los datos de entrenamiento, para este caso se contó con un total de 193 poligonos, que en total sumaban 2567 pixeles. Al igual que en el primer intento, 21 de estos polígonos correspondían a los datos de campo (ver ítem 3.1), mientras que el resto se generaron a partir de la inspección visual de las escenas de S2 para las dos épocas, seca y húmeda. En la **tabla X** se muestra la distribución por clase. Por otro lado, los valores de los parámetros configurados para este modelo, se vuelcan en la **tabla x**.
+En el primer modelo, la clase **arbustal** presentó la menor precisión del productor (61%), indicando que una proporción importante de los píxeles de referencia pertenecientes a esta clase fue clasificada principalmente como bosque. Asimismo, la clase **agua** registró la menor precisión del usuario (56%), debido a que una fracción considerable de los píxeles clasificados como agua correspondía en realidad a otras clases, principalmente urbanización.
 
-| Clase     | *Bosque* | *Arbustal* | *Pastizal* | *Roca* | *Agua* | *Cultivo* | *Urbanización* |
-|:----------|-------:|---------:|---------:|-----:|-----:|--------:|-------------:|
-| **Polígonos** 38 | 39 | 36 | 25 | 22 | 14 | 19  | 
+Luego de incorporar las modificaciones propuestas, el segundo modelo mostró una mejora general en todas las métricas de evaluación. La clase **arbustal** continuó presentando la menor precisión del productor (84%), aunque con un incremento significativo respecto del primer modelo. Los píxeles de referencia que no fueron correctamente clasificados se asignaron principalmente a las clases bosque y pastizal. Por su parte, las clases **pastizal** y **roca** registraron la menor precisión del usuario (83% y 86%, respectivamente). En el primer caso, una fracción de los píxeles clasificados como pastizal correspondía en realidad a arbustal, mientras que en el segundo algunos píxeles clasificados como roca pertenecían a la clase cultivo.
 
-**Tabla X**. ---
+![alt text](qgis/images/fig04.png)
 
-| Parámetro | Valor |
-|:-------|----------:|
-| Cantidad de árboles | 120 |
-| Variables por ramificación| 7 |
-| Mínimo de elementos</br>por ramificación | 3 |
-| Fracción de datos de</br>entrenamiento por árbol | 0.8 |
-| Semilla | 42 |
+**Figura X.** Comparación de los resultados obtenidos mediante el primer (izquierda) y segundo (derecha) modelo de clasificación.
 
-**Tabla X**. ---
+La comparación visual confirma la mejora reflejada por los parámetros de evaluación. En el primer modelo se observan errores evidentes, como la clasificación de áreas urbanas o de cultivo como agua, asociados principalmente al desbalance entre clases y a la configuración inicial del clasificador. En el segundo modelo estos errores se reducen considerablemente, aunque aún persisten algunas confusiones entre las clases cultivo, urbanización y roca.
 
-El resultado de la clasificación del área de estudio se muestra en la Figura X. Los parámetros de evaluación del modelo (Tabla X, Anexo) indican una precisión global superior al 94%, lo que representa una mejora del 11% respecto del primer modelo. Al igual que en el caso anterior, la clase arbustal presentó la menor precisión del productor (84%), aunque con un incremento significativo respecto al primer modelo. Los píxeles de referencia de esta clase que no fueron correctamente clasificados se asignaron principalmente a las clases bosque y pastizal. Por su parte, las clases pastizal y roca registraron la menor precisión del usuario (83% y 86%, respectivamente), aunque también evidenciaron mejoras en estas métricas. En el primer caso, una fracción de los píxeles clasificados como pastizal correspondía en realidad a arbustal. En el segundo, parte de los píxeles clasificados como roca se correspondía con la clase cultivo.
+Bajo el resultado obtenido con el segundo modelo, se observa que el área de estudio presenta un predominio de las clases **pastizal** y **arbustal**, que ocupan aproximadamente un 25% de la superficie total cada una. Si bien el ajuste realizado permitió mejorar significativamente el desempeño del clasificador, el trabajo futuro deberá centrarse en incorporar nuevos datos de entrenamiento representativos y explorar configuraciones alternativas del algoritmo con el fin de reducir las confusiones remanentes entre clases espectralmente similares.
 
-![alt text](qgis/images/fig03.png)
-
-Tal como se puede observar en la figura anterior, el resultado obtenido a partir del segundo modelo presenta una mejora significativa, cuantificable mediante los parámetros de precisión global, del productor y del usuario. No obstante, al realizar una inspección visual y comparar la clasificación con las imágenes de Sentinel-2, se identifican zonas que fueron clasificadas incorrectamente. En particular, algunas áreas de cultivo fueron asignadas a las clases urbanización y roca, lo que evidencia que, a pesar del incremento en la precisión, estos errores aún persisten. Bajo este resultado, se observa que el área de estudio presenta un predominio de las clases pastizal y arbustal, que ocupan aproximadamente un 25% de la superficie total cada una. Con el fin de refinar la clasificación obtenida, el trabajo futuro deberá centrarse en implementar estrategias durante el entrenamiento del modelo que permitan reducir las fallas en la asignación de clases del mismo. 
 
 # Referencias
 

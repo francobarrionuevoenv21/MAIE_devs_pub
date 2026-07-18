@@ -1,0 +1,28 @@
+{
+"type": "FeatureCollection",
+"name": "puntos_train_cett_refs03",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "63", "land_cover": "arbustal", "layer": "ptos_verdad_4326", "land_cover_corr": "Arbustal" }, "geometry": { "type": "Point", "coordinates": [ -64.469602889696546, -31.518334500583496, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "64", "land_cover": "past_arb", "layer": "ptos_verdad_4326", "land_cover_corr": "Arbustal" }, "geometry": { "type": "Point", "coordinates": [ -64.46367307540747, -31.528387444118266, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "139", "land_cover": "bosq_arb", "layer": "ptos_verdad_4326", "land_cover_corr": "Bosque" }, "geometry": { "type": "Point", "coordinates": [ -64.422604954000718, -31.45244331100049, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "141", "land_cover": "arbustal", "layer": "ptos_verdad_4326", "land_cover_corr": "Arbustal" }, "geometry": { "type": "Point", "coordinates": [ -64.433242343000757, -31.44329823600048, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "143", "land_cover": "past_arb", "layer": "ptos_verdad_4326", "land_cover_corr": "Arbustal" }, "geometry": { "type": "Point", "coordinates": [ -64.440023303000771, -31.436960092000483, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "149", "land_cover": "arbustal", "layer": "ptos_verdad_4326", "land_cover_corr": "Arbustal" }, "geometry": { "type": "Point", "coordinates": [ -64.443714442000783, -31.413192870000479, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "153", "land_cover": "bosque", "layer": "ptos_verdad_4326", "land_cover_corr": "Bosque" }, "geometry": { "type": "Point", "coordinates": [ -64.377650544000616, -31.4370161670005, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "155", "land_cover": "bosque", "layer": "ptos_verdad_4326", "land_cover_corr": "Bosque" }, "geometry": { "type": "Point", "coordinates": [ -64.387079179000636, -31.436715089000497, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "160", "land_cover": "bosq_abr", "layer": "ptos_verdad_4326", "land_cover_corr": "Bosque" }, "geometry": { "type": "Point", "coordinates": [ -64.397578100000658, -31.415918581000483, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "100", "land_cover": "arbustal", "layer": "puntos_cett_geoj", "land_cover_corr": "Arbustal" }, "geometry": { "type": "Point", "coordinates": [ -64.468677751220554, -31.526921134043029, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "101", "land_cover": "arbustal", "layer": "puntos_cett_geoj", "land_cover_corr": "Arbustal" }, "geometry": { "type": "Point", "coordinates": [ -64.468151595651022, -31.52563610257614, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "102", "land_cover": "arbustal", "layer": "puntos_cett_geoj", "land_cover_corr": "Arbustal" }, "geometry": { "type": "Point", "coordinates": [ -64.46906993944512, -31.52610358829903, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "103", "land_cover": "past_arb", "layer": "puntos_cett_geoj", "land_cover_corr": "Pastizal" }, "geometry": { "type": "Point", "coordinates": [ -64.468683718642538, -31.523183710852859, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "104", "land_cover": "arb_alto", "layer": "puntos_cett_geoj", "land_cover_corr": "Arbustal" }, "geometry": { "type": "Point", "coordinates": [ -64.469249530723005, -31.520965906373441, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "105", "land_cover": "cesped", "layer": "puntos_cett_geoj", "land_cover_corr": "Pastizal" }, "geometry": { "type": "Point", "coordinates": [ -64.467980957835081, -31.521409078963941, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "106", "land_cover": "bosque", "layer": "puntos_cett_geoj", "land_cover_corr": "Bosque" }, "geometry": { "type": "Point", "coordinates": [ -64.467061445632083, -31.520873138888579, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "107", "land_cover": "edificac", "layer": "puntos_cett_geoj", "land_cover_corr": "Edificacion" }, "geometry": { "type": "Point", "coordinates": [ -64.464666784187216, -31.52483053082689, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "108", "land_cover": "bosque", "layer": "puntos_cett_geoj", "land_cover_corr": "Bosque" }, "geometry": { "type": "Point", "coordinates": [ -64.464340787889626, -31.526906472438569, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "110", "land_cover": "arbustal", "layer": "puntos_cett_geoj", "land_cover_corr": "Arbustal" }, "geometry": { "type": "Point", "coordinates": [ -64.468994592760367, -31.528873365960791, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "111", "land_cover": "bosque", "layer": "puntos_cett_geoj", "land_cover_corr": "Bosque" }, "geometry": { "type": "Point", "coordinates": [ -64.458937332124876, -31.523716269674431, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": "112", "land_cover": "campo", "layer": "puntos_cett_geoj", "land_cover_corr": "Pastizal" }, "geometry": { "type": "Point", "coordinates": [ -64.4600913204725, -31.525723600428542, 0.0 ] } }
+]
+}
