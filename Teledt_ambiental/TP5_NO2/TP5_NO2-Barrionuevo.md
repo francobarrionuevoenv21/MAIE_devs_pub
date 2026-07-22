@@ -11,48 +11,25 @@ fontsize: 11pt
 
 ## 2.1. Área de estudio
 
-Con el fin de estudiar el efecto sobre la emisión de NO2 consecuencia de los [incedios ocurridos en la provincia de Chubut, Argentina, durante enero del 2025](https://www.infobae.com/salud/ciencia/2026/01/30/la-patagonia-argentina-sufre-el-incendio-mas-intenso-en-dos-decadas-segun-el-sistema-satelital-de-la-union-europea/) se definió un poligóno cuyos límites fueron: 72.22°O (-72.22°), 71.01°O (-71.01°), 42.08°S (-42.08°) y 43.23°S (-43.23°). De esta forma, se incluyeron las áreas del Parque Nacional los Alerces, y las localidades de el Hoyo y Epuyén. 
+Con el fin de estudiar el efecto sobre la emisión de NO2 consecuencia de los [incedios ocurridos en la provincia de Chubut, Argentina, durante enero del 2025](https://www.infobae.com/salud/ciencia/2026/01/30/la-patagonia-argentina-sufre-el-incendio-mas-intenso-en-dos-decadas-segun-el-sistema-satelital-de-la-union-europea/) se definió un poligóno cuyos límites fueron: 72.35°O (-72.35°), 70.89°O (-70.89°), 41.95°S (-41.95°) y 43.36°S (-43.36°) **(ver Figura X)**. De esta forma, se incluyeron las áreas del Parque Nacional los Alerces, y las localidades de el Hoyo y Epuyén, que fueron las áreas y localidades más afectadas por este evento.
+La definición del polígono se realizo a partir del acceso a la plataforma [NASA-FIRMS](). Mediante esta, se pudo analizar la cantidad de superficie quemada detectadas, su ubicación y las fechas cuando ocurrieron a a través de los sensores de las plataformas MODIS y VIIRS. 
 
-$$$$
+![alt text](report/images/fig0102.png)
 
-----
+*asa*
 
-![alt text](report/images/fig0101.png)
+## 2.2. Fuentes de datos
 
-El área sobre la cual se ha trabajado pertenece a las denominadas Sierras Chicas (SSCC) de la Provincia de Córdoba (Argentina). Las sierras ocupan una superficie de 810.000 ha y comprenden un gradiente de elevaciones entre 500 y 1950 m snm. El clima es templado semiárido, con un régimen de precipitaciones monzónico. El promedio anual de precipitaciones es de 850 mm, concentradas principalmente en el semestre más cálido, entre Septiembre y Marzo, dando lugar a inviernos secos y veranos húmedos. La temperatura media anual de 17,3 °C. La vegetación se clasifica como perteneciente al distrito Chaqueño Serrano, que es la porción más austral del bosque de estación seca conocido como Gran Chaco Americano (Cabrera, 1976). 
+### 2.3.1. Datos producto $NO_{2}$
 
-La vegetación en las SSCC consiste en un mosaico de bosques, arbustales y pastizales distribuidas a lo largo de todo el gradiente altitudinal (Cabido et al., 2018; Cingolani et al., 2022; Giorgis et al., 2011). Los bosques están dominados por *Lithraea molleoides* (nombre común: Molle) y *Zanthoxylum coco* (nombre común: Coco), pudiendo presentar un estrato arbóreo altamente desarrollado, con coberturas superiores al 80 % y alturas entre 5 y 9 m. Los arbustales están dominados por *Vachellia caven* (nombre común: Espinillo) y presentan una cobertura del estrato arbustivo entre 25 y 65 %, con alturas que oscilan entre 2 y 4 m.
+Para estudiar la afectación de la calidad del aire por la emisión de $NO_{2}$ producto de los incendios ocurridos en la Patagonia Argentina, dentro del área de estudio definida (ver ítem 2.1), se ha utilizado el producto *offline* de nivel 2 de $NO_{2}$ obtenido a partir del sensor TROPOMI a bordo de Sentinel-5P. Este producto provee la abundancia troposférica de dicho contaminante sobre la columna vertical medida en unidades de $mol/m^{2}$. 
+El acceso, así como el procesamiento de los datos, se han realizado a través del [editor de código de Google Earth Engine (GEE)](https://code.earthengine.google.com/). De esta manera, estas tareas se ejecturon el entorno de una nube, prescindiendo de recursos computacionales propios.
+Los datos de abundancia troposférica de $NO^{2}$ fueron adquiridos para dos periodos. Uno de ellos correspondió a un mes donde hubo nulos o pocos incendios, y el otro el cual se han registrado los incendios a estudiar, es decir enero del año 2026. Dentro del entorno de GEE se adquirieron todas las escenas para cada periodo y aplicando álgebra de bandas se obtuvo: la cantidad de píxeles con datos (es decir sin nubes), y la suma, la mediana, y el desvío estandar de la abundancia píxel a píxel. 
 
-El área sobre la cual se ejecutó la clasificación de coberturas y uso de suelo, abarca un sector de las Sierras Chicas de 59.700 ha, cuyos límites son... . La misma incluye áreas urbanizadas y de interés, tales como Carlos Paz y alrededores, Malagueño, y el propio CETT ubicado en Falda del Cañete **(Figura X)**. 
+### 2.3.2. Datos complementarios
 
-$$$$$$$$$$$$$$$
-**Figura X.**---
+## 2.3. Análisis de ...
 
-## 2.2. Recolección de datos de campo
-
-El día 25 de junio del 2026 se realizó una recorrida por el Centro Espacial Teófilo Tabanera [CETT] (Falda del Cañete, Córdoba) con el fin de realizar una recolección de datos de referencia sobre el tipo de cobertura y vegetación sobre distintos puntos previamente definidos dentro del área del CETT. En total se referenciaron 12 puntos según 4 categorías: arbustal, bosque, pastizal y edificación/urbano.
-
-## 2.3. Procesamiento de datos e imágenes satelitales
-
-### 2.3.1. Datos de campo
-
-A los datos de campo recolectados se les agregaron datos de puntos a los que previamente se les había asignado un tipo de cobertura y/o uso de suelo. De esta forma se contó con un total de 21 registros dentro del CETT para las clasificaciones posteriores, que se volcaron en una capa vectorial. Las operaciones de geoprocesamiento necesarias para este paso se realizaron empleando el software QGIS.
-
-### 2.3.2. Imágenes satelitales
-
-Para la clasificación se han empleado dos escenas de Sentinel 2 (S8) con nivel de procesamiento 2, incluyendo las bandas 2 a 12. Una de ellas fue obtenida el día 6 de enero del año 2026, correspondiente a la época húmeda, mientras que la segunda fue obtenida el día 26 de mayo del mismo año, y se corresponde a la época seca. **(Figura X)**. Esta contenían el área de estudio previamente definida (ver ítem 2.1), por lo que posteriormente fueron clippeadas según los límites de la misma. 
-
-A partir de estas imágenes se han generado 3 índices espectrales derivados: el Índice de Vegetación de Diferencia Normalizada (NDVI), el Índice Diferencial de Agua Normalizado (NDWI) y el Índice Urbano (UI) a partir del cómputo del algebra de bandas siguiendo las **Ecuaciones X, X, y X**, respectivamente.
-
-$NDVI = \frac{NIR-Red}{NIR+Red}$ **Ecuación X**
-
-$NDWI = \frac{Green-NIR}{Green-NIR}$ **Ecuación X**
-
-$UI = \frac{SWIR2-RedEdge4}{SWIR2+RedEdge4}$ **Ecuación X**
-
-Adicionalmente se empleó el producto de modelo digital de elevación (MDE) con resolución de 30 m de Shuttle Radar Topography Mission (SRTM). Finalmente, se creó un cubo de datos incluyendo las bandas 2-12 para las escenas de S2, los indices derivados y el MDE, a partir de su apilado. De esta forma, quedaron listos los datos clasificación y elaboración del mapa de coberturas y uso de suelo en el siguiente paso. 
-
-La obtención y procesamiento de las imágenes de S2, así como la obtención de los indices espectrales derivados y el modelo de elevación, como la ejecución de geoprocesamiento, se han realizado a través del [editor de código de Google Earth Engine](https://code.earthengine.google.com/). De esta forma, todo el procesamiento se ejecutó en la nube, prescindiendo de recursos computacionales propios. Por otro lado, esto facilitó realizar tanto el procesamiento de los datos, así como la clasificación, en un flujo de trabajo unificado. 
 
 ## 2.4. Clasificación y evaluación de los resultados
 
