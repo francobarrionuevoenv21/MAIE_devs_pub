@@ -1,6 +1,7 @@
 ---
 geometry: margin=2cm
 fontsize: 11pt
+lang: es
 ---
 
 # 1. Objetivo
@@ -11,67 +12,61 @@ fontsize: 11pt
 
 ## 2.1. Área de estudio
 
-Con el fin de estudiar el efecto sobre la emisión de NO2 consecuencia de los [incedios ocurridos en la provincia de Chubut, Argentina, durante enero del 2025](https://www.infobae.com/salud/ciencia/2026/01/30/la-patagonia-argentina-sufre-el-incendio-mas-intenso-en-dos-decadas-segun-el-sistema-satelital-de-la-union-europea/) se definió un poligóno cuyos límites fueron: 72.35°O (-72.35°), 70.89°O (-70.89°), 41.95°S (-41.95°) y 43.36°S (-43.36°) **(ver Figura X)**. De esta forma, se incluyeron las áreas del Parque Nacional los Alerces, y las localidades de el Hoyo y Epuyén, que fueron las áreas y localidades más afectadas por este evento.
-La definición del polígono se realizo a partir del acceso a la plataforma [NASA-FIRMS](https://firms.modaps.eosdis.nasa.gov/). Mediante esta, se pudo analizar la cantidad de superficie quemada detectadas, su ubicación y las fechas cuando ocurrieron a a través de los sensores de las plataformas MODIS y VIIRS. 
+Con el fin de estudiar el efecto de los [incendios ocurridos en la provincia de Chubut (Argentina) durante enero de 2026](https://www.infobae.com/salud/ciencia/2026/01/30/la-patagonia-argentina-sufre-el-incendio-mas-intenso-en-dos-decadas-segun-el-sistema-satelital-de-la-union-europea/) sobre las emisiones de $NO_{2}$, se definió un polígono delimitado entre **72.35°O (-72.35°) y 70.89°O (-70.89°) de longitud**, y **43.36°S (-43.36°) y 41.95°S (-41.95°) de latitud** (ver Figura 1). De esta forma, se incluyeron las áreas del Parque Nacional Los Alerces y las localidades de El Hoyo y Epuyén, que fueron las zonas más afectadas por este evento.
 
-![alt text](report/images/fig0102.png)
+La definición del polígono se realizó a partir del análisis realizado a través de la plataforma [NASA-FIRMS](https://firms.modaps.eosdis.nasa.gov/), mediante la cual se analizó la distribución espacial de las áreas quemadas, así como las fechas de ocurrencia de los incendios detectados por los sensores **MODIS** y **VIIRS**.
+
+![Mapa del área de estudio y focos de calor de MODIS registrados durante febrero de 2025 y enero de 2026.](report/images/fig0102.png){ width=500px }
 
 
 ## 2.2. Fuentes de datos
 
 ### 2.3.1. Datos producto $NO_{2}$
 
-Para estudiar la afectación de la calidad del aire por la emisión de $NO_{2}$ producto de los incendios ocurridos en la Patagonia Argentina, dentro del área de estudio definida (ver ítem 2.1), se ha utilizado el producto *offline* de nivel 2 de $NO_{2}$ obtenido a partir del sensor TROPOMI a bordo de Sentinel-5P. Este producto provee la abundancia troposférica de dicho contaminante sobre la columna vertical medida en unidades de $mol/m^{2}$. 
-El acceso, así como el procesamiento de los datos, se han realizado a través del [editor de código de Google Earth Engine (GEE)](https://code.earthengine.google.com/). De esta manera, estas tareas se ejecturon el entorno de una nube, prescindiendo de recursos computacionales propios.
-Los datos de abundancia troposférica de $NO_{2}$ fueron adquiridos para dos periodos. Uno de ellos correspondió a un mes donde hubo nulos o pocos incendios, y el otro el cual se han registrado los incendios a estudiar, es decir enero del año 2026. Dentro del entorno de GEE se adquirieron todas las escenas para cada periodo y aplicando álgebra de bandas se obtuvo las composiciones temporales de: la cantidad de píxeles con datos (es decir sin nubes), y la suma, la mediana, y el desvío estandar de la abundancia píxel a píxel. 
+Para estudiar la afectación de la calidad del aire por las emisiones de $NO_{2}$ producidas por los incendios ocurridos en la Patagonia argentina, dentro del área de estudio definida (ver ítem 2.1), se utilizó el producto *offline* de nivel 2 de $NO_{2}$ obtenido a partir del sensor TROPOMI a bordo del satélite Sentinel-5P. Este producto proporciona la abundancia troposférica de este contaminante en la columna vertical, expresada en unidades de $mol/m^{2}$.
+
+El acceso a los datos, así como su procesamiento, se realizaron mediante el [editor de código de Google Earth Engine (GEE)](https://code.earthengine.google.com/). De esta forma, todas las tareas se ejecutaron en un entorno de computación en la nube, prescindiendo del uso de recursos computacionales locales.
+
+Los datos de abundancia troposférica de $NO_{2}$ se adquirieron para dos períodos. El primero correspondió a un mes con ausencia o escasa ocurrencia de incendios, mientras que el segundo abarcó enero de 2026, período durante el cual se registraron los incendios objeto de este estudio. Dentro del entorno de GEE se obtuvieron todas las escenas disponibles para cada período y, mediante álgebra de bandas, se generaron composiciones temporales de la cantidad de píxeles con datos válidos (es decir, libres de nubes), así como de la suma, la mediana y el desvío estándar de la abundancia troposférica de $NO_{2}$ calculada píxel a píxel. 
 
 ### 2.3.2. Datos complementarios
 
-Desde la plataforma de NASA-FIRMS, se han descargado datos de focos de calor del sensor MODIS correspondiente a los meses de febrero del año 2025 y enero del año 2026. Estos datos aportan información sobre si ocurrieron incendios y dónde lo hicieron en el área de estudio. Incorporarlos permite aporta evidencia sobre las diferencias ocurridas entre los periodos elegidos para el análisis. 
+Desde la plataforma NASA-FIRMS se descargaron los datos de focos de calor detectados por el sensor MODIS correspondientes a los meses de febrero de 2025 y enero de 2026. Estos datos proporcionan información sobre la ocurrencia y la distribución espacial de los incendios dentro del área de estudio. Su incorporación aporta evidencia que permite interpretar las diferencias observadas entre los períodos seleccionados para el análisis.
 
 ## 2.3. Análisis datos de $NO_{2}$
 
-Los análisis implementados fueron realizado sobre las composiciones temporales de cantidad de píxeles con datos, y la mediana y el desvío estandar de la abundancia de $NO_{2}$ píxel a píxel para cada periodo. A partir de ellas se realizó un primer análisis que consistió en evaluar las zonas con una cantidad suficiente de datos por pixel. Asumiendo que en el lapso de un mes se deberian capturar alrededor de 30 escenas, se estableció un umbral de 15 datos por pixel. Todos aquellos que no cumplieran con dicho criterio fueron descartados. 
-Habiendo identificado aquellas zonas del área de estudio que cumplian el umbral de cantidad mínima de datos, se continuó evaluando la distribución espacial de la mediana y el desvío estándar de la abundancia del $NO_{2}$. Adicionalmente, se analizó la relación entre el desvío estandary la mediana en el lapso de cada periodo. Esto se empleó como parámetro para evaluar si la variabilidad en el registro de $NO_{2}$ se correspondía a un evento puntual ($D. estandar > Mediana$) o a una condición permanente ($D. estandar < Mediana$) a lo largo del área de estudio.
-Finalmente se evalúo estadísticamente si las diferencias entre los dos periodos analizados eran signicativas. Para ello se empleo un test de medias, asumiendo la independencia de los datos. 
+Los análisis implementados fueron realizado sobre las composiciones temporales de cantidad de píxeles con datos, y la mediana y el desvío estandar de la abundancia de $NO_{2}$ píxel a píxel para cada periodo. A partir de estas composiciones se llevó a cabo un primer análisis orientado a identificar las zonas con una cantidad suficiente de datos por píxel. Considerando que, durante el lapso de un mes, deberían adquirirse aproximadamente 30 escenas, se estableció un umbral mínimo de 15 datos por píxel. Todos aquellos píxeles que no cumplieron con este criterio fueron descartados.
+
+Una vez identificadas las zonas del área de estudio que cumplían con el umbral mínimo de datos, se continuó con el análisis de la distribución espacial de la mediana y el desvío estándar de la abundancia de $NO_{2}$. Adicionalmente, se evaluó la relación entre ambos parámetros para cada período. Esta relación se utilizó como un indicador para determinar si la variabilidad observada en los registros de $NO_{2}$ respondía a una condición persistente ($D.\ \text{estándar} < \text{Mediana}$) o a la ocurrencia de eventos puntuales ($D.\ \text{estándar} > \text{Mediana}$) que afectaban la abundancia de este contaminente dentro del área de estudio.
+
+Finalmente, se evaluaron visualmente las diferencias en la abundancia de $NO_{2}$ entre ambos períodos. Para ello, se emplearon gráficos estadísticos que resumen la distribución de los datos.
 
 # 3. Resultaods
 
-## 2.1. 
+## 2.1. Periodos de análisis
 
+Los periodos de análisis elegidos fueron febrero del año 2025 y enero del año 2026. Esta elección surge del análisis las áreas quemadas realizado a través de la plataforma de NASA-FIRMS. Tal como se puede observar en la **Figura X**, la cantidad de focos de calor asociados a incendios obtenidos a partir de productos MODIS dentro del área de estudio fue mayor en el segundo (1530 focos de calor) caso comparado con febrero del 2025 (130 focos de calor). Esto se condice con lo registrado en relación a los incendios de importante magnitud ocurridos en dicha región durante 2026. 
 
+## 2.2. Febrero 2025
 
-| Clase | **Modelo 1** | **Modelo 2** |
-|:-------|-------------:|-------------:|
-| Bosque | 34 | 38 |
-| Arbustal | 34 | 39 |
-| Pastizal | 34 | 36 |
-| Roca | 25 | 25 |
-| Agua | 19 | 22 |
-| Cultivo | 18 | 14 |
-| Urbanización | 17 | 19 |
-| **Total de polígonos** | **181** | **193** |
-| **Total de píxeles** | **3307** | **2567** |
+Tal como se observa en la **Figura X** los resultados de las composiciones temporales para el periodo de febrero del año 2025 arrojó que alrededor de la mitad de los píxeles se encuentran por debajo del umbral de cantidad de píxeles mínimos. Estos se hallan principalmente en la zona al oeste del área de estudio, lo cual coincide con la ubicación por encima de la Cordillera de los Andes. Los datos de mediana computada muestran una baja dispersión, observándose valores en el rango entre los -10 y 10 $mol/m^{2}$. Los valores negativos no tienen sentido físico, y se corresponden con aquellos donde hubo interferencia por nubosidad. Por otro lado, los datos del desvío estándar muestran con valores en el rango entre los 0 y 10 $mol/m^{2}$.
 
-**Tabla X.** Comparación de los datos de entrenamiento utilizados en ambos modelos.
+![alt text](report/images/image0202.png)
 
+El análisis de los datos, ya enmascarados aquellos píxeles con no cumplían con el umbral establecido, permitió obtener un panorama más representativo de lo que ocurrió durante el periodo de acuerdo a la **Figura X**. Aquí se observa que predomina una mediana entre los 2 y 4 $mol/m^{2}$, y algunas zonas con valores mayores al máximo registrado de 10 $mol/m^{2}$. Los valores de desvío muestran una predominancia entre los 4 y 6 $mol/m^{2}$. Se destacan dos manchones con variabilidad superior a los 10 $mol/m^{2}$. Al analizar la relación entre la mediana y el desvío, se observa que para la mayor parte del área estudiada se cumple que el $DE > Mediana$. De esta manera, a modo preliminar, es posible mencionar para febrero del año 2025 la abundancia de $NO_{2}$ mostró alta variabilidad.
 
-| Parámetro | **Modelo 1** | **Modelo 2** |
-|:-----------------------------|:-------------:|:-------------:|
-| Cantidad de árboles | 100 | 120 |
-| Variables por ramificación | *Default* | 7 |
-| Mínimo de elementos por ramificación | 1 | 3 |
-| Fracción de datos por árbol | 1 | 0.8 |
-| Semilla | *Default* (Aleatoria) | 42 |
+![alt text](report/images/image03.png)
 
-**Tabla X.** Comparación de los parámetros utilizados para el entrenamiento de ambos modelos.
+## 2.3. Enero 2026
 
+Como se visuaiza en la **Figura X**, los resultados de las composiciones temporales para el periodo de enero del 2026 muestran que la mayor proporción de los píxeles se encuentran por encima del umbral de cantidad de píxeles mínimos. De esta forma, la mayoría de los datos de la composición generada son útiles los análisis posteriores. Los datos de mediana computada muestran una mayor dispersión, y una un corrimiento a la derecha, observándose valores en el rango entre los -5 y 10 $mol/m^{2}$, alcanzándose máximos alrededor de los 20 $mol/m^{2}$. Al igual, que en el caso anterior, los valores negativos no tienen sentido físico, y se corresponden con aquellos donde hubo interferencia por nubosidad. Por otro lado, los datos del desvío estándar muestran valores en el rango entre los 0 y 20 $mol/m^{2}$, registrándose máximos de alrededor de los 200 $mol/m^{2}$.
 
+![alt text](report/images/image0202.png)
 
+Una vez enmascarados aquellos píxeles con no cumplían con el umbral establecido, tal como se observa en la **Figura X** su análisis arrojó que predominó una mediana entre los 5 y 10 $mol/m^{2}$, así como la ocurrencia de dos grandes núcleos con abundancias mayores a los 15 $mol/m^{2}$. Por su ubicación, que se verifica en la **Figura X**, estos se corresponden al aumento producido por la quema de biomasa en los incendios ocurridos durante dicho periodo. Los valores de desvío muestran una predominancia entre los 5 y 10 $mol/m^{2}$. Se observan tambien grandes extensiones con valores de desvio mayores a los 20 $mol/m^{2}, también relacionadas por su ubicación a los incendios ocurridos. Al analizar la relación entre la mediana y el desvío, se observa que para la mayor parte del área estudiada se cumple que el $DE > Mediana$. De esta forma, se observa la predominancia de una alta variabilidad en la abundancia de $NO_{2}$ producto de los incendios ocurridos que afectaron fuertemente la calidad del aire en la región por generación de este contaminante. 
 
-# Referencias
+![alt text](report/images/image05.png)
 
-Cabido, M., Zeballos, S. R., Zak, M., Carranza, M. L., Giorgis, M. A., Cantero, J. J., & Acosta, A. T. R. (2018). Native woody vegetation in central Argentina: Classification of Chaco and Espinal  forests. Applied Vegetation Science, 21(2), 298–311.  
-Cabrera, A. L. (1976). Regiones fitogeográficas argentinas. Enciclopedia Argentina de Agricultura  y Jardinería. Tomo II. Acme. 
-Cingolani, A. M., Giorgis, M. A., Hoyos, L. E., & Cabido, M. (2022). La vegetación de las montañas de Córdoba (Argentina) a comienzos del siglo XXI: un mapa base para el ordenamiento territorial. Boletín de la Sociedad Argentina de Botánica, 57(1), 65–100. 
-Giorgis, M. A., Cingolani, A. M., Chiarini, F., Chiapella, J., Barboza, G., Ariza Espinar, L., Morero,  R., Gurvich, D. E., Tecco, P. A., Subils, R., & Cabido, M. (2011). Composición florística del Bosque Chaqueño Serrano de la provincia de Córdoba, Argentina. Kurtziana, 36(1), 9–43.  
+## 2.4. Comparación entre periodos
+
+La comparación de la mediana de la abundancia de $NO_{2}$ entre los dos periodos a través del gráfico de boxplot de la **Figura X**, muestra que existe una diferencia en el valor de la tendencia central computado dentro del área de estudio. Esta aproximadamente se duplicó durante los incendios de Enero del 2026. El rango intercuatílico es mucho más alto durante dicho periodo, lo que habla de una mayor heterogeneidad espacial. Finalmente, la existencia de numerosos outliers habla de la existencia de zonas con abundancias excepcionalmente altas de $NO_{2}$, las cuales podrían estar vinculadas a los propios focos de incendios.
