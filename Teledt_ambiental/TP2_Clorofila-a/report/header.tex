@@ -22,3 +22,11 @@
 \usepackage{enumitem}
 
 \setlength{\parskip}{0.25em}
+
+% Figures are floats so LaTeX decides where to place it (top, bottom, next page, etc.).
+% This package force it to place it where I need
+\usepackage{float}
+
+\makeatletter
+\def\fps@figure{H}
+\makeatother
