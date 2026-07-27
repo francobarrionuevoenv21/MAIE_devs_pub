@@ -12,7 +12,7 @@ figure-placement: H
 
 **Materia:** Teledetección Ambiental (Maestría en Aplicaciones de Información Espacial, I. Gulich)
 
-**Docentes:** Dra. Fernanda García, Dra. Anabella Ferral, Dr. Juan Argarañaz
+**Docentes:** Dra. Fernanda García, Dra. Anabella Ferral y Dr. Juan Argarañaz
 
 **Alumno:** Franco David Barrionuevo
 
@@ -127,7 +127,7 @@ Además de modificar el conjunto de entrenamiento, también se ajustaron los par
 | Semilla | *Default* (Aleatoria) | 42 |
 Table: Comparación de los valores definidos para los parámetros de los modelos entrenados durante las dos instancias.
 
-Los resultados de ambas clasificaciones se muestran en la **Figura 3**. El primer modelo alcanzó una precisión global cercana al 85%, mientras que el segundo obtuvo una precisión superior al 94%, lo que representa una mejora aproximada del 11%.
+Los resultados de ambas clasificaciones se muestran en la **Figura 3**. El primer modelo alcanzó una precisión global del 85%, mientras que el segundo obtuvo una precisión superior igual a 95%, lo que representa una mejora aproximada del 12%.
 
 En el primer modelo, la clase arbustal presentó la menor precisión del productor (61%), indicando que una proporción importante de los píxeles de referencia pertenecientes a esta clase fue clasificada principalmente como bosque. Asimismo, la clase agua registró la menor precisión del usuario (56%), debido a que una fracción considerable de los píxeles clasificados como agua correspondía en realidad a otras clases, principalmente urbanización.
 
@@ -165,7 +165,7 @@ Giorgis, M. A., Cingolani, A. M., Chiarini, F., Chiapella, J., Barboza, G., Ariz
 | **Agua**           | 0 | 0 | 0 | 0 | 20 | 0 | 16 | 0.44 | 0.56 |
 | **Cultivo**        | 0 | 0 | 0 | 2 | 0 | 78 | 0 | 0.03 | 0.98 |
 | **Urbanización**   | 0 | 0 | 0 | 0 | 0 | 0 | 185 | 0.00 | 1.00 |
-| **EP**             | 0.17 | 0.39 | 0.00 | 0.02 | 0.00 | 0.05 | 0.14 | **84.90** | |
+| **EP**             | 0.17 | 0.39 | 0.00 | 0.02 | 0.00 | 0.05 | 0.14 | **0.85** | |
 | **PP**             | 0.83 | 0.61 | 1.00 | 0.98 | 1.00 | 0.95 | 0.86 | | |
 Table: Matriz de confusión para modelo Random Forest 1 entrenado
 
@@ -179,7 +179,7 @@ Table: Matriz de confusión para modelo Random Forest 1 entrenado
 | **Agua**           | 0 | 0 | 0 | 0 | 87 | 3 | 3 | 0.06 | 0.94 |
 | **Cultivo**        | 0 | 0 | 0 | 0 | 0 | 356 | 0 | 0.00 | 1.00 |
 | **Urbanización**   | 0 | 0 | 0 | 0 | 0 | 1 | 130 | 0.01 | 0.99 |
-| **EP**             | 0.06 | 0.16 | 0.00 | 0.00 | 0.00 | 0.05 | 0.02 | **94.67** | |
+| **EP**             | 0.06 | 0.16 | 0.00 | 0.00 | 0.00 | 0.05 | 0.02 | **0.95** | |
 | **PP**             | 0.94 | 0.84 | 1.00 | 1.00 | 1.00 | 0.95 | 0.98 | | |
 Table: Matriz de confusión para modelo Random Forest 2 entrenado
 

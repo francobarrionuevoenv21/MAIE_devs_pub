@@ -11,7 +11,7 @@ figure-placement: H
 
 **Materia:** Teledetección Ambiental (Maestría en Aplicaciones de Información Espacial, I. Gulich)
 
-**Docentes:** Dra. Fernanda García, Dra. Anabella Ferral, Dr. Juan Argarañaz
+**Docentes:** Dra. Fernanda García, Dra. Anabella Ferral y Dr. Juan Argarañaz
 
 **Alumno:** Franco David Barrionuevo
 
@@ -55,7 +55,7 @@ Los análisis implementados fueron realizado sobre las composiciones temporales 
 
 Una vez identificadas las zonas del área de estudio que cumplían con el umbral mínimo de datos, se continuó con el análisis de la distribución espacial de la mediana y el desvío estándar de la abundancia de $NO_{2}$. Adicionalmente, se evaluó la relación entre ambos parámetros para cada período. Esta relación se utilizó como un indicador para determinar si la variabilidad observada en los registros de $NO_{2}$ respondía a una condición persistente ($DE < \text{Mediana}$) o a la ocurrencia de eventos puntuales ($DE > \text{Mediana}$) que afectaban la abundancia de este contaminente dentro del área de estudio.
 
-Finalmente, se evaluaron visualmente las diferencias en la abundancia de $NO_{2}$ entre ambos períodos. Para ello, se emplearon gráficos estadísticos que resumen la distribución de los datos.
+Finalmente, se evaluaron cualitativamente las diferencias en la mediana de las abundancias de $NO_{2}$ entre ambos períodos. Para ello, se emplearon gráficos estadísticos que resumen la distribución de los datos.
 
 # 3. Resultados y discusión
 

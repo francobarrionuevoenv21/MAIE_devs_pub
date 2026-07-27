@@ -12,7 +12,7 @@ figure-placement: H
 
 **Materia:** Teledetección Ambiental (Maestría en Aplicaciones de Información Espacial, I. Gulich)
 
-**Docentes:** Dra. Fernanda García, Dra. Anabella Ferral, Dr. Juan Argarañaz
+**Docentes:** Dra. Fernanda García, Dra. Anabella Ferral y Dr. Juan Argarañaz
 
 **Alumno:** Franco David Barrionuevo
 
