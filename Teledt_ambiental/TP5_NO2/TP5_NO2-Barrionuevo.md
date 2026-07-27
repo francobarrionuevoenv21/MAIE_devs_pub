@@ -23,7 +23,7 @@ figure-placement: H
 
 # 1. Objetivo
 
- El $NO_{2}$ es un gas que se forma en el aire muy rápido, por oxidación del NO emitido durante la combustión de combustibles fósiles y biomasa, y se encuentra cerca de fuentes de tránsito, industriales e incendios. El presente trabajo tuvo como objetivo evaluar el cambio en la abundancia de este contaminante como consecuencia de los incendios forestales ocurridos en la Patagonia argentina durante enero del año 2026. Para ello, se emplearon datos satelitales correspondientes a dos períodos: uno sin grandes incendios registrados y otro coincidente con el evento de estudio, lo que permitió analizar las diferencias en la abundancia de $NO_{2}$ entre ambos escenarios.
+ El $NO_{2}$ es un gas que se forma en el aire muy rápido, por oxidación del NO emitido durante la combustión de combustibles fósiles y biomasa, y se encuentra cerca de fuentes de tránsito, industriales e incendios. El presente trabajo tuvo como objetivo evaluar el cambio en la abundancia de este contaminante como consecuencia de los incendios forestales ocurridos en la Patagonia argentina durante enero del año 2026. Para ello, se emplearon datos satelitales correspondientes a dos períodos: uno coincidente con el evento de estudio y otro sin grandes incendios registrados en la misma estación, lo que permitió analizar las diferencias en la abundancia de $NO_{2}$ entre ambos escenarios.
 
 # 2. Metodología
 
@@ -43,7 +43,7 @@ Para estudiar la afectación de la calidad del aire por las emisiones de $NO_{2}
 
 El acceso a los datos, así como su procesamiento, se realizaron mediante el [editor de código de Google Earth Engine (GEE)](https://code.earthengine.google.com/). De esta forma, todas las tareas se ejecutaron en un entorno de computación en la nube, prescindiendo del uso de recursos computacionales locales.
 
-Los datos de abundancia troposférica de $NO_{2}$ se adquirieron para dos períodos. El primero correspondió a un mes con ausencia o escasa ocurrencia de incendios, mientras que el segundo abarcó enero de 2026, período durante el cual se registraron los incendios objeto de este estudio. Dentro del entorno de GEE se obtuvieron todas las escenas disponibles para cada período y, mediante álgebra de bandas, se generaron composiciones temporales. De esta forma, se obtuvieron las composiciones correspondientes a la cantidad de píxeles con datos válidos (n Píxeles), es decir sin nubes, así como la mediana y el desvío estándar (DE) de la abundancia troposférica de $NO_{2}$ calculada píxel a píxel. 
+Los datos de abundancia troposférica de $NO_{2}$ se adquirieron para dos períodos en la misma estación del año. El primero se correspondió a un mes con ausencia o escasa ocurrencia de incendios, mientras que el segundo abarcó enero de 2026, período durante el cual se registraron los incendios objeto de este estudio. Dentro del entorno de GEE se obtuvieron todas las escenas disponibles para cada período y, mediante álgebra de bandas, se generaron composiciones temporales. De esta forma, se obtuvieron las composiciones correspondientes a la cantidad de píxeles con datos válidos (n Píxeles), es decir sin nubes, así como la mediana y el desvío estándar (DE) de la abundancia troposférica de $NO_{2}$ calculada píxel a píxel. 
 
 ### 2.3.2. Datos complementarios
 

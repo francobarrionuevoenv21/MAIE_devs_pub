@@ -1,0 +1,6 @@
+// Commands environment conda
+
+// Create environment from yml file
+conda env create -f Curso_PDIS.yml 
+
+// 
