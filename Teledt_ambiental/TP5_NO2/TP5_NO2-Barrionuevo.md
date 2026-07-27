@@ -7,9 +7,9 @@ figure-placement: H
 ---
 \Large
 
-**Título:** Trabajo práctico N*5. Análisis de $NO_{2}$ troposférico con Google Earth Engine
+**Título:** Trabajo práctico N°5. Análisis de $NO_{2}$ troposférico con Google Earth Engine
 
-**Matería:** Teledetección Ambiental (Maestría en Aplicaciones de Información Espacial, I. Gulich)
+**Materia:** Teledetección Ambiental (Maestría en Aplicaciones de Información Espacial, I. Gulich)
 
 **Docentes:** Dra. Fernanda García, Dra. Anabella Ferral, Dr. Juan Argarañaz
 
@@ -23,13 +23,13 @@ figure-placement: H
 
 # 1. Objetivo
 
- El $NO_{2}$ es un gas que se forma en el aire muy rápido, por oxiación del NO emitido durante la combustión de combustibles fósiles y biomasa, y se encuentra cerca de fuentes de tránsito, industriales e incendios. El presente trabajo tuvo como objetivo evaluar el cambio en la abundancia de este contaminante como consecuencia de los incendios forestales ocurridos en la Patagonia argentina durante 2026. Para ello, se emplearon datos satelitales correspondientes a dos períodos: uno sin grandes incendios registrados y otro coincidente con el evento de estudio, lo que permitió analizar las diferencias en la abundancia de $NO_{2}$ entre ambos escenarios.
+ El $NO_{2}$ es un gas que se forma en el aire muy rápido, por oxidación del NO emitido durante la combustión de combustibles fósiles y biomasa, y se encuentra cerca de fuentes de tránsito, industriales e incendios. El presente trabajo tuvo como objetivo evaluar el cambio en la abundancia de este contaminante como consecuencia de los incendios forestales ocurridos en la Patagonia argentina durante enero del año 2026. Para ello, se emplearon datos satelitales correspondientes a dos períodos: uno sin grandes incendios registrados y otro coincidente con el evento de estudio, lo que permitió analizar las diferencias en la abundancia de $NO_{2}$ entre ambos escenarios.
 
 # 2. Metodología
 
 ## 2.1. Área de estudio
 
-Con el fin de estudiar el efecto de los [incendios ocurridos en la provincia de Chubut (Argentina) durante enero de 2026](https://www.infobae.com/salud/ciencia/2026/01/30/la-patagonia-argentina-sufre-el-incendio-mas-intenso-en-dos-decadas-segun-el-sistema-satelital-de-la-union-europea/) sobre las emisiones de $NO_{2}$, se definió un polígono delimitado entre **72.35°O (-72.35°) y 70.89°O (-70.89°) de longitud**, y **43.36°S (-43.36°) y 41.95°S (-41.95°) de latitud** (ver Figura 1). De esta forma, se incluyeron las áreas del Parque Nacional Los Alerces y las localidades de El Hoyo y Epuyén, que fueron las zonas más afectadas por este evento.
+Con el fin de estudiar el efecto de los [incendios ocurridos en la provincia de Chubut (Argentina) durante enero de 2026](https://www.infobae.com/salud/ciencia/2026/01/30/la-patagonia-argentina-sufre-el-incendio-mas-intenso-en-dos-decadas-segun-el-sistema-satelital-de-la-union-europea/) sobre las emisiones de $NO_{2}$, se definió un polígono delimitado entre **72.35°O (-72.35°) y 70.89°O (-70.89°) de longitud**, y **43.36°S (-43.36°) y 41.95°S (-41.95°) de latitud** (ver **Figura 1**). De esta forma, se incluyeron las áreas del Parque Nacional Los Alerces y las localidades de El Hoyo y Epuyén, que fueron las zonas más afectadas por este evento.
 
 La definición del polígono se realizó a partir del análisis realizado a través de la plataforma [NASA-FIRMS](https://firms.modaps.eosdis.nasa.gov/), mediante la cual se analizó la distribución espacial de las áreas quemadas, así como las fechas de ocurrencia de los incendios detectados por los sensores MODIS y VIIRS.
 
@@ -79,14 +79,14 @@ Como se observa en la **Figura 4**, los resultados de las composiciones temporal
 
 ![Valores computados (arriba) y distribución (abajo) de la de cantidad de píxeles válidos (A), mediana (B) y desvío estándar (C) de la abundancia de $NO_{2}$ para el área de estudio durante enero del año 2026. ](report/images/image04.png){ width=65% }
 
-Una vez enmascarados los píxeles que no cumplían con el umbral establecido, su análisis (**Figura 5**) mostró un predominio de valores de mediana entre 5 y 10 $mol/m^{2}$, así como la presencia de dos grandes núcleos con abundancias superiores a 15 $mol/m^{2}$. Por su ubicación, que puede verificarse en la **Figura 1**, estos núcleos se asocian al incremento de $NO_{2}$ producido por la quema de biomasa durante los incendios ocurridos en ese período. En cuanto al desvío estándar, predominan valores entre 5 y 10 $mol/m^{2}$, aunque también se observan extensas áreas con valores superiores a 20 $mol/m^{2}$, de igual forma asociadas por su localización a los incendios registrados. Al analizar la relación entre la mediana y el desvío estándar, se observa que en la mayor parte del área de estudio se cumple que $DE > \text{Mediana}$. En conjunto, estos resultados indican una elevada variabilidad temporal en la abundancia de $NO_{2}$, consistente con el impacto de los incendios sobre la calidad del aire debido al incremento de las emisiones de este contaminante.
+Una vez enmascarados los píxeles que no cumplían con el umbral establecido, su análisis (**Figura 5**) mostró un predominio de valores de mediana entre 5 y 10 $mol/m^{2}$, así como la presencia de dos grandes núcleos con abundancias superiores a 15 $mol/m^{2}$. Por su ubicación, que puede verificarse en la **Figura 1**, estos núcleos se asocian al incremento de $NO_{2}$ producido por la quema de biomasa durante los incendios ocurridos en ese periodo. En cuanto al desvío estándar, predominan valores entre 5 y 10 $mol/m^{2}$, aunque también se observan extensas áreas con valores superiores a 20 $mol/m^{2}$, de igual forma asociadas por su localización a los incendios registrados. Al analizar la relación entre la mediana y el desvío estándar, se observa que en la mayor parte del área de estudio se cumple que $DE > \text{Mediana}$. En conjunto, estos resultados indican una elevada variabilidad temporal en la abundancia de $NO_{2}$, consistente con el impacto de los incendios sobre la calidad del aire debido al incremento de las emisiones de este contaminante.
 
 ![(A) Píxeles válidos dentro del área de estudio para el periodo enero 2026. (B) Mediana computada durante enero 2026 para los píxeles válidos dentro del área de estudio. (C) Desvío estándar computado durante enero 2026 para los píxeles válidos dentro del área de estudio. (D) Relación entre el desvío estandar y la mediana para lo píxeles válidos. Rojo: $DE > \text{Mediana}$. Gris: $DE < \text{Mediana}$](report/images/image05.png){ width=60% }
 
 
 ## 3.4. Comparación entre periodos
 
-La comparación de la mediana de la abundancia de $NO_{2}$ entre ambos períodos mediante el gráfico de caja (*boxplot*) de la **Figura 6** muestra una diferencia marcada en la tendencia central de los datos dentro del área de estudio. En particular, la mediana aproximadamente se duplicó durante los incendios de enero de 2026. Asimismo, el rango intercuartílico es mayor en este período, lo que indica una mayor heterogeneidad espacial en la abundancia de $NO_{2}$. Finalmente, la presencia de numerosos valores*outliers* evidencia la existencia de zonas con abundancias excepcionalmente elevadas de $NO_{2}$, las cuales podrían estar asociadas directamente a las emisiones producidas por los focos de incendio.
+La comparación de la mediana de la abundancia de $NO_{2}$ entre ambos períodos mediante el gráfico de caja (*boxplot*) de la **Figura 6** muestra una diferencia marcada en la tendencia central de los datos dentro del área de estudio. En particular, la mediana aproximadamente se duplicó durante los incendios de enero de 2026. Asimismo, el rango intercuartílico es mayor en este período, lo que indica una mayor heterogeneidad espacial en la abundancia de $NO_{2}$. Finalmente, la presencia de numerosos valores *outliers* evidencia la existencia de zonas con abundancias excepcionalmente elevadas de $NO_{2}$, las cuales podrían estar asociadas directamente a las emisiones producidas por los focos de incendio.
 
 ![Gráficos de caja de los valores de mediana de abundancia de $NO_{2}$ para los periodos de febrero 2025 y enero 2026](report/images/image06.png){ width=40% }
 

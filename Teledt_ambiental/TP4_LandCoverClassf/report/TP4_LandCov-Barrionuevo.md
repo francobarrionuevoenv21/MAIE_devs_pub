@@ -10,7 +10,7 @@ figure-placement: H
 
 **Trabajo práctico N°4. Clasificación de imágenes satelitales para la elaboración de un mapa de cubiertas y uso del suelo**
 
-**Matería:** Teledetección Ambiental (Maestría en Aplicaciones de Información Espacial, I. Gulich)
+**Materia:** Teledetección Ambiental (Maestría en Aplicaciones de Información Espacial, I. Gulich)
 
 **Docentes:** Dra. Fernanda García, Dra. Anabella Ferral, Dr. Juan Argarañaz
 

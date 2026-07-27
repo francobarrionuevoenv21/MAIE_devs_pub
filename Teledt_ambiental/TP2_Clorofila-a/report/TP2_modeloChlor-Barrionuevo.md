@@ -10,7 +10,7 @@ figure-placement: H
 
 **Trabajo práctico N°2. Elaboración de mapas de Clorofila-a a partir de imágenes Landsat y mediciones de campo**
 
-**Matería:** Teledetección Ambiental (Maestría en Aplicaciones de Información Espacial, I. Gulich)
+**Materia:** Teledetección Ambiental (Maestría en Aplicaciones de Información Espacial, I. Gulich)
 
 **Docentes:** Dra. Fernanda García, Dra. Anabella Ferral, Dr. Juan Argarañaz
 

@@ -1,0 +1,42 @@
+name: Curso_PDIS
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - notebook
+  - pexpect
+  - matplotlib
+  - requests
+  - numpy
+  - black
+  - scikit-learn
+  - pyyaml
+  - pandas
+  - rtree
+  - beautifulsoup4
+  - imageio
+  - scipy
+  - plotly
+  - ipykernel
+  - rasterio
+  - folium
+  - jinja2
+  - seaborn
+  - geopandas
+  - fiona
+  - opencv
+  - pip
+  - shapely
+  - pyproj
+  - scikit-image
+  - jupyter
+  - gdal
+  - libgdal
+  - xarray
+  - rasterstats
+  - jupyter_client
+  - jupyter_core
+  - jupyterlab_pygments
+  - notebook
+  - netcdf4
