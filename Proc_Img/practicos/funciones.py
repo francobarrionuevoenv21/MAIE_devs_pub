@@ -44,10 +44,35 @@ def subset_img(ds, ul_x, ul_y, lr_x, lr_y, bands_list = [1]):
     row_off, col_off = ds.index(ul_x, ul_y) # https://rasterio-readthedocs-io.translate.goog/en/stable/quickstart.html?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc#spatial-indexing
     ps_x = ds.transform.a
     ps_y = ds.transform.e*(-1)
-    width = abs(round((lr_x-ul_x)/ps_x))
-    height = abs(round((ul_y-lr_y)/ps_y))
+    width = (round((lr_x-ul_x)/ps_x))
+    height = (round((ul_y-lr_y)/ps_y))
 
     window = Window(col_off, row_off, width, height) # (col_off, row_off, width, height)
-    subset = ds.read(bands_list, window = window)[0] # [0] --> convierto de 3D a 2D
+    subset = ds.read(bands_list, window = window) # [0] --> convierto de 3D a 2D
 
     return subset, window
+
+def scale_multiband(imagen, p = 0, nodata = None):
+    '''
+    Parámetros:
+    imagen: 3D datarray con n bandas/canales
+    p: percentil para escalado de la imagen
+    nodata: valor No Data para ecualizado de la imagen
+    ---
+    Return
+    imagen_escalada: 3D datarray escalado 
+    ---
+    NOTA: Para plotear con matplotlib en RGB usar el comando .transpose(1,2,0)
+    '''
+    # Crear un array vacio con la misma estructura que imagen_spot_apilada, pero con tipo de dato uint8 (en caso de usar la función scale que escala a 0-255).
+    imagen_escalada = np.empty_like(imagen, dtype=np.uint8)
+
+    # Definir una variable con el número de canales
+    canales = imagen_escalada.shape[0]
+
+    # Escalar una a una las bandas (usando p)
+    for i in range(canales):
+      canal = imagen[i, :, :]
+      imagen_escalada[i, :, :] = scale(canal, p)
+      
+    return imagen_escalada
