@@ -8,6 +8,9 @@
 import numpy as np
 import rasterio
 from rasterio.windows import Window
+import scipy.ndimage
+from zipfile import ZipFile
+import os
 
 # Funciones creadas
 def scale(imagen, p, nodata = None):
@@ -76,3 +79,50 @@ def scale_multiband(imagen, p = 0, nodata = None):
       imagen_escalada[i, :, :] = scale(canal, p)
       
     return imagen_escalada
+
+
+def leer_bandas_l2a(zipfilename, bands_to_extract, res, poligono = None):
+  '''Funcion para leer imagen S2 Nivel 2A desde ZIP
+  Inputs: zipfilename: string, nombre del zip (ruta entera)
+  bands_to_extract: Lista de bandas a extraer (Lista de strings). Ej: bands_to_extract = ['B02', 'B03', 'B04', 'B08']
+  res: resolucion (ej: 10)
+  poligono: poligono para aplicar recorte (en geodataframe). Por defecto no usa poligono
+  '''
+  zfile = ZipFile(zipfilename,'r')
+  stack_bandas = []
+
+  for bnd in zfile.namelist():
+    dirname = os.path.basename(os.path.dirname(bnd))
+
+    if dirname == f'R{res}m' and bnd.endswith('.jp2'):
+        if os.path.basename(bnd).split('_')[2] in bands_to_extract:
+            fname = f'/vsizip/{zipfilename}/{bnd}' # Agregmos /vsizip/ a cada ruta
+            ds = rasterio.open(fname)
+            metadatos = ds.meta
+            if poligono is not None:
+              clip, clip_transform = rasterio.mask.mask(ds, poligono.geometry, crop=True) # Extraemos una sección de la imagen solamente
+              stack_bandas.append(clip[0])
+              metadatos['transform'] = clip_transform # Si recortamos, actualizamos el transform de los metadatos
+              metadatos['height'] = clip.shape[1] # Si recortamos, actualizamos el height de los metadatos
+              metadatos['width'] = clip.shape[2] # Si recortamos, actualizamos el width de los metadatos
+            else:  
+              stack_bandas.append(ds.read()[0]) # Leemos como array 2D y lo agregamos a stack_bandas
+  stack_bandas = np.array(stack_bandas)
+  metadatos['count'] = stack_bandas.shape[0] # Actualizamos el count o numero de bandas
+  metadatos['driver'] = 'GTiff' # Cambiamos el driver a GeoTiff
+  return stack_bandas, metadatos
+
+
+def resample_bands(src_bands,ref_bands):
+    """
+    Función auxiliar.
+    Realiza el re-muestreo según la resolución elegida.
+    """
+    b = src_bands.shape[0]
+    r = ref_bands.shape[1]
+    c = ref_bands.shape[2]
+    zf = float(r/src_bands.shape[1])
+    src_resample =  np.zeros((b,r,c))
+    for i,band in enumerate(src_bands):
+        src_resample[i] = scipy.ndimage.zoom(src_bands[i],zf)
+    return src_resample
