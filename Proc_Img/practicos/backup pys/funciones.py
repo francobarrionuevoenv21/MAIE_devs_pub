@@ -17,8 +17,9 @@ def scale(imagen, p, nodata = None):
   # Calcular los percentiles p y 100-p
   valor_min = np.percentile(imagen[imagen != nodata], p)
   valor_max = np.percentile(imagen[imagen != nodata], 100-p)
+  print(valor_min, valor_max)
 
-  # Truncar la imagen al rango [p1, p99]
+  # Truncar la imagen al rango [pInf, pSup]
   ecualizada = np.clip(imagen, valor_min, valor_max)
 
   # Normalizar la imagen al rango 0-255.
