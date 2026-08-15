@@ -1,0 +1,1 @@
+pandoc TP4_LandCov-Barrionuevo.md --pdf-engine=xelatex -H header.tex -o TP4_final.pdf
