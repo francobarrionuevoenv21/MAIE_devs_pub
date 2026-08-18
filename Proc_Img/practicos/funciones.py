@@ -8,6 +8,7 @@
 import numpy as np
 import rasterio
 from rasterio.windows import Window
+from rasterio.mask import mask
 import scipy.ndimage
 from zipfile import ZipFile
 import os
