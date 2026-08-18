@@ -127,3 +127,27 @@ def resample_bands(src_bands,ref_bands):
     for i,band in enumerate(src_bands):
         src_resample[i] = scipy.ndimage.zoom(src_bands[i],zf)
     return src_resample
+
+def extraer_muestras(raster_fn, rois_vec, nodata = 65535, columna = 'clase', bandas = ['B02', 'B03', 'B04', 'B08', 'B11', 'B12']):
+    
+    with rasterio.open(raster_fn) as src:
+        d = src.count
+        X = np.empty((0, d), dtype=np.float32)  # array vacío para almacenar valores espectrales
+        Y = np.empty(0, dtype=int)              # array vacío para almacenar etiquetas
+
+        rois_vec = rois_vec.to_crs(epsg=src.crs.to_epsg())
+        
+        for index, row in rois_vec.iterrows():
+            clase, geom = row[[columna, 'geometry']].to_list()
+            clip, _transform = mask(src, [geom], crop=True, nodata=nodata)
+            d, x, y = clip.shape
+            D = clip.reshape([d, x*y]).T  # Rompemos la estructura espacial, pero no espectral
+            DX = D[np.all(D != nodata, axis=1)]  # Nos quedamos con los valores útiles
+            DY = np.repeat(clase, DX.shape[0])  # Generamos un array con la etiqueta de la clase
+            X = np.concatenate((X, DX))  # Concatenamos nuestros datos espectrales
+            Y = np.concatenate((Y, DY))  # Concatenamos las etiquetas de la clase
+            
+    muestras = pd.DataFrame(X, columns= bandas)
+    muestras['Clase'] = Y
+
+    return muestras
