@@ -5,6 +5,7 @@
 # Created Date:
 
 # Importo liberías de base
+import pandas as pd
 import numpy as np
 import rasterio
 from rasterio.windows import Window
