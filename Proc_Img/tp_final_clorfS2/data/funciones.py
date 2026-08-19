@@ -73,7 +73,7 @@ def explore_s2_items(date_ini, date_end, cv):
 
     return client.search(**search_parameters).item_collection()
 
-def down_assets(items, items_id, assets_folder, assets_down = ['red', 'nir']):
+def down_assets(items, item_id, assets_folder, assets_down = ['red', 'nir']):
         
     '''
     assas
