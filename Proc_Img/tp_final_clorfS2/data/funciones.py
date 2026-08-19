@@ -220,7 +220,7 @@ def save_maps(maps_folder, chla_map, tsi_map, dic_clip_bands):
 
     return list_paths
 
-def run_chla_s2(items, item_id, assets_folder, maps_folder)
+def run_chla_s2(items, item_id, assets_folder, maps_folder):
 
     # --
     print('RUN PASO 1: DESCARGA DE LOS ASSETS DE SENTINEL-2')
