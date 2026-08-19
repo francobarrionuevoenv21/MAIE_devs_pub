@@ -147,7 +147,6 @@ def clip_bands_bounds(assets_folder, dict_path_bands, assets_clip = ['red', 'nir
         dict_bands_bounds[asset] = {'subset' : band_mask[0], # Me quedo con el dataarray en 2D
                                     'metadatos' : bands_meta,
                                     'date': dict_path_bands[asset]['date_yymmdd']}
-
     return dict_bands_bounds
 
 def calc_chla(dict_clip_bands):
@@ -208,13 +207,13 @@ def save_maps(maps_folder, chla_map, tsi_map, dic_clip_bands):
     meta_chla_map = bands_meta.copy()
 
     # --
-    bands_meta.update({'nodata': 10}) # Defino 10 porque las clases van de 0-4
-    meta_chla_map.update({'dtype': 'float32',
-                         'nodata': -1.0}) # Defino un valor negativo
+    bands_meta.update({'nodata': np.nan}) # --
+    '''meta_chla_map.update({'dtype': 'float32',
+                         'nodata': np.nan})''' # --
 
     # --
     with rio.open(
-        chla_path, 'w',**meta_chla_map) as dst01:
+        chla_path, 'w',**bands_meta) as dst01:
         dst01.write(chla_map, 1)   # escribir en la banda 1
         dst01.set_band_description(1, 'chla_ug-l')
 
