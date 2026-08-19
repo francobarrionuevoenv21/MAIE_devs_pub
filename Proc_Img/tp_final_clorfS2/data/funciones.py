@@ -137,8 +137,12 @@ def clip_bands_bounds(assets_folder, dict_path_bands, assets_clip = ['red', 'nir
 
         # Extraigo y actualizo metadatos
         bands_meta = band_ds.meta
-        bands_meta.update({'transform': mask_transform,
-                        'nodata': None})
+        bands_meta.update({
+                'height': band_mask.shape[1],
+                'width': band_mask.shape[2],
+                'transform': mask_transform,
+                'nodata': None
+            })
 
         dict_bands_bounds[asset] = {'subset' : band_mask[0], # Me quedo con el dataarray en 2D
                                     'metadatos' : bands_meta,
