@@ -205,10 +205,12 @@ def save_maps(maps_folder, chla_map, tsi_map, dic_clip_bands):
     # --
     # Extraigo y actualizo metadatos
     bands_meta = dic_clip_bands['red']['metadatos'] # Extraigo la metadata desde el da de la banda red
+    meta_chla_map = bands_meta.copy()
 
     # --
-    meta_chla_map = bands_meta.copy()
-    meta_chla_map.update({'dtype': 'float32'})
+    bands_meta.update({'nodata': 10}) # Defino 10 porque las clases van de 0-4
+    meta_chla_map.update({'dtype': 'float32',
+                         'nodata': -1.0}) # Defino un valor negativo
 
     # --
     with rio.open(
