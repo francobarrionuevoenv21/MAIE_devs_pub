@@ -224,7 +224,7 @@ def save_maps(maps_folder, chla_map, tsi_map, dic_clip_bands):
         dst02.write(tsi_map, 1)   # escribir en la banda 1
         dst02.set_band_description(1, 'carlson_idx')
 
-    return list_paths
+    return {'chla_path': chla_path, 'tsi_path': tsi_path}
 
 def run_chla_s2(items, item_id, assets_folder, maps_folder):
 
@@ -248,12 +248,11 @@ def run_chla_s2(items, item_id, assets_folder, maps_folder):
     # --
     print('\n')
     print('RUN PASO 4: GUARDADO DE LOS MAPAS COMO EN FORMATO .TIF')
-    list_maps = save_maps(maps_folder, chla_map, tsi_map, dict_clip_bands)
+    dict_maps = save_maps(maps_folder, chla_map, tsi_map, dict_clip_bands)
     print('END PASO 4')
 
     return ({'chla_map': chla_map, 'tsi_map': tsi_map, 'date': date},
-        list_maps)
-
+        dict_maps)
 
 def plot_maps(chla_map, tsi_map, date, figsize=(8, 6)):
 
