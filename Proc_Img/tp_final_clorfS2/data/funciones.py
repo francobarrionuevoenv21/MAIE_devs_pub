@@ -1,6 +1,3 @@
-# Instalar PySTAC mediante pip
-pip install pystac-client --quiet
-
 # --
 import sys
 import requests
