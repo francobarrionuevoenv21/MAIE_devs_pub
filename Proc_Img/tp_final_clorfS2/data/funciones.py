@@ -207,7 +207,8 @@ def save_maps(maps_folder, chla_map, tsi_map, dic_clip_bands):
     meta_chla_map = bands_meta.copy()
 
     # --
-    bands_meta.update({'nodata': np.nan}) # --
+    bands_meta.update({'dtype': 'float32', 
+                       'nodata': np.nan}) # --
     '''meta_chla_map.update({'dtype': 'float32',
                          'nodata': np.nan})''' # --
 
