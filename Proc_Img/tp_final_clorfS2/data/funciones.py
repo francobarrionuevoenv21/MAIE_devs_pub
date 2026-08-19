@@ -1,14 +1,8 @@
+# Instalar PySTAC mediante pip
+pip install pystac-client --quiet
+
 # --
 import sys
-
-# Instalar PySTAC mediante pip
-# Comandos complementarios en caso de ejectutar en Colab
-if 'google.colab' in sys.modules:
-    !pip install pystac-client --quiet
-else:
-    pip install pystac-client --quiet
-
-# --
 import requests
 import os
 from pystac_client import Client
