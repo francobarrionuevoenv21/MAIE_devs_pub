@@ -380,7 +380,7 @@ def plot_maps(chla_map, tsi_map, date, figsize=(8, 6)):
     fig.colorbar(
         im1,
         cax=cax1,
-        label="Concentración de clorofila [$\mu$$g/L$]"
+        label="Concentración de Clorofila-a [$\mu$$g/L$]"
     )
 
     # --- Capa de TSI ---
@@ -459,7 +459,7 @@ def plot_maps_leaf(chla_path, tsi_path, chla_map, date):
         cmap="Greens",
         vmin=np.nanpercentile(chla_map, 1),
         vmax=np.nanpercentile(chla_map, 99),
-        label="Chlorophyll-a"
+        label="Clorofila-a"
     )
 
     # --- Capa de TSI ---
