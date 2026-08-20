@@ -79,16 +79,18 @@ def df_items(stac_items):
         
     # Defino propiedades a extraer
     properties_to_extract = [
-        "datetime",
-        "platform",
-        "eo:cloud_cover",
+        'datetime',
+        'platform',
+        'grid:code', 
+        'eo:cloud_cover',
     ]
 
     # Rename de las columnas del dataframe
     column_renames = {
-        "datetime": "Fecha",
-        "platform": "Plataforma",
-        "eo:cloud_cover": "Cloud Cover (%)",
+        'datetime': 'Fecha',
+        'platform': 'Plataforma',
+        'grid:code': 'Grid code',
+        'eo:cloud_cover': 'Cloud Cover (%)',
     }
     
     # Extraigo los datos para la creación del dataframe
