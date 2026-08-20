@@ -494,12 +494,12 @@ def plot_maps_leaf(chla_path, tsi_path, chla_map, date):
             "Eutrófico",
             "Hipertrófico"
         ],
-        fontsize=15,
+        fontsize=18,
         colors=colors
     )
 
     # --- Capa ESR ---
     esr_gdf = gpd.read_file(ESR_PATH)
-    m.add_gdf(esr_gdf, layer_name="Bounding Box", style={"color": "yellow", "weight": 2, "fillOpacity": 0})
+    m.add_gdf(esr_gdf, layer_name='Límites ESR', style={'color': 'yellow', 'weight': 2, 'fillOpacity': 0})
 
     return m # Display del mapa interactivo
