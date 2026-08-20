@@ -81,7 +81,6 @@ def df_items(stac_items):
     properties_to_extract = [
         'datetime',
         'platform',
-        'grid:code', 
         'eo:cloud_cover',
     ]
 
@@ -89,7 +88,6 @@ def df_items(stac_items):
     column_renames = {
         'datetime': 'Fecha',
         'platform': 'Plataforma',
-        'grid:code': 'Grid code',
         'eo:cloud_cover': 'Cloud Cover (%)',
     }
     
@@ -97,6 +95,7 @@ def df_items(stac_items):
     data = []
     for item in stac_items:
         row = {}
+        row['ID'] = item.id
         for prop in properties_to_extract:
             value = item.properties.get(prop, None)
             if prop == "datetime" and value is not None:
