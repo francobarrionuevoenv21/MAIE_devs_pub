@@ -1,4 +1,10 @@
-# --
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# ----------------------------------------------------------------------------
+# Created By  : Franco David Barrionuevo
+# Created Date: Augustu 2026
+
+# Librerías
 import sys
 import requests
 import os
@@ -15,16 +21,13 @@ import matplotlib.cm as cm
 from matplotlib.colors import ListedColormap, BoundaryNorm
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
-# --
+# Funciones
 
-def get_bounds_4326(vector_path):
-    '''
-    --
-    '''
-    
-    vector_gdf = gpd.read_file(vector_path).to_crs(epsg=4326)
+# Defino path vector límites Embalse San Roque
+ESR_PATH = 'https://github.com/francobarrionuevoenv21/MAIE_devs_pub/raw/refs/heads/main/Proc_Img/tp_final_claS2/data/esr_clean.geojson'
 
-    return vector_gdf.total_bounds # minx, miny, maxx, maxy
+
+# Definición de las funciones
 
 def df_items(stac_items):
 
@@ -54,7 +57,9 @@ def df_items(stac_items):
 def explore_s2_items(date_ini, date_end, cv):
 
     # Import bounding box desde GitHub
-    minx, miny, maxx, maxy = get_bounds_4326('https://github.com/francobarrionuevoenv21/MAIE_devs_pub/raw/refs/heads/main/Proc_Img/tp_final_clorfS2/data/esr_clean.geojson')
+    minx, miny, maxx, maxy = gpd.read_file(ESR_PATH)\
+        .to_crs(epsg=4326)\
+        .total_bounds # minx, miny, maxx, maxy
 
     # URL actualizada del catálogo STAC
     STAC_URL = 'https://earth-search.aws.element84.com/v1' # Catálogo: https://stacindex.org/catalogs?access=protected&type=static#/
