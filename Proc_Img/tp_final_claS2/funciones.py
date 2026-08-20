@@ -31,6 +31,41 @@ ESR_PATH = 'https://github.com/francobarrionuevoenv21/MAIE_devs_pub/raw/refs/hea
 
 # Definición de las funciones
 
+def explore_s2_items(date_ini, date_end, cv):
+    """
+    Busca ítems Sentinel-2 L2A en el catálogo STAC de AWS Earth Search dentro de un bounding box y rango de fechas.
+
+    Args:
+        date_ini (str): Fecha de inicio del rango de búsqueda (ej. "2023-01-01").
+        date_end (str): Fecha de fin del rango de búsqueda (ej. "2023-01-31").
+        cv (float): Porcentaje máximo de cobertura de nubes permitido (se retornan ítems con un valor menor a este).
+
+    Returns:
+        pystac.item_collection.ItemCollection: Colección de ítems Sentinel-2 que coinciden con la búsqueda.
+    """
+    
+    # Import bounding box desde GitHub
+    minx, miny, maxx, maxy = gpd.read_file(ESR_PATH)\
+        .to_crs(epsg=4326)\
+        .total_bounds  # minx, miny, maxx, maxy
+
+    # URL actualizada del catálogo STAC
+    STAC_URL = 'https://earth-search.aws.element84.com/v1'  # Catálogo: https://stacindex.org/catalogs?access=protected&type=static#/
+
+    # Crea un cliente STAC usando la URL del catálogo
+    client = Client.open(STAC_URL)
+
+    # Define los parámetros de la búsqueda
+    search_parameters = {
+        'collections': ['sentinel-2-l2a'],  # Colección específica a buscar; Descripción procesamiento L2A: https://docs.sentinel-hub.com/api/latest/data/sentinel-2-l2a/
+        'bbox': [minx, miny, maxx, maxy],  # Bounding box [oeste, sur, este, norte]
+        'datetime': f'{date_ini}/{date_end}',
+        'query': {'eo:cloud_cover': {'lt': cv}},  # Filtra por imágenes con menos del 10% de cobertura de nubes
+        "limit": 100,  # Número de ítems por página de resultados
+    }
+
+    return client.search(**search_parameters).item_collection()
+
 def df_items(stac_items):
     """
     Convierte ítems STAC en un DataFrame resumen con fecha, plataforma y cobertura de nubes.
@@ -68,41 +103,6 @@ def df_items(stac_items):
         data.append(row)
 
     return pd.DataFrame(data).rename(columns=column_renames)
-
-def explore_s2_items(date_ini, date_end, cv):
-    """
-    Busca ítems Sentinel-2 L2A en el catálogo STAC de AWS Earth Search dentro de un bounding box y rango de fechas.
-
-    Args:
-        date_ini (str): Fecha de inicio del rango de búsqueda (ej. "2023-01-01").
-        date_end (str): Fecha de fin del rango de búsqueda (ej. "2023-01-31").
-        cv (float): Porcentaje máximo de cobertura de nubes permitido (se retornan ítems con un valor menor a este).
-
-    Returns:
-        pystac.item_collection.ItemCollection: Colección de ítems Sentinel-2 que coinciden con la búsqueda.
-    """
-    
-    # Import bounding box desde GitHub
-    minx, miny, maxx, maxy = gpd.read_file(ESR_PATH)\
-        .to_crs(epsg=4326)\
-        .total_bounds  # minx, miny, maxx, maxy
-
-    # URL actualizada del catálogo STAC
-    STAC_URL = 'https://earth-search.aws.element84.com/v1'  # Catálogo: https://stacindex.org/catalogs?access=protected&type=static#/
-
-    # Crea un cliente STAC usando la URL del catálogo
-    client = Client.open(STAC_URL)
-
-    # Define los parámetros de la búsqueda
-    search_parameters = {
-        'collections': ['sentinel-2-l2a'],  # Colección específica a buscar; Descripción procesamiento L2A: https://docs.sentinel-hub.com/api/latest/data/sentinel-2-l2a/
-        'bbox': [minx, miny, maxx, maxy],  # Bounding box [oeste, sur, este, norte]
-        'datetime': f'{date_ini}/{date_end}',
-        'query': {'eo:cloud_cover': {'lt': cv}},  # Filtra por imágenes con menos del 10% de cobertura de nubes
-        "limit": 100,  # Número de ítems por página de resultados
-    }
-
-    return client.search(**search_parameters).item_collection()
 
 def down_assets(items, item_id, assets_folder, assets_down = ['red', 'nir']):
     """
