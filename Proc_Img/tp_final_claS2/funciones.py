@@ -244,7 +244,7 @@ def carlson_idx(chla_da):
     tsi_map_class = np.full(chla_da.shape, -1, dtype=int)
     tsi_map_class[mask] = np.digitize(tsi_map_raw[mask], bins) # Asigna un valor discreto a cada valor del datarray según los intervalos en bins
 
-    #tsi_map_class = np.where(tsi_map_class == -1, np.nan, tsi_map_class) # Redundante
+    tsi_map_class = np.where(tsi_map_class == -1, np.nan, tsi_map_class) # numpy.digitize asigna -1 los valores nan, por lo tanto reconvierto a nan
 
     return tsi_map_class
 
