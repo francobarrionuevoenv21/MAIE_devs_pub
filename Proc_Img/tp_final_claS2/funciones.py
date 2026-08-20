@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
 # Created By  : Franco David Barrionuevo
-# Created Date: Augustu 2026
+# Created Date: Agosto 2026
 
 # Librerías
 import sys
@@ -20,6 +20,8 @@ from matplotlib import pyplot as plt
 import matplotlib.cm as cm
 from matplotlib.colors import ListedColormap, BoundaryNorm
 from mpl_toolkits.axes_grid1 import make_axes_locatable
+
+import leafmap
 
 # Funciones
 
@@ -357,9 +359,7 @@ def plot_maps(chla_map, tsi_map, date, figsize=(8, 6)):
     
     fig, ax = plt.subplots(1, 2, figsize=figsize, constrained_layout=True)
 
-    # ======================
-    # CHLOROPHYLL MAP
-    # ======================
+     # --- Mapa de clorofila-a ---
 
     cmap = cm.get_cmap('BuGn').copy()
     cmap.set_bad(color="#6B544C92")
@@ -383,9 +383,7 @@ def plot_maps(chla_map, tsi_map, date, figsize=(8, 6)):
         label="Concentración de clorofila [$\mu$$g/L$]"
     )
 
-    # ======================
-    # TSI MAP
-    # ======================
+    # --- Capa de TSI ---
 
     colors = [
         "#2c7bb6",
@@ -430,3 +428,79 @@ def plot_maps(chla_map, tsi_map, date, figsize=(8, 6)):
     cbar.set_label("Estado trófico")
 
     plt.show()
+
+def plot_maps_leaf(chla_path, tsi_path, chla_map, date):
+    """
+    Muestra los mapas ráster de clorofila-a y TSI en un mapa interactivo leafmap.
+
+    Args:
+        chla_path (str): Ruta del archivo GeoTIFF de clorofila-a guardado.
+        tsi_path (str): Ruta del archivo GeoTIFF de TSI guardado.
+        chla_map (np.ndarray): Array de clorofila-a, usado para calcular los límites de percentiles del colormap.
+        date (str): Fecha de adquisición, usada para nombrar/contextualizar las capas.
+        bounds_path (str): Ruta o URL del GeoJSON del bounding box (default: ESR_PATH).
+
+    Returns:
+        leafmap.Map: Mapa interactivo con las capas de clorofila-a, TSI y vector ESR.
+    """
+
+    m = leafmap.Map(zoom=20, basemap="Esri.WorldImagery")
+
+    # --- Capa de clorofila-a ---
+    m.add_raster(
+        chla_path,
+        layer_name=f'Cl-a - {date}',
+        palette="Greens",
+        nodata=np.nan,
+        colormap=True,
+    )
+
+    m.add_colormap(
+        cmap="Greens",
+        vmin=np.nanpercentile(chla_map, 1),
+        vmax=np.nanpercentile(chla_map, 99),
+        label="Chlorophyll-a"
+    )
+
+    # --- Capa de TSI ---
+    colors = [
+        "#2c7bb6",
+        "#abd9e9",
+        "#ffffbf",
+        "#fdae61",
+        "#d7191c"
+    ]
+    cmap = ListedColormap(colors)
+
+    bounds = np.arange(-0.5, 5.5, 1)  # 5 clases de TSI: 0-4
+    norm = BoundaryNorm(bounds, cmap.N)
+
+    m.add_raster(
+        tsi_path,
+        layer_name= f'TSI-{date}',
+        colormap=cmap,
+        vmin=0,
+        vmax=4,
+        norm=norm,
+        nodata=np.nan
+    )
+
+    m.add_legend(
+        title="Índice de Carlson (TSI)",
+        labels=[
+            "Ultraoligotrófico",
+            "Oligotrófico",
+            "Mesotrófico",
+            "Eutrófico",
+            "Hipertrófico"
+        ],
+        fontsize=15,
+        colors=colors
+    )
+
+    # --- Capa ESR ---
+    esr_gdf = gpd.read_file(ESR_PATH)
+    m.add_gdf(esr_gdf, layer_name="Bounding Box", style={"color": "yellow", "weight": 2, "fillOpacity": 0})
+
+    # Display del mapa interactivo
+    m
