@@ -25,9 +25,8 @@ import leafmap
 
 # Funciones
 
-# Defino path vector límites Embalse San Roque
+# Defino path vector límites Embalse San Roque desde GitHub
 ESR_PATH = 'https://github.com/francobarrionuevoenv21/MAIE_devs_pub/raw/refs/heads/main/Proc_Img/tp_final_claS2/data/esr_clean.geojson'
-
 
 # Definición de las funciones
 
@@ -123,9 +122,9 @@ def down_assets(items, item_id, assets_folder, assets_down = ['red', 'nir']):
     sel_item = items[item_id]
 
     # Extraemos información clave del elemento: fecha (YYYY-MM-DD) y platform code
-    item_datetime = sel_item.properties.get("datetime", "Error")  # Check "Error" param value
+    item_datetime = sel_item.properties.get('datetime', 'Error')  # Check "Error" param value
     date_yymmdd = item_datetime[:10]  # 'YYYY-MM-DD'
-    platform = sel_item.properties.get("platform", "Error")
+    platform = sel_item.properties.get('platform', 'Error')
     pltf_code = platform[-2:]
 
     # Creo diccionario vacío 
@@ -146,12 +145,12 @@ def down_assets(items, item_id, assets_folder, assets_down = ['red', 'nir']):
             print(f'Descargando asset: {asset_key}')
             response = requests.get(url, stream=True)  # Descarga el archivo en modo streaming
 
-            with open(out_file, "wb") as f:
+            with open(out_file, 'wb') as f:
                 f.write(response.content)
 
-            print(f"Descarga completada en: {out_file}")
+            print(f'Descarga completada en: {out_file}')
 
-    print("Descargas de los assets finalizadas")
+    print('Descargas de los assets finalizadas')
 
     return dict_path_bands
 
@@ -221,7 +220,7 @@ def calc_chla(dict_clip_bands):
     chla_da = -5.57 + 80.13 * (nir_data / red_data)
     chla_da = np.clip(chla_da, 2.8, 288.5)  # Defino límites acorde a valores del modelo
 
-    return chla_da, dict_clip_bands['red']['date']
+    return chla_da, dict_clip_bands['red']['date'] # Selecciono la band "red", aunque es indistinto
 
 
 def carlson_idx(chla_da):
@@ -376,26 +375,26 @@ def plot_maps(chla_map, tsi_map, date, figsize=(8, 6)):
     ax[0].set_axis_off()
 
     divider = make_axes_locatable(ax[0])
-    cax1 = divider.append_axes("right", size="5%", pad=0.05)
+    cax1 = divider.append_axes('right', size='5%', pad=0.05)
 
     fig.colorbar(
         im1,
         cax=cax1,
-        label="Concentración de Clorofila-a [$\mu$$g/L$]"
+        label='Concentración de Clorofila-a [$\mu g/L$]'
     )
 
-    # --- Capa de TSI ---
+    # --- Mapa de TSI ---
 
     colors = [
-        "#2c7bb6",
-        "#abd9e9",
-        "#ffffbf",
-        "#fdae61",
-        "#d7191c"
+        '#2c7bb6',
+        '#abd9e9',
+        '#ffffbf',
+        '#fdae61',
+        '#d7191c'
     ]
 
     cmap = ListedColormap(colors)
-    cmap.set_bad(color="#6B544C92")
+    cmap.set_bad(color='#6B544C92')
 
     bounds = np.arange(-0.5, 5.5, 1)
     norm = BoundaryNorm(bounds, cmap.N)
@@ -410,7 +409,7 @@ def plot_maps(chla_map, tsi_map, date, figsize=(8, 6)):
     ax[1].set_axis_off()
 
     divider = make_axes_locatable(ax[1])
-    cax2 = divider.append_axes("right", size="5%", pad=0.05)
+    cax2 = divider.append_axes('right', size='5%', pad=0.05)
 
     cbar = fig.colorbar(
         im2,
@@ -419,14 +418,14 @@ def plot_maps(chla_map, tsi_map, date, figsize=(8, 6)):
     )
 
     cbar.ax.set_yticklabels([
-        "Ultraoligotrófico",
-        "Oligotrófico",
-        "Mesotrófico",
-        "Eutrófico",
-        "Hipertrófico"
+        'Ultraoligotrófico',
+        'Oligotrófico',
+        'Mesotrófico',
+        'Eutrófico',
+        'Hipertrófico'
     ])
 
-    cbar.set_label("Estado trófico")
+    cbar.set_label('Estado trófico')
 
     plt.show()
 
@@ -451,7 +450,7 @@ def plot_maps_leaf(chla_path, tsi_path, chla_map, date):
     m.add_raster(
         chla_path,
         layer_name=f'Cl-a - {date}',
-        palette="Greens",
+        palette='Greens',
         nodata=np.nan,
         colormap=True,
     )
@@ -460,16 +459,16 @@ def plot_maps_leaf(chla_path, tsi_path, chla_map, date):
         cmap="Greens",
         vmin=np.nanpercentile(chla_map, 1),
         vmax=np.nanpercentile(chla_map, 99),
-        label="Clorofila-a"
+        label='Clorofila-a'
     )
 
     # --- Capa de TSI ---
     colors = [
-        "#2c7bb6",
-        "#abd9e9",
-        "#ffffbf",
-        "#fdae61",
-        "#d7191c"
+        '#2c7bb6',
+        '#abd9e9',
+        '#ffffbf',
+        '#fdae61',
+        '#d7191c'
     ]
     cmap = ListedColormap(colors)
 
@@ -487,13 +486,13 @@ def plot_maps_leaf(chla_path, tsi_path, chla_map, date):
     )
 
     m.add_legend(
-        title="Índice de Carlson (TSI)",
+        title='Índice de Carlson (TSI)',
         labels=[
-            "Ultraoligotrófico",
-            "Oligotrófico",
-            "Mesotrófico",
-            "Eutrófico",
-            "Hipertrófico"
+            'Ultraoligotrófico',
+            'Oligotrófico',
+            'Mesotrófico',
+            'Eutrófico',
+            'Hipertrófico'
         ],
         fontsize=18,
         colors=colors
