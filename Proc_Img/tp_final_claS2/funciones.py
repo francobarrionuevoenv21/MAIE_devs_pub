@@ -380,7 +380,7 @@ def plot_maps(chla_map, tsi_map, date, figsize=(8, 6)):
     fig.colorbar(
         im1,
         cax=cax1,
-        label='Concentración de Clorofila-a [$\mu g/L$]'
+        label=r'Concentración de Clorofila-a [$\mu\mathrm{g}\,\mathrm{L}^{-1}$]'
     )
 
     # --- Mapa de TSI ---
@@ -451,6 +451,8 @@ def plot_maps_leaf(chla_path, tsi_path, chla_map, date):
         chla_path,
         layer_name=f'Cl-a - {date}',
         palette='Greens',
+        vmin=np.nanpercentile(chla_map, 1),
+        vmax=np.nanpercentile(chla_map, 99),
         nodata=np.nan,
         colormap=True,
     )
@@ -459,7 +461,7 @@ def plot_maps_leaf(chla_path, tsi_path, chla_map, date):
         cmap="Greens",
         vmin=np.nanpercentile(chla_map, 1),
         vmax=np.nanpercentile(chla_map, 99),
-        label='Clorofila-a'
+        label=r'Concentración de Clorofila-a [$\mu\mathrm{g}\,\mathrm{L}^{-1}$]'
     )
 
     # --- Capa de TSI ---
