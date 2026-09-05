@@ -1,0 +1,6 @@
+# Comando para configurar el ejecutable de SNAP dentro del PATH al instalarlo en esa-snap
+
+echo 'export PATH="$HOME/esa-snap/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+## De esta forma, se ejecuta desde linea de comando directamente con "snap"
