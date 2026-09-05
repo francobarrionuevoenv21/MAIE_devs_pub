@@ -1,0 +1,490 @@
+/s<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SAOCOM_XMLProduct xmlns:at="saocomTypes">
+  
+  <NumberOfChannels>1</NumberOfChannels>
+  
+  <Description>SAOCOM Annotated Level-0</Description>
+
+  <VersionNumber>2.1</VersionNumber>
+<Channel Number="1" Total="1">
+  <RasterInfo Number="1" Total="1">
+    <FileName>l0-acqId0000513531-b-sm6-0000000000-s6dp-hh</FileName>
+    <Lines>16974</Lines>
+    <Samples>8704</Samples>
+    <HeaderOffsetBytes>0</HeaderOffsetBytes>
+    <RowPrefixBytes>0</RowPrefixBytes>
+    <ByteOrder>LITTLEENDIAN</ByteOrder>
+    <CellType>FLOAT_COMPLEX</CellType>
+    <LinesStep unit="s">0.000530222693531</LinesStep>
+    <SamplesStep unit="s">3.33333333334e-08</SamplesStep>
+    <LinesStart unit="Utc">25-SEP-2021 21:47:31.652302000000</LinesStart>
+    <SamplesStart unit="s">0.005456643268674069708</SamplesStart>
+  </RasterInfo>
+
+  <DataSetInfo Number="1" Total="1">
+    <SensorName>SAO1B</SensorName>
+    <Description>Level 0 data</Description>
+    <SenseDate>2021-SEP-25</SenseDate>
+    <AcquisitionMode>STRIPMAP</AcquisitionMode>
+    <ImageType>RAW DATA</ImageType>
+    <Projection>SLANT RANGE</Projection>
+    <AcquisitionStation>ETT</AcquisitionStation>
+    <ProcessingCenter>L0FSW TEST SITE</ProcessingCenter>
+    <ProcessingDate>30-APR-2025 12:01:07.238350000000</ProcessingDate>
+    <ProcessingSoftware>SP</ProcessingSoftware>
+    <fc_hz unit="Hz">1275000000</fc_hz>
+    <SideLooking>RIGHT</SideLooking>
+    <CompressionInfo>
+      <DataQuantization>NONE</DataQuantization>
+    </CompressionInfo>
+  </DataSetInfo>
+
+  <Swath>
+    <SwathInfo Number="1" Total="1">
+      <Swath>DS6</Swath>
+      <SwathAcquisitionOrder>0</SwathAcquisitionOrder>
+      <Polarization>H/H</Polarization>
+      <Rank>10</Rank>
+      <RangeDelayBias unit="s">0</RangeDelayBias>
+      <AcquisitionStartTime>25-SEP-2021 21:47:31.119000000000</AcquisitionStartTime>
+      <AzimuthSteeringRateReferenceTime unit="s">0</AzimuthSteeringRateReferenceTime>
+      <AzimuthSteeringRatePol>
+        <val N="1">0</val>
+        <val N="2">0</val>
+        <val N="3">0</val>
+      </AzimuthSteeringRatePol>
+      <AcquisitionPRF>1886</AcquisitionPRF>
+      <EchoesPerBurst>16974</EchoesPerBurst>
+      <ChannelDelay>0</ChannelDelay>
+      <RxGain>0</RxGain>
+    </SwathInfo>
+    <AcquisitionTimeline Number="1" Total="1">
+      <MissingLines_number>0</MissingLines_number>
+      <MissingLines_azimuthtimes/>
+      <Swst_changes_number>1</Swst_changes_number>
+      <Swst_changes_azimuthtimes>
+        <val N="1" unit="s">0</val>
+      </Swst_changes_azimuthtimes>
+      <Swst_changes_values>
+        <val N="1" unit="s">0.00545664326867407</val>
+      </Swst_changes_values>
+      <noise_packets_number>0</noise_packets_number>
+      <noise_packets_azimuthtimes/>
+      <Internal_calibration_number>0</Internal_calibration_number>
+      <Internal_calibration_azimuthtimes/>
+      <PRF_changes_number>1</PRF_changes_number>
+      <PRF_changes_azimuthtimes>
+        <val N="1" unit="s">0</val>
+      </PRF_changes_azimuthtimes>
+      <PRF_changes_values>
+        <val N="1" unit="s">1886</val>
+      </PRF_changes_values>
+      <SWL_changes_number>1</SWL_changes_number>
+      <SWL_changes_azimuthtimes>
+        <val N="1" unit="s">0</val>
+      </SWL_changes_azimuthtimes>
+      <SWL_changes_values>
+        <val N="1" unit="s">0.000290133</val>
+      </SWL_changes_values>
+    </AcquisitionTimeline>
+    <SamplingConstants Number="1" Total="1">
+      <frg_hz unit="Hz">30000000</frg_hz>
+      <Brg_hz unit="Hz">20600000</Brg_hz>
+      <faz_hz unit="Hz">1886</faz_hz>
+      <Baz_hz unit="Hz">1231.158352</Baz_hz>
+      <PSrg_m unit="m">4.99654096667666</PSrg_m>
+      <PSaz_m unit="m">3.67297609029514</PSaz_m>
+    </SamplingConstants>
+    <Pulse Number="1" Total="1">
+      <Direction>DOWN</Direction>
+      <PulseLength unit="s">2.7e-05</PulseLength>
+      <Bandwidth unit="Hz">20600000</Bandwidth>
+      <PulseEnergy unit="j">2.469942e+04</PulseEnergy>
+      <PulseSamplingRate unit="Hz">30000000</PulseSamplingRate>
+      <PulseStartFrequency unit="Hz">10300000</PulseStartFrequency>
+      <PulseStartPhase unit="rad">0</PulseStartPhase>
+    </Pulse>
+    <BurstInfo Number="1" Total="1">
+      <NumberOfBursts>1</NumberOfBursts>
+      <LinesPerBurstChangeList>
+        <Lines FromBurst="1">16974</Lines>
+      </LinesPerBurstChangeList>
+      <BurstRepetitionFrequency unit="Hz">0</BurstRepetitionFrequency>
+      <Burst N="1">
+        <RangeStartTime unit="s">0.00545664326867407</RangeStartTime>
+        <AzimuthStartTime unit="Utc">25-SEP-2021 21:47:31.652302000000</AzimuthStartTime>
+      </Burst>
+    </BurstInfo>
+  </Swath>
+  <StateVectorData>
+      <OrbitNumber>NOT_AVAILABLE</OrbitNumber>
+      <Track>NOT_AVAILABLE</Track>
+      <OrbitDirection>DESCENDING</OrbitDirection>
+      <pSV_m>
+        <val N="1">2527180.73462078</val>
+        <val N="2">-5153725.38414769</val>
+        <val N="3">-4019691.1844028</val>
+        <val N="4">2523794.13566665</val>
+        <val N="5">-5150638.18865815</val>
+        <val N="6">-4025778.84734896</val>
+        <val N="7">2520405.09507049</val>
+        <val N="8">-5147544.55740415</val>
+        <val N="9">-4031861.83758191</val>
+        <val N="10">2517013.60213356</val>
+        <val N="11">-5144444.50122362</val>
+        <val N="12">-4037940.14909969</val>
+        <val N="13">2513619.66256869</val>
+        <val N="14">-5141338.02513841</val>
+        <val N="15">-4044013.77490034</val>
+        <val N="16">2510223.28071631</val>
+        <val N="17">-5138225.13034421</val>
+        <val N="18">-4050082.70797979</val>
+        <val N="19">2506824.46133125</val>
+        <val N="20">-5135105.82010718</val>
+        <val N="21">-4056146.94033485</val>
+        <val N="22">2503423.21000661</val>
+        <val N="23">-5131980.09950808</val>
+        <val N="24">-4062206.46696479</val>
+        <val N="25">2500019.53070976</val>
+        <val N="26">-5128847.97108565</val>
+        <val N="27">-4068261.27886764</val>
+        <val N="28">2496613.41349411</val>
+        <val N="29">-5125709.44411058</val>
+        <val N="30">-4074311.3700393</val>
+        <val N="31">2493204.8940192</val>
+        <val N="32">-5122564.50901558</val>
+        <val N="33">-4080356.73447787</val>
+        <val N="34">2489793.96132151</val>
+        <val N="35">-5119413.17561879</val>
+        <val N="36">-4086397.36318135</val>
+        <val N="37">2486380.6208816</val>
+        <val N="38">-5116255.44678974</val>
+        <val N="39">-4092433.25014568</val>
+        <val N="40">2482964.87681685</val>
+        <val N="41">-5113091.32726889</val>
+        <val N="42">-4098464.38837099</val>
+        <val N="43">2479546.73475152</val>
+        <val N="44">-5109920.81986028</val>
+        <val N="45">-4104490.77085574</val>
+        <val N="46">2476126.19960295</val>
+        <val N="47">-5106743.92659251</val>
+        <val N="48">-4110512.39059338</val>
+        <val N="49">2472703.26056337</val>
+        <val N="50">-5103560.65944155</val>
+        <val N="51">-4116529.240584</val>
+        <val N="52">2469277.95355737</val>
+        <val N="53">-5100371.00763366</val>
+        <val N="54">-4122541.31482358</val>
+        <val N="55">2465850.26731609</val>
+        <val N="56">-5097174.97999076</val>
+        <val N="57">-4128548.6053101</val>
+        <val N="58">2462420.20723581</val>
+        <val N="59">-5093972.5816989</val>
+        <val N="60">-4134551.10504163</val>
+        <val N="61">2458987.77801677</val>
+        <val N="62">-5090763.81606026</val>
+        <val N="63">-4140548.80801619</val>
+        <val N="64">2455552.98596648</val>
+        <val N="65">-5087548.68549996</val>
+        <val N="66">-4146541.70622767</val>
+        <val N="67">2452115.83347305</val>
+        <val N="68">-5084327.19343142</val>
+        <val N="69">-4152529.79367841</val>
+        <val N="70">2448676.31278671</val>
+        <val N="71">-5081099.35127432</val>
+        <val N="72">-4158513.06236213</val>
+        <val N="73">2445234.45844772</val>
+        <val N="74">-5077865.14794809</val>
+        <val N="75">-4164491.50627687</val>
+        <val N="76">2441790.25880913</val>
+        <val N="77">-5074624.59358371</val>
+        <val N="78">-4170465.11942269</val>
+        <val N="79">2438343.71918419</val>
+        <val N="80">-5071377.69114247</val>
+        <val N="81">-4176433.89279557</val>
+        <val N="82">2434894.84605905</val>
+        <val N="83">-5068124.44523695</val>
+        <val N="84">-4182397.82039147</val>
+        <val N="85">2431443.64317225</val>
+        <val N="86">-5064864.85969083</val>
+        <val N="87">-4188356.89621052</val>
+        <val N="88">2427990.11634714</val>
+        <val N="89">-5061598.93606005</val>
+        <val N="90">-4194311.11224655</val>
+        <val N="91">2424534.26887542</val>
+        <val N="92">-5058326.679545</val>
+        <val N="93">-4200260.46250289</val>
+      </pSV_m>
+      <vSV_mOs>
+        <val N="1">-3385.35580987127</val>
+        <val N="2">3083.98735159082</val>
+        <val N="3">-6089.99587677747</val>
+        <val N="4">-3387.81504145216</val>
+        <val N="5">3090.41675578899</val>
+        <val N="6">-6085.3275532015</val>
+        <val N="7">-3390.26941647818</val>
+        <val N="8">3096.84289670852</val>
+        <val N="9">-6080.65220809887</val>
+        <val N="10">-3392.71892350749</val>
+        <val N="11">3103.26577646994</val>
+        <val N="12">-6075.96984697032</val>
+        <val N="13">-3395.16356046666</val>
+        <val N="14">3109.68538675161</val>
+        <val N="15">-6071.28047531681</val>
+        <val N="16">-3397.60332493301</val>
+        <val N="17">3116.10171979212</val>
+        <val N="18">-6066.58409873932</val>
+        <val N="19">-3400.03821457391</val>
+        <val N="20">3122.5147672978</val>
+        <val N="21">-6061.88072283859</val>
+        <val N="22">-3402.46822731014</val>
+        <val N="23">3128.92452132978</val>
+        <val N="24">-6057.17035321537</val>
+        <val N="25">-3404.89336092712</val>
+        <val N="26">3135.33097385829</val>
+        <val N="27">-6052.45299547105</val>
+        <val N="28">-3407.31360366219</val>
+        <val N="29">3141.73412686914</val>
+        <val N="30">-6047.72865520596</val>
+        <val N="31">-3409.72897197672</val>
+        <val N="32">3148.13395226319</val>
+        <val N="33">-6042.99733792128</val>
+        <val N="34">-3412.1394543613</val>
+        <val N="35">3154.53045201354</val>
+        <val N="36">-6038.25904941795</val>
+        <val N="37">-3414.54504851438</val>
+        <val N="38">3160.9236181199</val>
+        <val N="39">-6033.51379519675</val>
+        <val N="40">-3416.94575231174</val>
+        <val N="41">3167.31344267712</val>
+        <val N="42">-6028.76158095863</val>
+        <val N="43">-3419.34156358863</val>
+        <val N="44">3173.69991744855</val>
+        <val N="45">-6024.00241220455</val>
+        <val N="46">-3421.73248007489</val>
+        <val N="47">3180.08303455688</val>
+        <val N="48">-6019.23629483546</val>
+        <val N="49">-3424.11849006182</val>
+        <val N="50">3186.46279602922</val>
+        <val N="51">-6014.46323425192</val>
+        <val N="52">-3426.49961032492</val>
+        <val N="53">3192.83917367376</val>
+        <val N="54">-6009.68323625531</val>
+        <val N="55">-3428.87582925159</val>
+        <val N="56">3199.21216969099</val>
+        <val N="57">-6004.89630654637</val>
+        <val N="58">-3431.24714453019</val>
+        <val N="59">3205.5817759941</val>
+        <val N="60">-6000.10245072585</val>
+        <val N="61">-3433.61355425198</val>
+        <val N="62">3211.94798464688</val>
+        <val N="63">-5995.30167449494</val>
+        <val N="64">-3435.97505602929</val>
+        <val N="65">3218.3107875156</val>
+        <val N="66">-5990.49398355437</val>
+        <val N="67">-3438.33164786903</val>
+        <val N="68">3224.67017678743</val>
+        <val N="69">-5985.67938360532</val>
+        <val N="70">-3440.68331806672</val>
+        <val N="71">3231.02615459755</val>
+        <val N="72">-5980.85788034853</val>
+        <val N="73">-3443.03008330928</val>
+        <val N="74">3237.37869255439</val>
+        <val N="75">-5976.02947958477</val>
+        <val N="76">-3445.37193230361</val>
+        <val N="77">3243.72779298883</val>
+        <val N="78">-5971.1941869154</val>
+        <val N="79">-3447.70886250084</val>
+        <val N="80">3250.07344786274</val>
+        <val N="81">-5966.35200824097</val>
+        <val N="82">-3450.04087212605</val>
+        <val N="83">3256.4156492139</val>
+        <val N="84">-5961.50294916264</val>
+        <val N="85">-3452.36795909335</val>
+        <val N="86">3262.75438908584</val>
+        <val N="87">-5956.64701538138</val>
+        <val N="88">-3454.69012101529</val>
+        <val N="89">3269.08965946177</val>
+        <val N="90">-5951.78421279794</val>
+        <val N="91">-3457.0073560683</val>
+        <val N="92">3275.42145256681</val>
+        <val N="93">-5946.91454721348</val>
+      </vSV_mOs>
+      <t_ref_Utc>25-SEP-2021 21:47:21.000000000000</t_ref_Utc>
+      <dtSV_s>1</dtSV_s>
+      <nSV_n>31</nSV_n>
+    </StateVectorData>
+   <DopplerCentroid Number="1" Total="2">
+      <pol>
+        <val N="1" unit="Hz">-17.4533961545152</val>
+        <val N="2" unit="Hz/s">1682.17479832664</val>
+        <val N="3" unit="Hz/s">0</val>
+        <val N="4" unit="Hz/s2">0</val>
+        <val N="5" unit="Hz/s2">-186900.534472182</val>
+        <val N="6" unit="Hz/s3">-35724810.2283668</val>
+        <val N="7" unit="Hz/s4">30397159822.7011</val>
+      </pol>
+      <trg0_s>0.00545653652867407</trg0_s>
+      <taz0_Utc>25-SEP-2021 21:47:31.617445433412</taz0_Utc>
+    </DopplerCentroid>
+    <DopplerCentroid Number="2" Total="2">
+      <pol>
+        <val N="1" unit="Hz">-17.6420888445283</val>
+        <val N="2" unit="Hz/s">1585.46698984613</val>
+        <val N="3" unit="Hz/s">0</val>
+        <val N="4" unit="Hz/s2">0</val>
+        <val N="5" unit="Hz/s2">-149778.896216282</val>
+        <val N="6" unit="Hz/s3">-50996694.2951063</val>
+        <val N="7" unit="Hz/s4">35897476036.4628</val>
+      </pol>
+      <trg0_s>0.00545653652867407</trg0_s>
+      <taz0_Utc>25-SEP-2021 21:47:36.617445433412</taz0_Utc>
+    </DopplerCentroid>
+    <DopplerRate Number="1" Total="2">
+      <pol>
+        <val N="1" unit="Hz/s">-550.475589559515</val>
+        <val N="2" unit="Hz/s2">100864.970275487</val>
+        <val N="3" unit="Hz/s2">0</val>
+        <val N="4" unit="Hz/s3">0</val>
+        <val N="5" unit="Hz/s3">-18129537.4988644</val>
+        <val N="6" unit="Hz/s4">3212043710.38228</val>
+        <val N="7" unit="Hz/s5">-492150994681.171</val>
+      </pol>
+      <trg0_s>0.00545653652867407</trg0_s>
+      <taz0_Utc>25-SEP-2021 21:47:31.617445433412</taz0_Utc>
+    </DopplerRate>
+    <DopplerRate Number="2" Total="2">
+      <pol>
+        <val N="1" unit="Hz/s">-550.509510434461</val>
+        <val N="2" unit="Hz/s2">100841.542693706</val>
+        <val N="3" unit="Hz/s2">0</val>
+        <val N="4" unit="Hz/s3">0</val>
+        <val N="5" unit="Hz/s3">-18120876.6960115</val>
+        <val N="6" unit="Hz/s4">3208474807.93185</val>
+        <val N="7" unit="Hz/s5">-490849039033.953</val>
+      </pol>
+      <trg0_s>0.00545653652867407</trg0_s>
+      <taz0_Utc>25-SEP-2021 21:47:36.617445433412</taz0_Utc>
+    </DopplerRate> 
+   <AttitudeInfo>
+      <t_ref_Utc>25-SEP-2021 21:47:21.000000000000</t_ref_Utc>
+      <dtYPR_s>1</dtYPR_s>
+      <nYPR_n>31</nYPR_n>
+      <yaw_deg>
+        <val N="1">3.10766271882671</val>
+        <val N="2">3.10512118278032</val>
+        <val N="3">3.10278423019107</val>
+        <val N="4">3.10028767864097</val>
+        <val N="5">3.09783509170985</val>
+        <val N="6">3.09537564689225</val>
+        <val N="7">3.09307208861674</val>
+        <val N="8">3.09079971759223</val>
+        <val N="9">3.08840150799971</val>
+        <val N="10">3.08610993839132</val>
+        <val N="11">3.08391281037375</val>
+        <val N="12">3.08159170059377</val>
+        <val N="13">3.07930459928204</val>
+        <val N="14">3.07699432922911</val>
+        <val N="15">3.0747037841622</val>
+        <val N="16">3.07227928930836</val>
+        <val N="17">3.06995243640019</val>
+        <val N="18">3.06773144829738</val>
+        <val N="19">3.06537831315729</val>
+        <val N="20">3.06305697820563</val>
+        <val N="21">3.06072846689148</val>
+        <val N="22">3.05843224644813</val>
+        <val N="23">3.0559938163365</val>
+        <val N="24">3.05366590104735</val>
+        <val N="25">3.05143050184053</val>
+        <val N="26">3.04906423973477</val>
+        <val N="27">3.04674045339026</val>
+        <val N="28">3.04440349531769</val>
+        <val N="29">3.04207219545197</val>
+        <val N="30">3.03974326087786</val>
+        <val N="31">3.03726659410778</val>
+      </yaw_deg>
+      <pitch_deg>
+        <val N="1">0.0966100857482778</val>
+        <val N="2">0.0965623830318282</val>
+        <val N="3">0.0965141531734198</val>
+        <val N="4">0.0964657338908417</val>
+        <val N="5">0.096414372623985</val>
+        <val N="6">0.0963649807120894</val>
+        <val N="7">0.0963517170080499</val>
+        <val N="8">0.0963384636001944</val>
+        <val N="9">0.0963248138773811</val>
+        <val N="10">0.0963107063603102</val>
+        <val N="11">0.0962960499157224</val>
+        <val N="12">0.0962812197385513</val>
+        <val N="13">0.0962633658319404</val>
+        <val N="14">0.096247649700539</val>
+        <val N="15">0.0962728183920496</val>
+        <val N="16">0.096297967963355</val>
+        <val N="17">0.0963227151898509</val>
+        <val N="18">0.0963469149359938</val>
+        <val N="19">0.096370895538144</val>
+        <val N="20">0.0963919242564087</val>
+        <val N="21">0.096414963748317</val>
+        <val N="22">0.0964376926361078</val>
+        <val N="23">0.0965288831005635</val>
+        <val N="24">0.096620292134083</val>
+        <val N="25">0.096711365408628</val>
+        <val N="26">0.0968020263832792</val>
+        <val N="27">0.096889730574471</val>
+        <val N="28">0.0969795684953364</val>
+        <val N="29">0.0970689339322653</val>
+        <val N="30">0.0971579271368539</val>
+        <val N="31">0.0972305962986552</val>
+      </pitch_deg>
+      <roll_deg>
+        <val N="1">-30.3058737129247</val>
+        <val N="2">-30.3059030614573</val>
+        <val N="3">-30.3059351716975</val>
+        <val N="4">-30.3059698413377</val>
+        <val N="5">-30.3060074230117</val>
+        <val N="6">-30.3060475259527</val>
+        <val N="7">-30.3061503578909</val>
+        <val N="8">-30.3062562707294</val>
+        <val N="9">-30.3063648262394</val>
+        <val N="10">-30.3064757536315</val>
+        <val N="11">-30.3065892778881</val>
+        <val N="12">-30.3067053491102</val>
+        <val N="13">-30.3068239434146</val>
+        <val N="14">-30.3069450112477</val>
+        <val N="15">-30.3069440669632</val>
+        <val N="16">-30.3069443000882</val>
+        <val N="17">-30.3069471247843</val>
+        <val N="18">-30.3069525510447</val>
+        <val N="19">-30.3069604976344</val>
+        <val N="20">-30.306971029373</val>
+        <val N="21">-30.3069840793234</val>
+        <val N="22">-30.306999632051</val>
+        <val N="23">-30.3070080486455</val>
+        <val N="24">-30.307018918063</val>
+        <val N="25">-30.3070323864206</val>
+        <val N="26">-30.3070483728097</val>
+        <val N="27">-30.30706706958</val>
+        <val N="28">-30.3070882419327</val>
+        <val N="29">-30.3071118909974</val>
+        <val N="30">-30.307138097101</val>
+        <val N="31">-30.3071119285081</val>
+      </roll_deg>
+      <referenceFrame>GEODETIC</referenceFrame>
+      <rotationOrder>YPR</rotationOrder>
+      <AttitudeType>NOMINAL</AttitudeType>
+    </AttitudeInfo>
+    
+  <GeometricLayout>
+    <sarAntennaMechBoresight>
+      <roll>0.037</roll>
+      <pitch>-0.024</pitch>
+      <yaw>-0.004</yaw>
+    </sarAntennaMechBoresight>
+    <sarAntennaPosition>
+      <X>0</X>
+      <Y>-1.75</Y>
+      <Z>0.7</Z>
+    </sarAntennaPosition>
+  </GeometricLayout>
+</Channel>
+</SAOCOM_XMLProduct>
