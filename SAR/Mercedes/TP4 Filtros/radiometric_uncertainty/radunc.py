@@ -118,7 +118,7 @@ def clip_tif(tif_path, samples_path, samples_col, back_val=0):
         for idx, row in gdf_samples.iterrows():
             geom = [row.geometry]  # mask() expects a list of geometries
             #geom = row.geometry  # mask() expects a list of geometries
-            out_image, out_transform = mask(src, geom, crop=True)
+            out_image, out_transform = mask(src, geom, all_touched=True, crop=True)
 
             x = out_image
             x[0][x[0] == back_val] = np.nan
