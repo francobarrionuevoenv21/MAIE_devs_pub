@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "sierras_fields",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -64.98036696705104, -31.811515915336575 ], [ -64.987903024565128, -32.076885540369219 ], [ -64.167243912272525, -32.092572939647667 ], [ -64.1647457957596, -31.822376917075932 ], [ -64.98036696705104, -31.811515915336575 ] ] ] ] } }
+]
+}
