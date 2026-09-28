@@ -52,3 +52,7 @@ SAR/Mercedes/TP6_Humedad_del_Suelo/SAOCOM/Datos SAOCOM/S1A_OPER_SAR_EOSSP__CORE_
 SAR/Mercedes/TP6_Humedad_del_Suelo/SAOCOM/Datos SAOCOM/S1A_OPER_SAR_EOSSP__CORE_L1C_ARG-1_OLVF_20210703T230029_incidence_angle_cg.tif
 SAR/Mercedes/TP6_Humedad_del_Suelo/IIEM/
 Modelos/TPfinal_ESRTTSS_pred/data/chla_slc_clip_2326.nc
+Modelos/TPfinal_ESRTTSS_pred/data_updt/chla_slc_clip_1726_mask_FULL03.nc
+Modelos/TPfinal_ESRTTSS_pred/data/chla_slc_clip_1726_mask02.nc
+Modelos/TPfinal_ESRTTSS_pred/data/chla_slc_clip_1726_mask_FULL02.nc
+Modelos/TPfinal_ESRTTSS_pred/data/chla_slc_clip_1726.nc
