@@ -1,0 +1,34 @@
+PRÁCTICOS - ANÁLISIS ESPACIAL (Instituto Gulich, 2026)
+
+Abran el proyecto de RStudio en esta carpeta (o fijen esta carpeta como
+directorio de trabajo) y corran los scripts en orden. Todos leen los datos de
+la carpeta datos/ y algunos usan archivos que genera un script anterior:
+
+  02 genera datos/soja_t.gpkg         -> lo usan 02b y 03
+  03 genera datos/soja_depurado.gpkg  -> lo usan 05 y 06
+  07 genera datos/grilla_MO_3km.gpkg  -> lo usan 08, 08b, 09 y 09b
+
+Script                               Tema                                        Datos
+01_procesos_aleatorios.R             Procesos aleatorios y realizaciones         simulados
+02_intro_sf.R                        Datos georreferenciados en R (sf)           soja_geo.txt
+02b_mapas_ggplot_tmap.R              Mapas con ggplot2 y tmap (versión 4)        soja_t.gpkg, MO_Córdoba.txt, grilla_MO.txt
+03_exploratorio_depuracion.R         Exploratorio, outliers e inliers            soja_t.gpkg, MO_Córdoba.txt
+04_autocorrelacion_moran.R           Vecindad, Moran global y local              Columbus (spData), MO_Córdoba.txt
+05_semivariograma.R                  Semivariograma y anisotropía                soja_depurado.gpkg, MO_Córdoba.txt, ppMarzo.txt
+06_kriging.R                         Kriging, bloque, validación cruzada         soja_depurado.gpkg, MO_Córdoba.txt
+07_kriging_regresion.R               Kriging regresión                           MO_Córdoba.txt, grilla_MO.txt
+08_arboles_random_forest_kriging.R   Árboles, Random Forest y RF-kriging         MO_Córdoba.txt, grilla_MO_3km.gpkg
+08b_machine_learning_tidymodels.R    El 8 con tidymodels (ajuste y evaluación)   MO_Córdoba.txt, grilla_MO_3km.gpkg
+09_validacion_espacial_aoa.R         Validación espacial y área de aplicabilidad MO_Córdoba.txt, grilla_MO_3km.gpkg
+09b_validacion_espacial_tidymodels.R El 9 con spatialsample y waywiser           MO_Córdoba.txt, grilla_MO_3km.gpkg
+10_clasificacion_cultivos.R          Clasificación de cultivos (Landsat-8)       maipo.rda
+11_modelos_mixtos_cana.R             Modelos mixtos con correlación espacial     No_quemadas.txt
+
+Cada script empieza con la pregunta que intenta responder y termina con
+preguntas "Para discutir". Las respuestas no están en el código: hay que mirar
+los resultados.
+
+Paquetes: el script 02 instala los que falten.
+
+Los scripts "b" (02b, 08b, 09b) son complementos: 08b y 09b resuelven los
+mismos problemas que el 8 y el 9 con tidymodels (https://www.tidymodels.org/).
